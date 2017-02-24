@@ -48,22 +48,22 @@
           <span></span>
         </span>
         <div class="nav-right nav-menu">
-            <a class="nav-item is-tab notice">
+            <a class="nav-item is-tab notice" href="/order/">
                 <i class="fa fa-fw fa-star"></i>
                 <small>新規予約</small>
                 <span class="number-style">3</span>
             </a>
-            <a class="nav-item is-tab notice">
+            <a class="nav-item is-tab notice" href="/order/">
                 <i class="fa fa-fw fa-exclamation"></i>
                 <small>承認待ち</small>
                 <span class="number-style">1</span>
             </a>
           <span class="nav-item">
-              <a class="button is-light">
+              <a class="button is-light" href="/settings/">
                   <i class="fa fa-fw fa-cog"></i>
                   設定
               </a>
-              <a class="button">
+              <a class="button" href="/login/">
                 <i class="fa fa-fw fa-sign-out"></i>
                 ログアウト
               </a>
@@ -90,8 +90,8 @@
         <div class="notification">
             <ul class="is-clearfix">
               <li><a href="/"><span class="icon is-small"><i class="fa fa-home" aria-hidden="true"></i></span></a></li>
-              <li><a href="/order"><span>売上管理</span></a></li>
-              <li><span>売上一覧</span></li>
+              <li><a href="/settings"><span>設定</span></a></li>
+              <li><span>プロフィール</span></li>
             </ul>
         </div>
     </div>
@@ -110,7 +110,6 @@
       <li><a href="/product/post">コースの内容</a></li>
       <li><a href="/product/post">集合場所</a></li>
       <li><a href="/product/post">注意事項・その他</a></li>
-      <li><a href="/product/post">取消料</a></li>
       <li><a href="/product/post">予約カレンダー</a></li>
       <li><a href="/product/post">料金・規格</a></li>
       <li><a href="/product/post">エリア・カテゴリ</a></li>
@@ -130,10 +129,10 @@
   </p>
   <ul class="menu-list">
     <li><a href="/product">商品一覧</a></li>
-    <li><a>新規追加</a></li>
-    <li><a>エリア</a></li>
-    <li><a>カテゴリ</a></li>
-    <li><a>規格</a></li>
+    <li><a href="/product/post">新規追加</a></li>
+    <li><a href="/area">エリア</a></li>
+    <li><a href="/category">カテゴリ</a></li>
+    <li><a href="/standard">規格</a></li>
   </ul>
   <p class="menu-label">
     受注管理
@@ -151,9 +150,9 @@
     設定
   </p>
   <ul class="menu-list">
-    <li><a>プロフィール</a></li>
-    <li><a>口座設定</a></li>
-    <li><a>アカウント</a></li>
+    <li><a href="/settings">プロフィール</a></li>
+    <li><a href="/settings/bank">口座設定</a></li>
+    <li><a href="/settings/account">アカウント</a></li>
   </ul>
 </aside>
 
@@ -162,105 +161,432 @@
 <!-- START main -->
 <main>
 
-    <section class="hero section">
-        <!-- Hero content: will be in the middle -->
-        <div class="hero-body">
-            <h1 class="title is-4">
-              月間売上
-            </h1>
-            <h2 class="subtitle">
-              2017/03
-            </h2>
-            <nav class="level">
-              <div class="level-item has-text-centered">
-                <div>
-                    <p class="heading">合計売上</p>
-                    <p class="title">1,203,456円</p>
-                </div>
-              </div>
-              <div class="level-item has-text-centered">
-                <div>
-                    <p class="heading">合計件数</p>
-                    <p class="title">300</p>
-                </div>
-              </div>
-            </nav>
+    <h2 class="title is-3">プロフィール</h2>
+
+    <div class="control">
+        <label class="label">表示名</label>
+        <p class="control">
+            <input class="input is-danger is-outlined" type="text" placeholder="例：観光販売システムズ">
+        </p>
+    </div>
+
+    <div class="control">
+        <label class="label">画像</label>
+        <p class="control">
+            <form action="" method="POST" enctype="multipart/form-data">
+                <label class="button is-danger is-outlined" for="main_img">画像を選択してください</label>
+                <input type="file" name="main_img" id="main_img" style="display:none;">
+            </form>
+        </p>
+    </div>
+
+    <div class="control">
+        <label class="label">ロゴマーク</label>
+        <p class="control">
+            <form action="" method="POST" enctype="multipart/form-data">
+                <label class="button is-danger is-outlined" for="main_img">画像を選択してください</label>
+                <input type="file" name="main_img" id="main_img" style="display:none;">
+            </form>
+        </p>
+    </div>
+
+    <hr>
+
+    <div class="control">
+        <label class="label">担当者名</label>
+        <div class="control is-horizontal">
+            <div class="control is-grouped">
+                <p class="control is-expanded">
+                    <input class="input is-danger is-outlined" type="text" placeholder="姓">
+                </p>
+                <p class="control is-expanded">
+                    <input class="input is-danger is-outlined" type="text" placeholder="名">
+                </p>
+            </div>
         </div>
-    </section>
+    </div>
 
-    <section class="section">
-        <h1 class="title is-4">
-          商品別 TOP5
-        </h1>
-        <canvas id="myChart" width="400" height="300"></canvas>
-    </section>
+    <div class="control">
+        <label class="label">フリガナ</label>
+        <div class="control is-horizontal">
+            <div class="control is-grouped">
+                <p class="control is-expanded">
+                    <input class="input" type="text" placeholder="セイ">
+                </p>
+                <p class="control is-expanded">
+                    <input class="input" type="text" placeholder="メイ">
+                </p>
+            </div>
+        </div>
+    </div>
 
-    <section class="section">
-        <h1 class="title is-4">
-          売上一覧
-        </h1>
-        <table class="order-list table">
-          <thead>
-            <tr>
-              <th class="order-date">入金日</th>
-              <th class="order-number">注文番号</th>
-              <th class="order-product-name">商品名</th>
-              <th class="order-name">購入者</th>
-              <th class="order-number">購入件数</th>
-              <th class="order-amount">売上金額</th>
-            </tr>
-          </thead>
-          <tfoot>
-            <tr>
-              <th class="order-date" colspan="5">合計</th>
-              <th class="order-amount">90,000円</th>
-            </tr>
-        </tfoot>
-          <tbody>
-            <tr>
-              <td class="order-date">2017/03/01<br />15:00</td>
-              <td class="order-number">23</td>
-              <td class="order-product-name">商品名商品名商品名<br /><small>規格規格規格</small></td>
-              <td class="order-name">山田 太朗</td>
-              <td class="order-number">3</td>
-              <td class="order-amount">18,000</td>
-            </tr>
-            <tr>
-              <td class="order-date">2017/03/01<br />15:00</td>
-              <td class="order-number">23</td>
-              <td class="order-product-name">商品名商品名商品名<br /><small>規格規格規格</small></td>
-              <td class="order-name">山田 太朗</td>
-              <td class="order-number">3</td>
-              <td class="order-amount">18,000</td>
-            </tr>
-            <tr>
-              <td class="order-date">2017/03/01<br />15:00</td>
-              <td class="order-number">23</td>
-              <td class="order-product-name">商品名商品名商品名<br /><small>規格規格規格</small></td>
-              <td class="order-name">山田 太朗</td>
-              <td class="order-number">3</td>
-              <td class="order-amount">18,000</td>
-            </tr>
-            <tr>
-              <td class="order-date">2017/03/01<br />15:00</td>
-              <td class="order-number">23</td>
-              <td class="order-product-name">商品名商品名商品名<br /><small>規格規格規格</small></td>
-              <td class="order-name">山田 太朗</td>
-              <td class="order-number">3</td>
-              <td class="order-amount">18,000</td>
-            </tr>
-            <tr>
-              <td class="order-date">2017/03/01<br />15:00</td>
-              <td class="order-number">23</td>
-              <td class="order-product-name">商品名商品名商品名<br /><small>規格規格規格</small></td>
-              <td class="order-name">山田 太朗</td>
-              <td class="order-number">3</td>
-              <td class="order-amount">18,000</td>
-            </tr>
-          </tbody>
-        </table>
-    </section>
+    <div class="control">
+        <label class="label">メールアドレス</label>
+        <p class="control">
+            <input class="input is-danger is-outlined" type="email" placeholder="例：sample@firld-desing.jp">
+        </p>
+    </div>
 
+    <hr>
+
+    <div class="control">
+        <label class="label">会社名</label>
+        <p class="control">
+          <input class="input" type="text" placeholder="例：株式会社観光販売システムズ">
+        </p>
+    </div>
+
+    <div class="control">
+        <label class="label">郵便番号</label>
+        <div class="control is-horizontal">
+            <div class="control is-grouped">
+                <p class="control is-expanded">
+                    <input class="input" type="number" min="0" placeholder="例：123">
+                </p>
+                <p class="control is-expanded">
+                    <input class="input" type="number" min="0" placeholder="例：4567">
+                </p>
+            </div>
+        </div>
+
+        <label class="label">都道府県</label>
+        <p class="control">
+          <span class="select">
+            <select>
+                <option value="" selected>都道府県</option>
+                <option value="北海道">北海道</option>
+                <option value="青森県">青森県</option>
+                <option value="岩手県">岩手県</option>
+                <option value="宮城県">宮城県</option>
+                <option value="秋田県">秋田県</option>
+                <option value="山形県">山形県</option>
+                <option value="福島県">福島県</option>
+                <option value="茨城県">茨城県</option>
+                <option value="栃木県">栃木県</option>
+                <option value="群馬県">群馬県</option>
+                <option value="埼玉県">埼玉県</option>
+                <option value="千葉県">千葉県</option>
+                <option value="東京都">東京都</option>
+                <option value="神奈川県">神奈川県</option>
+                <option value="新潟県">新潟県</option>
+                <option value="富山県">富山県</option>
+                <option value="石川県">石川県</option>
+                <option value="福井県">福井県</option>
+                <option value="山梨県">山梨県</option>
+                <option value="長野県">長野県</option>
+                <option value="岐阜県">岐阜県</option>
+                <option value="静岡県">静岡県</option>
+                <option value="愛知県">愛知県</option>
+                <option value="三重県">三重県</option>
+                <option value="滋賀県">滋賀県</option>
+                <option value="京都府">京都府</option>
+                <option value="大阪府">大阪府</option>
+                <option value="兵庫県">兵庫県</option>
+                <option value="奈良県">奈良県</option>
+                <option value="和歌山県">和歌山県</option>
+                <option value="鳥取県">鳥取県</option>
+                <option value="島根県">島根県</option>
+                <option value="岡山県">岡山県</option>
+                <option value="広島県">広島県</option>
+                <option value="山口県">山口県</option>
+                <option value="徳島県">徳島県</option>
+                <option value="香川県">香川県</option>
+                <option value="愛媛県">愛媛県</option>
+                <option value="高知県">高知県</option>
+                <option value="福岡県">福岡県</option>
+                <option value="佐賀県">佐賀県</option>
+                <option value="長崎県">長崎県</option>
+                <option value="熊本県">熊本県</option>
+                <option value="大分県">大分県</option>
+                <option value="宮崎県">宮崎県</option>
+                <option value="鹿児島県">鹿児島県</option>
+                <option value="沖縄県">沖縄県</option>
+            </select>
+          </span>
+        </p>
+
+        <label class="label">市区町村</label>
+        <p class="control">
+            <input class="input" type="text" placeholder="例：〇〇市〇〇">
+        </p>
+
+        <label class="label">丁目・番地</label>
+        <p class="control">
+            <input class="input" type="text" placeholder="例：1丁目123">
+        </p>
+
+        <label class="label">ビル・マンション名等</label>
+        <p class="control">
+            <input class="input" type="text" placeholder="例：〇〇ビル101">
+        </p>
+    </div>
+
+    <hr>
+
+    <div class="control">
+        <label class="label">電話番号</label>
+        <div class="control is-horizontal">
+            <div class="control is-grouped">
+                <p class="control is-expanded">
+                    <input class="input is-danger is-outlined" type="number" min="0" placeholder="例：123">
+                </p>
+                <p class="control is-expanded">
+                    <input class="input is-danger is-outlined" type="number" min="0" placeholder="例：4567">
+                </p>
+                <p class="control is-expanded">
+                    <input class="input is-danger is-outlined" type="number" min="0" placeholder="例：8901">
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="control">
+        <label class="label">FAX番号</label>
+        <div class="control is-horizontal">
+            <div class="control is-grouped">
+                <p class="control is-expanded">
+                    <input class="input" type="number" min="0" placeholder="例：123">
+                </p>
+                <p class="control is-expanded">
+                    <input class="input" type="number" min="0" placeholder="例：4567">
+                </p>
+                <p class="control is-expanded">
+                    <input class="input" type="number" min="0" placeholder="例：8901">
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="control">
+        <label class="label">営業時間</label>
+        <p class="control">
+          <input class="input" type="text" placeholder="例：平日9:00〜17:00">
+        </p>
+    </div>
+
+    <hr>
+
+    <div class="control">
+        <label class="label">ホームページ URL</label>
+        <p class="control">
+          <input class="input" type="text" placeholder="例：http://example.com">
+        </p>
+    </div>
+
+    <div class="control">
+        <label class="label">Facebookページ URL</label>
+        <p class="control">
+          <input class="input" type="text" placeholder="例：http://example.com">
+        </p>
+    </div>
+
+    <div class="control">
+        <label class="label">Twitter URL</label>
+        <p class="control">
+          <input class="input" type="text" placeholder="例：http://example.com">
+        </p>
+    </div>
+
+    <div class="control">
+        <label class="label">Instagram URL</label>
+        <p class="control">
+          <input class="input" type="text" placeholder="例：http://example.com">
+        </p>
+    </div>
+
+    <hr>
+
+        <section class="cancel">
+            <h2 class="conts-ttl subtitle">
+                取消料
+            </h2>
+            <div class="conts-body">
+                <label class="label">説明文</label>
+                <p class="control">
+                    <textarea class="textarea is-danger" placeholder="例：契約成立後、お客様のご都合で契約を解除する場合、旅行代金に対してお客様1名につき下記の料率で取消料をいただきます。なお、複数人数のご参加で、一部のお客様が契約を解除される場合は、ご参加のお客様から運送・宿泊機関等の（1台・1室あたりの）ご利用人数の変更に対する差額代金をそれぞれいただきます。"></textarea>
+                </p>
+
+                <label class="label">
+                    料率
+                    <span class="help">最大10件まで追加可能</span>
+                </label>
+                <div class="sortable">
+                    <p class="control has-addons">
+                        <a class="button">
+                          <i class="fa fa-navicon"></i>
+                        </a>
+                      <span class="select">
+                        <select>
+                          <option>旅行開始後 無連絡不参加</option>
+                          <option>当日</option>
+                          <option>前日</option>
+                          <option>2日前まで</option>
+                          <option>3日前まで</option>
+                          <option>3日から2日前まで</option>
+                        </select>
+                      </span>
+                      <span class="select">
+                        <select>
+                          <option>100%</option>
+                          <option>90%</option>
+                          <option>80%</option>
+                          <option>70%</option>
+                          <option>60%</option>
+                          <option>50%</option>
+                          <option>40%</option>
+                          <option>30%</option>
+                          <option>20%</option>
+                          <option>10%</option>
+                          <option>なし</option>
+                        </select>
+                      </span>
+                      <a class="button" onclick="((this).parentNode.remove())">
+                        <i class="fa fa-close"></i>
+                      </a>
+                    </p>
+                    <p class="control has-addons">
+                        <a class="button">
+                          <i class="fa fa-navicon"></i>
+                        </a>
+                      <span class="select">
+                        <select>
+                          <option>旅行開始後 無連絡不参加</option>
+                          <option>当日</option>
+                          <option>前日</option>
+                          <option>2日前まで</option>
+                          <option>3日前まで</option>
+                          <option>3日から2日前まで</option>
+                        </select>
+                      </span>
+                      <span class="select">
+                        <select>
+                          <option>100%</option>
+                          <option>90%</option>
+                          <option>80%</option>
+                          <option>70%</option>
+                          <option>60%</option>
+                          <option>50%</option>
+                          <option>40%</option>
+                          <option>30%</option>
+                          <option>20%</option>
+                          <option>10%</option>
+                          <option>なし</option>
+                        </select>
+                      </span>
+                      <a class="button" onclick="((this).parentNode.remove())">
+                        <i class="fa fa-close"></i>
+                      </a>
+                    </p>
+                </div>
+                <p class="control add-btn">
+                  <a class="button is-primary">
+                    <span class="icon">
+                      <i class="fa fa-plus-circle"></i>
+                    </span>
+                    <span>料率を追加</span>
+                  </a>
+                </p>
+
+                <label class="label">
+                    注釈
+                    <span class="help">最大10件まで追加可能</span>
+                </label>
+                <div class="control sortable">
+                    <p class="control has-addons">
+                        <a class="button is-white">
+                          <i class="fa fa-navicon"></i>
+                        </a>
+                        <textarea class="textarea is-expanded" style="min-height: 60px; min-width: auto;" placeholder="例：オプショナルプランも上記取消料率による取消料が利用日を基準として別途適用されます。ただし、旅行開始後の取消料は100％となります。"></textarea>
+                        <a class="button is-white">
+                          <i class="fa fa-close"></i>
+                        </a>
+                    </p>
+                </div>
+                <p class="control add-btn">
+                  <a class="button is-primary">
+                    <span class="icon">
+                      <i class="fa fa-plus-circle"></i>
+                    </span>
+                    <span>行を追加</span>
+                  </a>
+                </p>
+
+            </div>
+        </section>
+
+        <hr>
+
+    <div class="control">
+        <label class="label">旅行業に基づく旅行商品の取り扱い</label>
+        <span class="help is-danger">※旅行商品を取り扱う場合は、株式会社観光販売システムズとの契約が別途必要となります。</span>
+        <p class="control">
+            <label class="checkbox">
+              <input type="checkbox" name="travel-agency-available">
+              取り扱う
+            </label>
+        </p>
+    </div>
+
+    <div class="travel-agency-input">
+        <div class="control">
+            <label class="label">旅行条件書</label>
+            <p class="control">
+                <label class="radio">
+                    <input type="radio" name="condition_type" value="pdf" checked="checked"> PDFファイルをアップロードする
+                </label>
+                <label class="radio">
+                    <input type="radio" name="condition_type" value="link"> URLリンクを入力する
+                </label>
+            </p>
+
+            <div class="control condition-url">
+                <label class="label">旅行条件書 PDF</label>
+                <p class="control has-addons">
+                  <input class="input" type="file" placeholder="Find a repository">
+                </p>
+            </div>
+
+            <div class="control condition-url">
+                <label class="label">旅行条件書 URL</label>
+                <p class="control">
+                  <input class="input" type="text" placeholder="例：http://example.com">
+                </p>
+            </div>
+
+            <label class="label">企画旅行業者の氏名又は名称</label>
+            <p class="control">
+                <input class="input" type="text" placeholder="例：観光販売システムズ">
+            </p>
+
+            <label class="label">企画旅行業者の住所</label>
+            <p class="control">
+                <input class="input" type="text" placeholder="例：愛知県名古屋市中村区名駅3丁目21番7号　名古屋三交ビル9階">
+            </p>
+
+            <label class="label">企画旅行業者の登録番号</label>
+            <p class="control has-addons">
+                <span class="button is-disabled">観光庁長官登録旅行業第</span>
+                <input class="input" type="number" placeholder="例：1600">
+                <span class="button is-disabled">号</span>
+            </p>
+
+            <label class="label">加入旅行業協会名（加入会社のみ）</label>
+            <p class="control">
+                <input class="input" type="text" placeholder="例：一般社団法人日本旅行業協会（JATA）正会員">
+            </p>
+        </div>
+    </div>
+
+    <div class="control save-point">
+        <p class="has-text-centered">
+            <a class="button is-success">
+                <span class="icon">
+                    <i class="fa fa-save"></i>
+                </span>
+                <span>変更を保存</span>
+            </a>
+        </p>
+    </div>
 </main>
 <!-- END main -->
         </div>
@@ -306,38 +632,6 @@
 <!-- Page Script -->
 
 <script>
-  function initMap() {
-
-    // マップの初期化
-    var map = new google.maps.Map(document.getElementById('location-map'), {
-      zoom: 13,
-      center: {lat: 36.38992, lng: 139.06065}
-    });
-
-    // クリックイベントを追加
-    map.addListener('click', function(e) {
-      getClickLatLng(e.latLng, map);
-    });
-  }
-
-  function getClickLatLng(lat_lng, map) {
-
-    // 座標を表示
-    document.getElementById('lat').textContent = lat_lng.lat();
-    document.getElementById('lng').textContent = lat_lng.lng();
-
-    // マーカーを設置
-    var marker = new google.maps.Marker({
-      position: lat_lng,
-      map: map
-    });
-
-    // 座標の中心をずらす
-    // http://syncer.jp/google-maps-javascript-api-matome/map/method/panTo/
-    map.panTo(lat_lng);
-  }
-</script>
-<script>
     // 並び替え機能
     $( function() {
         $( ".sortable" ).sortable();
@@ -373,41 +667,34 @@
         });
     });
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+<script src="//cdn.ckeditor.com/4.5.8/basic/ckeditor.js"></script>
 <script>
-var ctx = document.getElementById("myChart");
-var myChart = new Chart(ctx, {
-    type: 'polarArea',
-    data: {
-        labels: ["商品名1商品名1商品名1", "商品名2商品名2商品名2", "商品名3商品名3商品名3", "商品名4商品名4商品名4", "商品名5商品名5商品名5"],
-        datasets: [{
-            data: [50000, 19000, 30000, 50000, 20000, 30000],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
-            }]
+  CKEDITOR.replace('ckeditor01', {
+    language: 'ja',
+    uiColor: '#ffffff',
+  });
+</script>
+
+<script type="text/javascript">
+$(function() {
+    $('[name=travel-agency-available]').change(function() {
+        if ($(this).is(':checked')) {
+            $('.travel-agency-input').fadeIn();
+        } else {
+            $('.travel-agency-input').fadeOut();
         }
-    }
+    }).trigger('change');
+
+    $('[name=condition_type]').change(function() {
+        if ($("input:radio[name='condition_type']:checked").val() == "text") {
+            $('.condition-txt').fadeIn();
+            $('.condition-url').fadeOut();
+        } else if ($("input:radio[name='condition_type']:checked").val() == "link") {
+            $('.condition-url').fadeIn();
+            $('.condition-txt').fadeOut();
+        }
+    }).trigger('change');
 });
 </script>
 

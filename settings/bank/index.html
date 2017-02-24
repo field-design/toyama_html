@@ -90,8 +90,8 @@
         <div class="notification">
             <ul class="is-clearfix">
               <li><a href="/"><span class="icon is-small"><i class="fa fa-home" aria-hidden="true"></i></span></a></li>
-              <li><a href="/order"><span>受注管理</span></a></li>
-              <li><span>詳細情報</span></li>
+              <li><a href="/settings"><span>設定</span></a></li>
+              <li><span>口座設定</span></li>
             </ul>
         </div>
     </div>
@@ -161,159 +161,58 @@
 <!-- START main -->
 <main>
 
-    <h2 class="title is-3">詳細情報</h2>
+    <h2 class="title is-3">口座設定</h2>
 
-    <section>
-        <h3 class="title is-5">決済情報</h3>
-        <hr>
-        <table class="order-edit table is-bordered">
-          <tbody>
-            <tr>
-                <th>決済種別</th>
-                <td>クレジットカード決済</td>
-            </tr>
-            <tr>
-                <th>取引状況</th>
-                <td>取消</td>
-            </tr>
-            <tr>
-                <th>与信承認番号</th>
-                <td>0010485</td>
-            </tr>
-            <tr>
-                <th>支払方法</th>
-                <td>一括払い</td>
-            </tr>
-            <tr>
-                <th>決済金額</th>
-                <td>6,000円</td>
-            </tr>
-          </tbody>
-        </table>
-    </section>
+    <div class="control">
+        <label class="label">銀行名</label>
+        <p class="control">
+            <input class="input is-danger is-outlined" type="text" placeholder="例：〇〇銀行">
+        </p>
+    </div>
 
-    <section>
-        <h3 class="title is-5">受注ステータス</h3>
-        <hr>
-        <table class="order-edit table is-bordered">
-          <tbody>
-            <tr>
-                <th>受注番号</th>
-                <td>238</td>
-            </tr>
-            <tr>
-                <th>受注日</th>
-                <td>2017/04/30 15:06</td>
-            </tr>
-            <tr>
-                <th>対応状況</th>
-                <td>入金待ち</td>
-            </tr>
-            <tr>
-                <th>入金日</th>
-                <td>未入金</td>
-            </tr>
-          </tbody>
-        </table>
-    </section>
+    <div class="control">
+        <label class="label">支店名</label>
+        <p class="control">
+            <input class="input is-danger is-outlined" type="text" placeholder="例：〇〇支店">
+        </p>
+    </div>
 
-    <section>
-        <h3 class="title is-5">注文者情報</h3>
-        <hr>
-        <table class="order-edit table is-bordered">
-          <tbody>
-            <tr>
-                <th>会員ID</th>
-                <td>非会員</td>
-            </tr>
-            <tr>
-                <th>お名前</th>
-                <td>山田 太朗</td>
-            </tr>
-            <tr>
-                <th>フリガナ</th>
-                <td>ヤマダ タロウ</td>
-            </tr>
-            <tr>
-                <th>メールアドレス</th>
-                <td>abc@example.com</td>
-            </tr>
-            <tr>
-                <th>電話番号</th>
-                <td>000-0000-0000</td>
-            </tr>
-            <tr>
-                <th>携帯番号</th>
-                <td>000-0000-0000</td>
-            </tr>
-            <tr>
-                <th>住所</th>
-                <td>
-                    123-4567<br />
-                    都道府県 市区町村 丁目番地 ビルマンション名
-                </td>
-            </tr>
-            <tr>
-                <th>生年月日</th>
-                <td>0000年00月00日</td>
-            </tr>
-            <tr>
-                <th>性別</th>
-                <td>男性</td>
-            </tr>
-            <tr>
-                <th>職業</th>
-                <td>会社員</td>
-            </tr>
-          </tbody>
-        </table>
-    </section>
+    <div class="control">
+        <label class="label">口座の種類</label>
+        <p class="control">
+            <label class="radio">
+                <input type="radio" name="account_type" value="savings" checked="checked"> 普通
+            </label>
+            <label class="radio">
+                <input type="radio" name="account_type" value="current"> 当座
+            </label>
+        </p>
+    </div>
 
-    <section>
-        <h3 class="title is-5">受注詳細</h3>
-        <hr>
-        <table class="order-list table">
-          <thead>
-            <tr>
-              <th class="order-product-name">商品名</th>
-              <th class="order-date">日時</th>
-              <th class="order-amount">単価</th>
-              <th class="order-number">数量</th>
-              <th class="order-edit">小計</th>
-            </tr>
-          </thead>
-          <tfoot>
-            <tr>
-              <th class="order-date" colspan="4">合計</th>
-              <th class="order-amount">18,000円</th>
-            </tr>
-        </tfoot>
-          <tbody>
-            <tr>
-              <td class="order-product-name">商品名商品名商品名<br /><small>規格規格規格</small></td>
-              <td class="order-date">2017/03/01<br />15:00</td>
-              <td class="order-amount">128,000円</td>
-              <td class="order-number">1</td>
-              <td class="order-amount">128,000円</td>
-            </tr>
-            <tr>
-              <td class="order-product-name">商品名商品名商品名<br /><small>規格規格規格</small></td>
-              <td class="order-date">2017/03/01<br />14:00</td>
-              <td class="order-amount">6,000円</td>
-              <td class="order-number">1</td>
-              <td class="order-amount">6,000円</td>
-            </tr>
-            <tr>
-              <td class="order-product-name">商品名商品名商品名<br /><small>規格規格規格</small></td>
-              <td class="order-date">2017/03/01<br />14:00</td>
-              <td class="order-amount">6,000円</td>
-              <td class="order-number">1</td>
-              <td class="order-amount">6,000円</td>
-            </tr>
-          </tbody>
-        </table>
-    </section>
+    <div class="control">
+        <label class="label">口座番号</label>
+        <p class="control">
+            <input class="input is-danger is-outlined" type="number" min="0" placeholder="例：1234567">
+        </p>
+    </div>
 
+    <div class="control">
+        <label class="label">口座名義</label>
+        <p class="control">
+            <input class="input is-danger is-outlined" type="text" placeholder="例：ヤマダ タロウ">
+        </p>
+    </div>
+
+    <div class="control save-point">
+        <p class="has-text-centered">
+            <a class="button is-success">
+                <span class="icon">
+                    <i class="fa fa-save"></i>
+                </span>
+                <span>変更を保存</span>
+            </a>
+        </p>
+    </div>
 </main>
 <!-- END main -->
         </div>
@@ -357,76 +256,6 @@
 
 
 <!-- Page Script -->
-
-<script>
-  function initMap() {
-
-    // マップの初期化
-    var map = new google.maps.Map(document.getElementById('location-map'), {
-      zoom: 13,
-      center: {lat: 36.38992, lng: 139.06065}
-    });
-
-    // クリックイベントを追加
-    map.addListener('click', function(e) {
-      getClickLatLng(e.latLng, map);
-    });
-  }
-
-  function getClickLatLng(lat_lng, map) {
-
-    // 座標を表示
-    document.getElementById('lat').textContent = lat_lng.lat();
-    document.getElementById('lng').textContent = lat_lng.lng();
-
-    // マーカーを設置
-    var marker = new google.maps.Marker({
-      position: lat_lng,
-      map: map
-    });
-
-    // 座標の中心をずらす
-    // http://syncer.jp/google-maps-javascript-api-matome/map/method/panTo/
-    map.panTo(lat_lng);
-  }
-</script>
-<script>
-    // 並び替え機能
-    $( function() {
-        $( ".sortable" ).sortable();
-        $( ".sortable" ).disableSelection();
-        $( ".button.remove" ).click(function() {
-            $( this ).parent().remove();
-        });
-    } );
-
-    // アコーディオン
-    $(document).ready( function() {
-    	$('.js-accordion').accordion({
-            header: ".conts-ttl",
-            active: 2,
-            heightStyle: "content",
-            icons: {
-                header: "ui-icon-pin-w",
-                activeHeader: "ui-icon-circle-arrow-s"
-            },
-            change: function(event, ui) {
-        		alert(ui.newContent.context.id);
-        	}
-        });
-    });
-</script>
-<script>
-    $(function() {
-        $('.js-datepicker').datepicker();
-        $('.js-timepicker').timepicker({
-            'timeFormat': 'H:i',
-            'scrollDefault': 'now',
-            'step': 15
-        });
-    });
-</script>
-
 
 
 

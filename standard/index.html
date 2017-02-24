@@ -86,19 +86,26 @@
 
 <div class="container">
 
-    <div class="breadcrumbs section">
-        <div class="notification">
-            <ul class="is-clearfix">
-              <li><a href="/"><span class="icon is-small"><i class="fa fa-home" aria-hidden="true"></i></span></a></li>
-              <li><a href="/order"><span>売上管理</span></a></li>
-              <li><span>売上一覧</span></li>
-            </ul>
-        </div>
+<div class="status-info section">
+    <progress class="progress is-success is-small" value="30" max="100">30%</progress>
+    <div class="status has-text-centered">
+        <a class="button is-success is-loading">Loading</a>
+        <a class="button is-success">
+            <span class="icon">
+                <i class="fa fa-check"></i>
+            </span>
+            <span>保存しました</span>
+        </a>
+        <a class="button is-info">
+            <span class="icon is-small">
+                <i class="fa fa-check"></i>
+            </span>
+            <span>公開しました</span>
+        </a>
     </div>
-
+</div>
     <div class="columns section">
         <div class="column is-3">
-
 <aside class="menu">
 
 <ul class="menu-list">
@@ -161,106 +168,76 @@
 <!-- START main -->
 <main>
 
-    <h2 class="title is-3">売上一覧</h2>
+    <h2 class="title is-3">規格管理</h2>
 
-    <section class="hero">
-        <!-- Hero content: will be in the middle -->
-        <div class="hero-body">
-            <h1 class="title is-4">
-              月間売上
-            </h1>
-            <h2 class="subtitle">
-              2017/03
-            </h2>
-            <nav class="level">
-              <div class="level-item has-text-centered">
-                <div>
-                    <p class="heading">合計売上</p>
-                    <p class="title">1,203,456円</p>
-                </div>
-              </div>
-              <div class="level-item has-text-centered">
-                <div>
-                    <p class="heading">合計件数</p>
-                    <p class="title">300</p>
-                </div>
-              </div>
-            </nav>
+    <section class="input-area">
+
+        <div class="conts-body message-body">
+
+            <label class="label">規格
+                <span class="help">最大30件</span>
+            </label>
+            <div class="control sortable">
+                <p class="control has-addons">
+                    <a class="button">
+                      <i class="fa fa-navicon"></i>
+                    </a>
+                    <input class="input is-expanded" type="text" placeholder="例：タクシー乗車代" value="Aコース">
+                    <a class="button remove" onclick="((this).parentNode.remove())">
+                      <i class="fa fa-close"></i>
+                    </a>
+                </p>
+                <p class="control has-addons">
+                    <a class="button">
+                      <i class="fa fa-navicon"></i>
+                    </a>
+                    <input class="input is-expanded" type="text" placeholder="例：タクシー乗車代" value="Bコース">
+                    <a class="button remove" onclick="((this).parentNode.remove())">
+                      <i class="fa fa-close"></i>
+                    </a>
+                </p>
+                <p class="control has-addons">
+                    <a class="button">
+                      <i class="fa fa-navicon"></i>
+                    </a>
+                    <input class="input is-expanded" type="text" placeholder="例：タクシー乗車代" value="Cコース">
+                    <a class="button remove" onclick="((this).parentNode.remove())">
+                      <i class="fa fa-close"></i>
+                    </a>
+                </p>
+                <p class="control has-addons">
+                    <a class="button">
+                      <i class="fa fa-navicon"></i>
+                    </a>
+                    <input class="input is-expanded" type="text" placeholder="例：タクシー乗車代" value="Dコース">
+                    <a class="button remove" onclick="((this).parentNode.remove())">
+                      <i class="fa fa-close"></i>
+                    </a>
+                </p>
+            </div>
+            <p class="control add-btn">
+              <a class="button is-primary">
+                <span class="icon">
+                  <i class="fa fa-plus-circle"></i>
+                </span>
+                <span>追加</span>
+              </a>
+            </p>
+
         </div>
+
     </section>
 
-    <section class="section">
-        <h1 class="title is-4">
-          商品別 TOP5
-        </h1>
-        <canvas id="myChart" width="400" height="300"></canvas>
-    </section>
-
-    <section class="section">
-        <h1 class="title is-4">
-          売上一覧
-        </h1>
-        <table class="order-list table">
-          <thead>
-            <tr>
-              <th class="order-date">入金日</th>
-              <th class="order-number">注文番号</th>
-              <th class="order-product-name">商品名</th>
-              <th class="order-name">購入者</th>
-              <th class="order-number">購入件数</th>
-              <th class="order-amount">売上金額</th>
-            </tr>
-          </thead>
-          <tfoot>
-            <tr>
-              <th class="order-date" colspan="5">合計</th>
-              <th class="order-amount">90,000円</th>
-            </tr>
-        </tfoot>
-          <tbody>
-            <tr>
-              <td class="order-date">2017/03/01<br />15:00</td>
-              <td class="order-number">23</td>
-              <td class="order-product-name">商品名商品名商品名<br /><small>規格規格規格</small></td>
-              <td class="order-name">山田 太朗</td>
-              <td class="order-number">3</td>
-              <td class="order-amount">18,000</td>
-            </tr>
-            <tr>
-              <td class="order-date">2017/03/01<br />15:00</td>
-              <td class="order-number">23</td>
-              <td class="order-product-name">商品名商品名商品名<br /><small>規格規格規格</small></td>
-              <td class="order-name">山田 太朗</td>
-              <td class="order-number">3</td>
-              <td class="order-amount">18,000</td>
-            </tr>
-            <tr>
-              <td class="order-date">2017/03/01<br />15:00</td>
-              <td class="order-number">23</td>
-              <td class="order-product-name">商品名商品名商品名<br /><small>規格規格規格</small></td>
-              <td class="order-name">山田 太朗</td>
-              <td class="order-number">3</td>
-              <td class="order-amount">18,000</td>
-            </tr>
-            <tr>
-              <td class="order-date">2017/03/01<br />15:00</td>
-              <td class="order-number">23</td>
-              <td class="order-product-name">商品名商品名商品名<br /><small>規格規格規格</small></td>
-              <td class="order-name">山田 太朗</td>
-              <td class="order-number">3</td>
-              <td class="order-amount">18,000</td>
-            </tr>
-            <tr>
-              <td class="order-date">2017/03/01<br />15:00</td>
-              <td class="order-number">23</td>
-              <td class="order-product-name">商品名商品名商品名<br /><small>規格規格規格</small></td>
-              <td class="order-name">山田 太朗</td>
-              <td class="order-number">3</td>
-              <td class="order-amount">18,000</td>
-            </tr>
-          </tbody>
-        </table>
-    </section>
+    <div class="control save-point">
+        <p class="control has-addons has-addons-centered">
+            <a class="button is-success">
+                <span class="icon">
+                    <i class="fa fa-save"></i>
+                </span>
+                <span>変更を保存</span>
+            </a>
+        </p>
+    </div>
 
 </main>
 <!-- END main -->
@@ -343,9 +320,9 @@
     $( function() {
         $( ".sortable" ).sortable();
         $( ".sortable" ).disableSelection();
-        $( ".button.remove" ).click(function() {
-            $( this ).parent().remove();
-        });
+        // $( ".button.remove" ).click(function() {
+        //     $( this ).parent().remove();
+        // });
     } );
 
     // アコーディオン
@@ -374,43 +351,7 @@
         });
     });
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-<script>
-var ctx = document.getElementById("myChart");
-var myChart = new Chart(ctx, {
-    type: 'polarArea',
-    data: {
-        labels: ["商品名1商品名1商品名1", "商品名2商品名2商品名2", "商品名3商品名3商品名3", "商品名4商品名4商品名4", "商品名5商品名5商品名5"],
-        datasets: [{
-            data: [50000, 19000, 30000, 50000, 20000, 30000],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
-            }]
-        }
-    }
-});
-</script>
+
 
 
 

@@ -48,22 +48,22 @@
           <span></span>
         </span>
         <div class="nav-right nav-menu">
-            <a class="nav-item is-tab notice">
+            <a class="nav-item is-tab notice" href="/order/">
                 <i class="fa fa-fw fa-star"></i>
                 <small>新規予約</small>
                 <span class="number-style">3</span>
             </a>
-            <a class="nav-item is-tab notice">
+            <a class="nav-item is-tab notice" href="/order/">
                 <i class="fa fa-fw fa-exclamation"></i>
                 <small>承認待ち</small>
                 <span class="number-style">1</span>
             </a>
           <span class="nav-item">
-              <a class="button is-light">
+              <a class="button is-light" href="/settings/">
                   <i class="fa fa-fw fa-cog"></i>
                   設定
               </a>
-              <a class="button">
+              <a class="button" href="/login/">
                 <i class="fa fa-fw fa-sign-out"></i>
                 ログアウト
               </a>
@@ -85,78 +85,171 @@
 
 
 <div class="container">
-
-
-    <div class="columns section">
-        <div class="column is-3">
-<aside class="menu">
-
-<ul class="menu-list">
-  <li>
-    <p class="menu-label">商品編集</p>
-    <ul>
-      <li><a class="is-active" href="/product/post">基本情報</a></li>
-      <li><a href="/product/post">プラン詳細</a></li>
-      <li><a href="/product/post">コースの内容</a></li>
-      <li><a href="/product/post">集合場所</a></li>
-      <li><a href="/product/post">注意事項・その他</a></li>
-      <li><a href="/product/post">取消料</a></li>
-      <li><a href="/product/post">予約カレンダー</a></li>
-      <li><a href="/product/post">料金・規格</a></li>
-      <li><a href="/product/post">エリア・カテゴリ</a></li>
-      <li><a href="/product/post">公開設定</a></li>
-    </ul>
-  </li>
-</ul>
-
-  <p class="menu-label">
-    General
-  </p>
-  <ul class="menu-list">
-    <li><a href="/">ダッシュボード</a></li>
-  </ul>
-  <p class="menu-label">
-    商品管理
-  </p>
-  <ul class="menu-list">
-    <li><a href="/product">商品一覧</a></li>
-    <li><a>新規追加</a></li>
-    <li><a>エリア</a></li>
-    <li><a>カテゴリ</a></li>
-    <li><a>規格</a></li>
-  </ul>
-  <p class="menu-label">
-    受注管理
-  </p>
-  <ul class="menu-list">
-    <li><a href="/order">受注一覧</a></li>
-  </ul>
-  <p class="menu-label">
-    売上管理
-  </p>
-  <ul class="menu-list">
-    <li><a href="/sales">売上一覧</a></li>
-  </ul>
-  <p class="menu-label">
-    設定
-  </p>
-  <ul class="menu-list">
-    <li><a>プロフィール</a></li>
-    <li><a>口座設定</a></li>
-    <li><a>アカウント</a></li>
-  </ul>
-</aside>
-
-        </div>
-        <div class="column is-9">
 <!-- START main -->
 <main>
 
+    <div class="section">
+        <h2 class="title is-4">商品管理</h2>
+        <div class="tile is-ancestor">
+            <div class="tile is-parent">
+                <a class="button is-info is-outlined is-medium is-fullwidth" href="/product/post">
+                    <span class="icon">
+                        <i class="fa fa-plus-circle"></i>
+                    </span>
+                    <span>新規追加</span>
+                </a>
+            </div>
+            <div class="tile is-parent">
+                <a class="button is-info is-outlined is-medium is-fullwidth" href="/product">
+                    <span class="icon">
+                        <i class="fa fa-list-ul"></i>
+                    </span>
+                    <span>商品一覧</span>
+                </a>
+            </div>
+            <div class="tile is-parent">
+                <a class="button is-medium is-fullwidth" href="/standard">
+                    <span class="icon">
+                        <i class="fa fa-cog"></i>
+                    </span>
+                    <span>規格管理</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <div class="section">
+        <h2 class="title is-4">新規受注</h2>
+        <table class="order-list table">
+          <thead>
+            <tr>
+              <th class="order-image"></th>
+              <th class="order-date">受注日</th>
+              <th class="order-number">注文番号</th>
+              <th class="order-name">お名前</th>
+              <th class="order-payment">支払方法</th>
+              <th class="order-amount">合計金額</th>
+              <th class="order-status">対応状況</th>
+              <th class="order-edit">詳細</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="order-image">
+                  <p class="image is-64x64">
+                    <img src="http://bulma.io/images/placeholders/128x128.png">
+                  </p>
+              </td>
+              <td class="order-date">2017/03/01<br />15:00</td>
+              <td class="order-number">23</td>
+              <td class="order-name">山田 太朗</td>
+              <td class="order-payment">クレジットカード</td>
+              <td class="order-amount">128,000</td>
+              <td class="order-status">入金待ち</td>
+              <td class="order-edit"><a href="/order/edit">詳細</a></td>
+            </tr>
+            <tr>
+                <td class="order-image">
+                    <p class="image is-64x64">
+                      <img src="http://bulma.io/images/placeholders/128x128.png">
+                    </p>
+                </td>
+              <td class="order-date">2017/03/01<br />14:00</td>
+              <td class="order-number">21</td>
+              <td class="order-name">山田 太朗</td>
+              <td class="order-payment">コンビニ</td>
+              <td class="order-amount">6,000</td>
+              <td class="order-status">キャンセル</td>
+              <td class="order-edit"><a href="/order/edit">詳細</a></td>
+            </tr>
+            <tr>
+                <td class="order-image">
+                    <p class="image is-64x64">
+                      <img src="http://bulma.io/images/placeholders/128x128.png">
+                    </p>
+                </td>
+              <td class="order-date">2017/03/01<br />14:00</td>
+              <td class="order-number">20</td>
+              <td class="order-name">山田 太朗</td>
+              <td class="order-payment">コンビニ</td>
+              <td class="order-amount">6,000</td>
+              <td class="order-status">入金済み</td>
+              <td class="order-edit"><a href="/order/edit">詳細</a></td>
+            </tr>
+            <tr>
+                <td class="order-image">
+                    <p class="image is-64x64">
+                      <img src="http://bulma.io/images/placeholders/128x128.png">
+                    </p>
+                </td>
+              <td class="order-date">2017/03/01<br />14:00</td>
+              <td class="order-number">19</td>
+              <td class="order-name">山田 太朗</td>
+              <td class="order-payment">コンビニ</td>
+              <td class="order-amount">6,000</td>
+              <td class="order-status">決済処理中</td>
+              <td class="order-edit"><a href="/order/edit">詳細</a></td>
+            </tr>
+            <tr>
+                <td class="order-image">
+                    <p class="image is-64x64">
+                      <img src="http://bulma.io/images/placeholders/128x128.png">
+                    </p>
+                </td>
+              <td class="order-date">2017/03/01<br />14:00</td>
+              <td class="order-number">18</td>
+              <td class="order-name">山田 太朗</td>
+              <td class="order-payment">コンビニ</td>
+              <td class="order-amount">6,000</td>
+              <td class="order-status">承認待ち</td>
+              <td class="order-edit"><a href="/order/edit">詳細</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="control">
+          <a class="button is-primary is-pulled-right" href="/order">
+            <span class="icon">
+              <i class="fa fa-angle-right"></i>
+            </span>
+            <span>さらに見る</span>
+          </a>
+          </p>
+    </div>
+    <div class="section">
+        <h2 class="title is-4">今月の売上</h2>
+        <div class="section">
+            <h3 class="title is-5">2017/03</h3>
+            <nav class="level">
+              <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">合計売上</p>
+                    <p class="title">1,203,456円</p>
+                </div>
+              </div>
+              <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">合計件数</p>
+                    <p class="title">300</p>
+                </div>
+              </div>
+            </nav>
+        </div>
+        <div class="section">
+            <h3 class="title is-5">商品別 TOP5</h3>
+            <canvas id="myChart" width="400" height="300"></canvas>
+        </div>
+        <p class="control">
+          <a class="button is-primary is-pulled-right" href="/sales">
+            <span class="icon">
+              <i class="fa fa-angle-right"></i>
+            </span>
+            <span>さらに見る</span>
+          </a>
+          </p>
+    </div>
 
 </main>
 <!-- END main -->
-        </div>
-    </div>
 </div>
 
 <!-- START global-footer -->
@@ -264,6 +357,43 @@
             'step': 15
         });
     });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script>
+var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+    type: 'polarArea',
+    data: {
+        labels: ["商品名1商品名1商品名1", "商品名2商品名2商品名2", "商品名3商品名3商品名3", "商品名4商品名4商品名4", "商品名5商品名5商品名5"],
+        datasets: [{
+            data: [50000, 19000, 30000, 50000, 20000, 30000],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
 </script>
 
 

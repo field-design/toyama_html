@@ -48,22 +48,22 @@
           <span></span>
         </span>
         <div class="nav-right nav-menu">
-            <a class="nav-item is-tab notice">
+            <a class="nav-item is-tab notice" href="/order/">
                 <i class="fa fa-fw fa-star"></i>
                 <small>新規予約</small>
                 <span class="number-style">3</span>
             </a>
-            <a class="nav-item is-tab notice">
+            <a class="nav-item is-tab notice" href="/order/">
                 <i class="fa fa-fw fa-exclamation"></i>
                 <small>承認待ち</small>
                 <span class="number-style">1</span>
             </a>
           <span class="nav-item">
-              <a class="button is-light">
+              <a class="button is-light" href="/settings/">
                   <i class="fa fa-fw fa-cog"></i>
                   設定
               </a>
-              <a class="button">
+              <a class="button" href="/login/">
                 <i class="fa fa-fw fa-sign-out"></i>
                 ログアウト
               </a>
@@ -96,6 +96,12 @@
             </span>
             <span>保存しました</span>
         </a>
+        <a class="button is-success">
+            <span class="icon">
+                <i class="fa fa-check"></i>
+            </span>
+            <span>リクエストを送信しました</span>
+        </a>
         <a class="button is-info">
             <span class="icon is-small">
                 <i class="fa fa-check"></i>
@@ -117,7 +123,6 @@
       <li><a href="/product/post">コースの内容</a></li>
       <li><a href="/product/post">集合場所</a></li>
       <li><a href="/product/post">注意事項・その他</a></li>
-      <li><a href="/product/post">取消料</a></li>
       <li><a href="/product/post">予約カレンダー</a></li>
       <li><a href="/product/post">料金・規格</a></li>
       <li><a href="/product/post">エリア・カテゴリ</a></li>
@@ -137,10 +142,10 @@
   </p>
   <ul class="menu-list">
     <li><a href="/product">商品一覧</a></li>
-    <li><a>新規追加</a></li>
-    <li><a>エリア</a></li>
-    <li><a>カテゴリ</a></li>
-    <li><a>規格</a></li>
+    <li><a href="/product/post">新規追加</a></li>
+    <li><a href="/area">エリア</a></li>
+    <li><a href="/category">カテゴリ</a></li>
+    <li><a href="/standard">規格</a></li>
   </ul>
   <p class="menu-label">
     受注管理
@@ -158,9 +163,9 @@
     設定
   </p>
   <ul class="menu-list">
-    <li><a>プロフィール</a></li>
-    <li><a>口座設定</a></li>
-    <li><a>アカウント</a></li>
+    <li><a href="/settings">プロフィール</a></li>
+    <li><a href="/settings/bank">口座設定</a></li>
+    <li><a href="/settings/account">アカウント</a></li>
   </ul>
 </aside>
 
@@ -168,6 +173,8 @@
         <div class="column is-9">
 <!-- START main -->
 <main>
+
+    <h2 class="title is-3">商品編集</h2>
 
 <div class="js-accordion">
     <section class="input-area message">
@@ -193,25 +200,27 @@
                 <textarea class="textarea is-danger" placeholder="例：蜃気楼が見える街として有名な「魚津市」でのレンタサイクルプラン"></textarea>
             </p>
 
-            <label class="label">メイン画像</label>
-            <span class="help">横幅1,000px以上の画像を登録してください。</span>
-            <p class="control">
-
-            </p>
-            <p class="control">
+            <label class="label">
+                メイン画像
+                <span class="help">横幅1,000px以上の画像を登録してください。</span>
+            </label>
+            <div class="notification main-image">
+                <button class="delete" onclick="((this).parentNode.remove())"></button>
                 <figure class="image">
-                  <img src="http://placehold.jp/800x600.png">
+                    <img src="http://placehold.jp/800x600.png">
                 </figure>
+            </div>
+            <div class="notification main-image">
+                <button class="delete" onclick="((this).parentNode.remove())"></button>
+                <figure class="image">
+                    <img src="http://placehold.jp/800x600.png">
+                </figure>
+            </div>
+            <p class="control">
                 <form action="" method="POST" enctype="multipart/form-data">
-                    <label class="button is-danger" for="main_img">画像を選択してください</label>
+                    <label class="button is-danger" for="main_img">画像を追加</label>
                     <input type="file" name="main_img" id="main_img" style="display:none;">
                 </form>
-                <a class="button is-danger is-outlined" onclick="((this).parentNode.remove())">
-                  <span>画像を削除</span>
-                  <span class="icon is-small">
-                    <i class="fa fa-times"></i>
-                  </span>
-                </a>
             </p>
 
             <div class="control save-point">
@@ -289,6 +298,13 @@
                     <label class="label">説明文</label>
                     <p class="control">
                         <textarea class="textarea" placeholder="例：蜃気楼の見える道、”しんきろうロード”は、魚津市の海沿い海岸線を南北に走る道路の通称です。"></textarea>
+                    </p>
+
+                    <label class="label">外部リンク<br />
+                        <span class="help">外部リンクを掲載する場合のみ入力してください。</span>
+                    </label>
+                    <p class="control">
+                        <input class="input" type="text" placeholder="例：http://example.com">
                     </p>
                 </div>
 
@@ -532,123 +548,307 @@
         </div>
     </section>
 
-    <section class="input-area cancel message">
+    <section class="input-area calendar message">
         <h2 class="conts-ttl subtitle message-header">
-            取消料
+            カレンダー
             <span class="icon">
               <i class="fa fa-plus-circle"></i>
             </span>
         </h2>
         <div class="conts-body message-body">
-            <label class="label">説明文</label>
-            <p class="control">
-                <textarea class="textarea is-danger" placeholder="例：契約成立後、お客様のご都合で契約を解除する場合、旅行代金に対してお客様1名につき下記の料率で取消料をいただきます。なお、複数人数のご参加で、一部のお客様が契約を解除される場合は、ご参加のお客様から運送・宿泊機関等の（1台・1室あたりの）ご利用人数の変更に対する差額代金をそれぞれいただきます。"></textarea>
-            </p>
 
-            <label class="label">
-                料率
-                <span class="help">最大10件まで追加可能</span>
-            </label>
-            <div class="sortable">
-                <p class="control has-addons">
-                    <a class="button">
-                      <i class="fa fa-navicon"></i>
-                    </a>
-                  <span class="select">
-                    <select>
-                      <option>旅行開始後 無連絡不参加</option>
-                      <option>当日</option>
-                      <option>前日</option>
-                      <option>2日前まで</option>
-                      <option>3日前まで</option>
-                      <option>3日から2日前まで</option>
-                    </select>
-                  </span>
-                  <span class="select">
-                    <select>
-                      <option>100%</option>
-                      <option>90%</option>
-                      <option>80%</option>
-                      <option>70%</option>
-                      <option>60%</option>
-                      <option>50%</option>
-                      <option>40%</option>
-                      <option>30%</option>
-                      <option>20%</option>
-                      <option>10%</option>
-                      <option>なし</option>
-                    </select>
-                  </span>
-                  <a class="button" onclick="((this).parentNode.remove())">
-                    <i class="fa fa-close"></i>
-                  </a>
-                </p>
-                <p class="control has-addons">
-                    <a class="button">
-                      <i class="fa fa-navicon"></i>
-                    </a>
-                  <span class="select">
-                    <select>
-                      <option>旅行開始後 無連絡不参加</option>
-                      <option>当日</option>
-                      <option>前日</option>
-                      <option>2日前まで</option>
-                      <option>3日前まで</option>
-                      <option>3日から2日前まで</option>
-                    </select>
-                  </span>
-                  <span class="select">
-                    <select>
-                      <option>100%</option>
-                      <option>90%</option>
-                      <option>80%</option>
-                      <option>70%</option>
-                      <option>60%</option>
-                      <option>50%</option>
-                      <option>40%</option>
-                      <option>30%</option>
-                      <option>20%</option>
-                      <option>10%</option>
-                      <option>なし</option>
-                    </select>
-                  </span>
-                  <a class="button" onclick="((this).parentNode.remove())">
-                    <i class="fa fa-close"></i>
-                  </a>
+            <div class="control">
+                <label class="label">プランの種類</label>
+                <p class="control">
+                    <label class="radio">
+                        <input type="radio" name="plan_type" value="standard" checked="checked"> 通常プラン
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="plan_type" value="request"> リクエストプラン
+                    </label>
                 </p>
             </div>
-            <p class="control add-btn">
-              <a class="button is-primary">
-                <span class="icon">
-                  <i class="fa fa-plus-circle"></i>
-                </span>
-                <span>料率を追加</span>
-              </a>
-            </p>
 
-            <label class="label">
-                注釈
-                <span class="help">最大10件まで追加可能</span>
-            </label>
-            <div class="control sortable">
-                <p class="control has-addons">
-                    <a class="button is-white">
-                      <i class="fa fa-navicon"></i>
-                    </a>
-                    <textarea class="textarea is-expanded" style="min-height: 60px; min-width: auto;" placeholder="例：オプショナルプランも上記取消料率による取消料が利用日を基準として別途適用されます。ただし、旅行開始後の取消料は100％となります。"></textarea>
-                    <a class="button is-white">
-                      <i class="fa fa-close"></i>
-                    </a>
-                </p>
+            <hr>
+
+            <div class="calendar-wrap">
+                <label class="label">
+                    在庫設定
+                    <span class="help">各日程に在庫を入力してください。</span>
+                </label>
+                
+                <div class="input-table">
+                    <div class="control is-grouped">
+                        <p class="control has-addons">
+                            <a class="button">
+                              <span>今月</span>
+                            </a>
+                        </p>
+                        <p class="control has-addons">
+                            <a class="button">
+                              <span class="icon">
+                                <i class="fa fa-angle-left"></i>
+                              </span>
+                            </a>
+                            <a class="button">
+                              <span>2017年3月</span>
+                            </a>
+                            <a class="button">
+                              <span class="icon">
+                                <i class="fa fa-angle-right"></i>
+                              </span>
+                            </a>
+                        </p>
+                    </div>
+                    <table class="table is-bordered">
+                        <thead>
+                            <tr>
+                                <th class="sun"><span>日</span></th>
+                                <th class="mon"><span>月</span></th>
+                                <th class="tue"><span>火</span></th>
+                                <th class="wed"><span>水</span></th>
+                                <th class="thu"><span>木</span></th>
+                                <th class="fri"><span>金</span></th>
+                                <th class="sat"><span>土</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="sun">
+                
+                                </td>
+                                <td class="mon">
+                
+                                </td>
+                                <td class="tue">
+                                    <span>1</span>
+                                    <div class="status">
+                                        <input type="number" name="" min="0" value="0">
+                                    </div>
+                                </td>
+                                <td class="wed">
+                                    <span>2</span>
+                                    <div class="status">
+                                        <input type="number" name="" min="0" value="0">
+                                    </div>
+                                </td>
+                                <td class="thu">
+                                    <span>3</span>
+                                    <div class="status">
+                                        <input type="number" name="" min="0" value="0">
+                                    </div>
+                                </td>
+                                <td class="fri">
+                                    <span>4</span>
+                                    <div class="status">
+                                        <input type="number" name="" min="0" value="0">
+                                    </div>
+                                </td>
+                                <td class="sat">
+                                    <span>5</span>
+                                    <div class="status">
+                                        <input type="number" name="" min="0" value="0">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="sun">
+                                    <span>6</span>
+                                    <div class="status">
+                                        <input type="number" name="" min="0" value="0">
+                                    </div>
+                                </td>
+                                <td class="mon">
+                                    <span>7</span>
+                                    <div class="status">
+                                        <input type="number" name="" min="0" value="0">
+                                    </div>
+                                </td>
+                                <td class="tue">
+                                    <span>8</span>
+                                    <div class="status">
+                                        <input type="number" name="" min="0" value="0">
+                                    </div>
+                                </td>
+                                <td class="wed">
+                                    <span>9</span>
+                                    <div class="status">
+                                        <input type="number" name="" min="0" value="0">
+                                    </div>
+                                </td>
+                                <td class="thu">
+                                    <span>10</span>
+                                    <div class="status">
+                                        <input type="number" name="" min="0" value="0">
+                                    </div>
+                                </td>
+                                <td class="fri">
+                                    <span>11</span>
+                                    <div class="status">
+                                        <input type="number" name="" min="0" value="0">
+                                    </div>
+                                </td>
+                                <td class="sat">
+                                    <span>12</span>
+                                    <div class="status">
+                                        <input type="number" name="" min="0" value="0">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="sun">
+                                    <span>13</span>
+                                    <div class="status">
+                                        <input type="number" name="" min="0" value="0">
+                                    </div>
+                                </td>
+                                <td class="mon">
+                                    <span>14</span>
+                                    <div class="status">
+                                        <input type="number" name="" min="0" value="0">
+                                    </div>
+                                </td>
+                                <td class="tue">
+                                    <span>15</span>
+                                    <div class="status">
+                                        <input type="number" name="" min="0" value="0">
+                                    </div>
+                                </td>
+                                <td class="wed">
+                                    <span>16</span>
+                                    <div class="status">
+                                        <input type="number" name="" min="0" value="0">
+                                    </div>
+                                </td>
+                                <td class="thu">
+                                    <span>17</span>
+                                    <div class="status">
+                                        <input type="number" name="" min="0" value="0">
+                                    </div>
+                                </td>
+                                <td class="fri">
+                                    <span>18</span>
+                                    <div class="status">
+                                        <input type="number" name="" min="0" value="0">
+                                    </div>
+                                </td>
+                                <td class="sat">
+                                    <span>19</span>
+                                    <div class="status">
+                                        <input type="number" name="" min="0" value="0">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="sun">
+                                    <span>20</span>
+                                    <div class="status">
+                                        <input type="number" name="" min="0" value="0">
+                                    </div>
+                                </td>
+                                <td class="mon">
+                                    <span>21</span>
+                                    <div class="status">
+                                        <input type="number" name="" min="0" value="0">
+                                    </div>
+                                </td>
+                                <td class="tue">
+                                    <span>22</span>
+                                    <div class="status">
+                                        <input type="number" name="" min="0" value="0">
+                                    </div>
+                                </td>
+                                <td class="wed">
+                                    <span>23</span>
+                                    <div class="status">
+                                        <input type="number" name="" min="0" value="0">
+                                    </div>
+                                </td>
+                                <td class="thu">
+                                    <span>24</span>
+                                    <div class="status">
+                                        <input type="number" name="" min="0" value="0">
+                                    </div>
+                                </td>
+                                <td class="fri">
+                                    <span>25</span>
+                                    <div class="status">
+                                        <input type="number" name="" min="0" value="0">
+                                    </div>
+                                </td>
+                                <td class="sat">
+                                    <span>26</span>
+                                    <div class="status">
+                                        <input type="number" name="" min="0" value="0">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="sun">
+                                    <span>27</span>
+                                    <div class="status">
+                                        <input type="number" name="" min="0" value="0">
+                                    </div>
+                                </td>
+                                <td class="mon">
+                                    <span>28</span>
+                                    <div class="status">
+                                        <input type="number" name="" min="0" value="0">
+                                    </div>
+                                </td>
+                                <td class="tue">
+                                    <span>29</span>
+                                    <div class="status">
+                                        <input type="number" name="" min="0" value="0">
+                                    </div>
+                                </td>
+                                <td class="wed">
+                                    <span>30</span>
+                                    <div class="status">
+                                        <input type="number" name="" min="0" value="0">
+                                    </div>
+                                </td>
+                                <td class="thu">
+                                    <span>31</span>
+                                    <div class="status">
+                                        <input type="number" name="" min="0" value="0">
+                                    </div>
+                                </td>
+                                <td class="fri">
+                
+                                </td>
+                                <td class="sat">
+                
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="control has-addons">
+                      <input class="input has-text-centered" type="number" placeholder="" min="0">
+                      <a class="button">
+                        一括入力
+                      </a>
+                    </p>
+                </div>
+                
             </div>
-            <p class="control add-btn">
-              <a class="button is-primary">
-                <span class="icon">
-                  <i class="fa fa-plus-circle"></i>
-                </span>
-                <span>行を追加</span>
-              </a>
-            </p>
+
+            <hr>
+
+            <div class="control">
+                <label class="label">
+                    手仕舞い日（申込締切日）
+                    <span class="help">当日の場合は0日前と入力してください。</span>
+                </label>
+                <div class="">
+                    <p class="control has-addons">
+                      <input class="input is-danger" type="number" min="0" placeholder="例：3">
+                      <span class="button is-disabled">日前</span>
+                      <input class="input js-timepicker" type="text" placeholder="時間">
+                      <span class="button is-disabled">時まで</span>
+                    </p>
+                </div>
+            </div>
 
             <div class="control save-point">
                 <p class="has-text-centered">
@@ -663,25 +863,66 @@
         </div>
     </section>
 
-    <section class="input-area calendar message">
-        <h2 class="conts-ttl subtitle message-header">
-            カレンダー
-            <span class="icon">
-              <i class="fa fa-plus-circle"></i>
-            </span>
-        </h2>
-        <div class="conts-body message-body">
-        </div>
-    </section>
-
     <section class="input-area price message">
         <h2 class="conts-ttl subtitle message-header">
-            料金・規格
+            料金
             <span class="icon">
               <i class="fa fa-plus-circle"></i>
             </span>
         </h2>
         <div class="conts-body message-body">
+
+            <label class="label">料金
+                <span class="help">最大5件まで追加可能</span>
+            </label>
+
+            <div class="columns">
+                <div class="column">
+                    <label class="label">料金タイトル</label>
+                    <p class="control has-icon has-icon-right">
+                        <span class="select is-fullwidth">
+                          <select>
+                            <option>おとな</option>
+                            <option>こども</option>
+                            <option>その他</option>
+                          </select>
+                        </span>
+                    </p>
+                </div>
+                <div class="column">
+                    <label class="label">料金</label>
+                    <p class="control has-icon has-icon-right">
+                        <input class="input is-danger" type="text" placeholder="例：2000">
+                        <span class="icon is-small">
+                          円
+                        </span>
+                    </p>
+                </div>
+                <div class="column">
+                    <label class="label">料金種別</label>
+                    <p class="control has-icon has-icon-right">
+                        <span class="select is-fullwidth">
+                          <select>
+                            <option>未選択</option>
+                            <option>幼児</option>
+                            <option>小学生</option>
+                            <option>中学生</option>
+                            <option>1台</option>
+                            <option>1組</option>
+                          </select>
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <p class="control add-btn">
+              <a class="button is-primary">
+                <span class="icon">
+                  <i class="fa fa-plus-circle"></i>
+                </span>
+                <span>料金を追加</span>
+              </a>
+            </p>
         </div>
     </section>
 
@@ -693,6 +934,51 @@
             </span>
         </h2>
         <div class="conts-body message-body">
+            <label class="label">
+                エリア
+                <span class="help">複数選択可能</span>
+            </label>
+            <p class="control">
+              <label class="checkbox">
+                <input type="checkbox">
+                魚津市
+              </label>
+              <label class="checkbox">
+                <input type="checkbox">
+                黒部市
+              </label>
+              <label class="checkbox">
+                <input type="checkbox">
+                入善町
+              </label>
+              <label class="checkbox">
+                <input type="checkbox">
+                朝日町
+              </label>
+            </p>
+
+            <label class="label">
+                カテゴリ
+                <span class="help">複数選択可能</span>
+            </label>
+            <p class="control">
+              <label class="checkbox">
+                <input type="checkbox">
+                体験する
+              </label>
+              <label class="checkbox">
+                <input type="checkbox">
+                見る
+              </label>
+              <label class="checkbox">
+                <input type="checkbox">
+                食べる
+              </label>
+              <label class="checkbox">
+                <input type="checkbox">
+                買う
+              </label>
+            </p>
         </div>
     </section>
 
@@ -760,30 +1046,6 @@
                     </tr>
                     <tr>
                         <th>
-                            <span class="icon is-small"><i class="fa fa-calendar"></i></span>
-                            <span>手仕舞い日</span>
-                        </th>
-                        <td>
-                            2016年5月11日
-                            <a class="button is-small is-primary is-inverted">
-                              <span class="icon is-small">
-                                <i class="fa fa-edit"></i>
-                              </span>
-                              <span>編集</span>
-                            </a>
-                            <p class="control has-addons">
-                                <input class="input js-datepicker" type="text" placeholder="手仕舞い日">
-                                <a class="button is-success">
-                                  <span class="icon is-small">
-                                    <i class="fa fa-save"></i>
-                                  </span>
-                                  <span>保存</span>
-                                </a>
-                            </p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
                             <span class="icon is-small"><i class="fa fa-link"></i></span>
                             <span>下書きURL</span>
                         </th>
@@ -820,6 +1082,12 @@
                         <i class="fa fa-check"></i>
                     </span>
                     <span>公開</span>
+                </a>
+                <a class="button is-success is-pulled-right">
+                    <span class="icon is-small">
+                        <i class="fa fa-check"></i>
+                    </span>
+                    <span>公開リクエスト</span>
                 </a>
             </div>
         </div>
@@ -917,7 +1185,7 @@
     $(document).ready( function() {
     	$('.js-accordion').accordion({
             header: ".conts-ttl",
-            active: 2,
+            active: 1,
             heightStyle: "content",
             icons: {
                 header: "ui-icon-pin-w",

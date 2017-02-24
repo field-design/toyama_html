@@ -38,6 +38,30 @@
       content: "/";
       color: #999; }
 
+.input-table table th,
+.input-table table td {
+  position: relative;
+  text-align: center; }
+  .input-table table th .status,
+  .input-table table td .status {
+    margin-top: 1.5em; }
+    .input-table table th .status input,
+    .input-table table td .status input {
+      width: 100%;
+      text-align: center; }
+
+.input-table table td span {
+  position: absolute;
+  top: .25em;
+  left: 0;
+  width: 100%; }
+
+.input-table table .sun {
+  color: #f74040; }
+
+.input-table table .sat {
+  color: #4285f4; }
+
 .input-area {
   margin-bottom: 45px; }
   .input-area .conts-ttl {

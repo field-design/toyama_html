@@ -48,22 +48,22 @@
           <span></span>
         </span>
         <div class="nav-right nav-menu">
-            <a class="nav-item is-tab notice">
+            <a class="nav-item is-tab notice" href="/order/">
                 <i class="fa fa-fw fa-star"></i>
                 <small>新規予約</small>
                 <span class="number-style">3</span>
             </a>
-            <a class="nav-item is-tab notice">
+            <a class="nav-item is-tab notice" href="/order/">
                 <i class="fa fa-fw fa-exclamation"></i>
                 <small>承認待ち</small>
                 <span class="number-style">1</span>
             </a>
           <span class="nav-item">
-              <a class="button is-light">
+              <a class="button is-light" href="/settings/">
                   <i class="fa fa-fw fa-cog"></i>
                   設定
               </a>
-              <a class="button">
+              <a class="button" href="/login/">
                 <i class="fa fa-fw fa-sign-out"></i>
                 ログアウト
               </a>
@@ -110,7 +110,6 @@
       <li><a href="/product/post">コースの内容</a></li>
       <li><a href="/product/post">集合場所</a></li>
       <li><a href="/product/post">注意事項・その他</a></li>
-      <li><a href="/product/post">取消料</a></li>
       <li><a href="/product/post">予約カレンダー</a></li>
       <li><a href="/product/post">料金・規格</a></li>
       <li><a href="/product/post">エリア・カテゴリ</a></li>
@@ -130,10 +129,10 @@
   </p>
   <ul class="menu-list">
     <li><a href="/product">商品一覧</a></li>
-    <li><a>新規追加</a></li>
-    <li><a>エリア</a></li>
-    <li><a>カテゴリ</a></li>
-    <li><a>規格</a></li>
+    <li><a href="/product/post">新規追加</a></li>
+    <li><a href="/area">エリア</a></li>
+    <li><a href="/category">カテゴリ</a></li>
+    <li><a href="/standard">規格</a></li>
   </ul>
   <p class="menu-label">
     受注管理
@@ -151,9 +150,9 @@
     設定
   </p>
   <ul class="menu-list">
-    <li><a>プロフィール</a></li>
-    <li><a>口座設定</a></li>
-    <li><a>アカウント</a></li>
+    <li><a href="/settings">プロフィール</a></li>
+    <li><a href="/settings/bank">口座設定</a></li>
+    <li><a href="/settings/account">アカウント</a></li>
   </ul>
 </aside>
 
@@ -161,6 +160,8 @@
         <div class="column is-9">
 <!-- START main -->
 <main>
+
+    <h2 class="title is-3">受注一覧</h2>
 
     <div class="filter section">
         <table class="table is-narrow">
