@@ -84,6 +84,9 @@
 .message-body a {
   text-decoration: none; }
 
+.plan-detail .conts-body .notification {
+  background: white; }
+
 .release .message-header {
   margin-bottom: 0;
   -webkit-box-pack: center;

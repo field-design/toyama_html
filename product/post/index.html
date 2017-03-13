@@ -106,8 +106,8 @@
     <p class="menu-label">商品編集</p>
     <ul>
       <li><a class="is-active" href="/product/post">基本情報</a></li>
-      <li><a href="/product/post">プラン詳細</a></li>
       <li><a href="/product/post">コースの内容</a></li>
+      <li><a href="/product/post">プラン情報</a></li>
       <li><a href="/product/post">集合場所</a></li>
       <li><a href="/product/post">注意事項・その他</a></li>
       <li><a href="/product/post">予約カレンダー</a></li>
@@ -223,7 +223,7 @@
         </div>
     </section>
 
-    <section class="input-area message">
+    <section class="input-area message plan-detail">
         <h2 class="conts-ttl subtitle message-header">
             コースの内容
             <span class="icon">
@@ -232,7 +232,8 @@
         </h2>
         <div class="conts-body message-body">
             <div class="control sortable">
-                <div class="control box card">
+                <div class="control box notification">
+                    <button class="delete" onclick="((this).parentNode.remove())"></button>
                     <nav class="level">
                         <!-- Left side -->
                         <div class="level-left">
@@ -244,16 +245,6 @@
                             </p>
                           </div>
                         </div>
-                        <!-- Right side -->
-                        <div class="level-right">
-                            <div class="level-item">
-                              <p class="subtitle is-5">
-                                  <a class="button is-white">
-                                    <i class="fa fa-close"></i>
-                                  </a>
-                              </p>
-                            </div>
-                        </div>
                     </nav>
                     <label class="label">画像</label>
                     <span class="help">横幅700px以上の画像を登録してください。</span>
@@ -263,19 +254,12 @@
                             <input type="file" name="main_img" id="main_img" style="display:none;">
                         </form>
                     </p>
-                    <p class="control">
-                        <a class="button is-danger is-outlined">
-                          <span>画像を削除</span>
-                          <span class="icon is-small">
-                            <i class="fa fa-times"></i>
-                          </span>
-                        </a>
-                    </p>
-                    <p class="control">
+                    <div class="notification main-image">
+                        <button class="delete" onclick="((this).parentNode.remove())"></button>
                         <figure class="image">
-                          <img src="http://placehold.jp/800x600.png">
+                            <img src="http://placehold.jp/800x600.png">
                         </figure>
-                    </p>
+                    </div>
 
                     <label class="label">タイトル</label>
                     <p class="control">
