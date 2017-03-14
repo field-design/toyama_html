@@ -204,4 +204,14 @@ body.login footer {
 
 .ui-datepicker-next {
   float: right; }
+
+/* =====================
+  errors
+===================== */
+.error {
+  color: #ff3860 !important; }
+  .error.has-icon:before {
+    padding-right: .25em;
+    content: "\f12a";
+    font-family: FontAwesome; }
 /*# sourceMappingURL=custom.css.map */
