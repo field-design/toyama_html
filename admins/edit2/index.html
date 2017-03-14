@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>title</title>
+<meta name="description" content="">
+<!-- icons -->
+<link rel="shortcut icon" href="/assets/img/icon/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/img/icon/apple-touch-icon.png">
+<!-- Stylesheet -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.1/css/bulma.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="/assets/css/custom.css">
+<link rel="stylesheet" href="/assets/css/jquery.timepicker.css">
+<!-- Modernizr -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<!--- jQuery -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-3.0.0.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+<script src="/assets/js/jquery.timepicker.min.js"></script>
+<!-- DNS prefetch -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+</head>
+
+<body id="top">
+<!-- Google Tag Manager -->
+
+<!-- End Google Tag Manager -->
+
+
+<!-- START global-header -->
+<header class="global-header">
+    <nav class="nav has-shadow" id="top">
+      <div class="container">
+        <div class="nav-left">
+          <a class="nav-item" href="../index.html">
+            <h1 class="title is-5">いまからえらべるTRAVEL</h1>
+          </a>
+        </div>
+        <span class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <div class="nav-right nav-menu">
+            <!-- <a class="nav-item is-tab notice" href="/order/">
+                <i class="fa fa-fw fa-star"></i>
+                <small>新規予約</small>
+                <span class="number-style">3</span>
+            </a>
+            <a class="nav-item is-tab notice" href="/order/">
+                <i class="fa fa-fw fa-exclamation"></i>
+                <small>承認待ち</small>
+                <span class="number-style">1</span>
+            </a> -->
+          <span class="nav-item">
+              <!-- <a class="button is-light" href="/settings/">
+                  <i class="fa fa-fw fa-cog"></i>
+                  設定
+              </a> -->
+              <a class="button is-light" href="/admins/edit">
+                  <i class="fa fa-fw fa-user"></i>
+                  プロフィール
+              </a>
+              <a class="button" href="/login/">
+                <i class="fa fa-fw fa-sign-out"></i>
+                ログアウト
+              </a>
+          </span>
+        </div>
+      </div>
+    </nav>
+</header>
+<!-- END global-header -->
+
+
+<!-- START global-nav -->
+<div class="global-nav">
+    <div class="container">
+
+    </div>
+</div>
+<!-- END global-nav -->
+
+
+<div class="container">
+
+    <div class="breadcrumbs section">
+        <div class="notification">
+            <ul class="is-clearfix">
+              <li><a href="/"><span class="icon is-small"><i class="fa fa-home" aria-hidden="true"></i></span></a></li>
+              <li><span>プロフィール設定</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="columns section">
+        <div class="column is-3">
+
+<aside class="menu">
+
+<ul class="menu-list">
+  <li>
+    <p class="menu-label">商品編集</p>
+    <ul>
+      <li><a class="is-active" href="/product/post">基本情報</a></li>
+      <li><a href="/product/post">料金</a></li>
+      <li><a href="/product/post">予約カレンダー</a></li>
+      <li><a href="/product/post">コースの内容</a></li>
+      <li><a href="/product/post">プラン情報</a></li>
+      <li><a href="/product/post">集合場所</a></li>
+      <li><a href="/product/post">注意事項・その他</a></li>
+      <li><a href="/product/post">エリア・カテゴリ</a></li>
+      <li><a href="/product/post">公開設定</a></li>
+    </ul>
+  </li>
+</ul>
+
+  <p class="menu-label">
+    一般
+  </p>
+  <ul class="menu-list">
+    <li><a href="/">ダッシュボード</a></li>
+  </ul>
+  <p class="menu-label">
+    商品管理
+  </p>
+  <ul class="menu-list">
+    <li><a href="/product">商品一覧</a></li>
+    <li><a href="/product/post">新規追加</a></li>
+    <!-- <li><a href="/area">エリア</a></li>
+    <li><a href="/category">カテゴリ</a></li>
+    <li><a href="/standard">規格</a></li> -->
+  </ul>
+  <p class="menu-label">
+    受注管理
+  </p>
+  <ul class="menu-list">
+    <li><a href="/order">受注一覧</a></li>
+  </ul>
+  <p class="menu-label">
+    売上管理
+  </p>
+  <ul class="menu-list">
+    <li><a href="/sales">売上一覧</a></li>
+  </ul>
+  <p class="menu-label">
+    設定
+  </p>
+  <ul class="menu-list">
+    <li><a href="/admins">事業者一覧</a></li>
+    <li><a href="/admins/edit">プロフィール</a></li>
+    <!-- <li><a href="/settings/bank">口座設定</a></li> -->
+    <!-- <li><a href="/settings/account">アカウント</a></li> -->
+  </ul>
+</aside>
+
+        </div>
+        <div class="column is-9">
+<!-- START main -->
+<main>
+
+    <h2 class="title is-3">プロフィール設定</h2>
+
+    <div class="control">
+        <label class="label">表示名</label>
+        <p class="control">
+            <input class="input is-outlined" type="text" placeholder="例：観光販売システムズ" value="観光販売システムズ">
+        </p>
+    </div>
+
+    <div class="control">
+        <label class="label">画像</label>
+        <p class="control">
+            <form action="" method="POST" enctype="multipart/form-data">
+                <label class="button is-outlined" for="main_img"><i class="fa fa-fw fa-picture-o"></i>画像を選択してください</label>
+                <input type="file" name="main_img" id="main_img" style="display:none;">
+            </form>
+        </p>
+    </div>
+
+    <div class="control">
+        <label class="label">ロゴマーク</label>
+        <!-- <p class="control">
+            <form action="" method="POST" enctype="multipart/form-data">
+                <label class="button is-outlined" for="logo_img"><i class="fa fa-fw fa-picture-o"></i>画像を選択してください</label>
+                <input type="file" name="logo_img" id="logo_img" style="display:none;">
+            </form>
+        </p> -->
+        <img src="/assets/img/sample/logo01.png" alt="">
+    </div>
+
+    <hr>
+
+    <div class="control">
+        <label class="label">担当者名</label>
+        <div class="control is-horizontal">
+            <div class="control is-grouped">
+                <p class="control is-expanded">
+                    <input class="input is-outlined" type="text" placeholder="姓" value="林">
+                </p>
+                <p class="control is-expanded">
+                    <input class="input is-outlined" type="text" placeholder="名" value="光太朗">
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="control">
+        <label class="label">フリガナ</label>
+        <div class="control is-horizontal">
+            <div class="control is-grouped">
+                <p class="control is-expanded">
+                    <input class="input" type="text" placeholder="セイ" value="ハヤシ">
+                </p>
+                <p class="control is-expanded">
+                    <input class="input" type="text" placeholder="メイ" value="コウタロウ">
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="control">
+        <label class="label">メールアドレス</label>
+        <p class="control">
+            <input class="input is-outlined" type="email" placeholder="例：sample@firld-desing.jp" value="info@kanko-pro.co.jp">
+        </p>
+    </div>
+
+    <hr>
+
+    <div class="control">
+        <label class="label">会社名</label>
+        <p class="control">
+          <input class="input" type="text" placeholder="例：株式会社観光販売システムズ" value="株式会社観光販売システムズ">
+        </p>
+    </div>
+
+    <div class="control">
+        <label class="label">郵便番号</label>
+        <div class="control is-horizontal">
+            <div class="control is-grouped">
+                <p class="control is-expanded">
+                    <input class="input" type="number" min="0" placeholder="例：123" value="450">
+                </p>
+                <p class="control is-expanded">
+                    <input class="input" type="number" min="0" placeholder="例：4567" value="0002">
+                </p>
+            </div>
+        </div>
+
+        <label class="label">都道府県</label>
+        <p class="control">
+          <span class="select">
+            <select>
+                <option value="" selected>都道府県</option>
+                <option value="北海道">北海道</option>
+                <option value="青森県">青森県</option>
+                <option value="岩手県">岩手県</option>
+                <option value="宮城県">宮城県</option>
+                <option value="秋田県">秋田県</option>
+                <option value="山形県">山形県</option>
+                <option value="福島県">福島県</option>
+                <option value="茨城県">茨城県</option>
+                <option value="栃木県">栃木県</option>
+                <option value="群馬県">群馬県</option>
+                <option value="埼玉県">埼玉県</option>
+                <option value="千葉県">千葉県</option>
+                <option value="東京都">東京都</option>
+                <option value="神奈川県">神奈川県</option>
+                <option value="新潟県">新潟県</option>
+                <option value="富山県">富山県</option>
+                <option value="石川県">石川県</option>
+                <option value="福井県">福井県</option>
+                <option value="山梨県">山梨県</option>
+                <option value="長野県">長野県</option>
+                <option value="岐阜県">岐阜県</option>
+                <option value="静岡県">静岡県</option>
+                <option value="愛知県" selected="">愛知県</option>
+                <option value="三重県">三重県</option>
+                <option value="滋賀県">滋賀県</option>
+                <option value="京都府">京都府</option>
+                <option value="大阪府">大阪府</option>
+                <option value="兵庫県">兵庫県</option>
+                <option value="奈良県">奈良県</option>
+                <option value="和歌山県">和歌山県</option>
+                <option value="鳥取県">鳥取県</option>
+                <option value="島根県">島根県</option>
+                <option value="岡山県">岡山県</option>
+                <option value="広島県">広島県</option>
+                <option value="山口県">山口県</option>
+                <option value="徳島県">徳島県</option>
+                <option value="香川県">香川県</option>
+                <option value="愛媛県">愛媛県</option>
+                <option value="高知県">高知県</option>
+                <option value="福岡県">福岡県</option>
+                <option value="佐賀県">佐賀県</option>
+                <option value="長崎県">長崎県</option>
+                <option value="熊本県">熊本県</option>
+                <option value="大分県">大分県</option>
+                <option value="宮崎県">宮崎県</option>
+                <option value="鹿児島県">鹿児島県</option>
+                <option value="沖縄県">沖縄県</option>
+            </select>
+          </span>
+        </p>
+
+        <label class="label">市区町村、丁目・番地、ビル・マンション名等</label>
+        <p class="control">
+            <input class="input" type="text" placeholder="例：〇〇市〇〇 1丁目123 〇〇ビル101" value="名古屋市中村区名駅3丁目21番7号　名古屋三交ビル9階">
+        </p>
+
+    </div>
+
+    <hr>
+
+    <div class="control">
+        <label class="label">電話番号</label>
+        <div class="control is-horizontal">
+            <div class="control is-grouped">
+                <p class="control is-expanded">
+                    <input class="input is-outlined" type="number" min="0" placeholder="例：123" value="026">
+                </p>
+                <p class="control is-expanded">
+                    <input class="input is-outlined" type="number" min="0" placeholder="例：4567" value="224">
+                </p>
+                <p class="control is-expanded">
+                    <input class="input is-outlined" type="number" min="0" placeholder="例：8901" value="3501">
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="control">
+        <label class="label">FAX番号</label>
+        <div class="control is-horizontal">
+            <div class="control is-grouped">
+                <p class="control is-expanded">
+                    <input class="input" type="number" min="0" placeholder="例：123" value="026">
+                </p>
+                <p class="control is-expanded">
+                    <input class="input" type="number" min="0" placeholder="例：4567" value="224">
+                </p>
+                <p class="control is-expanded">
+                    <input class="input" type="number" min="0" placeholder="例：8901" value="3555">
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="control">
+        <label class="label">営業時間</label>
+        <p class="control">
+          <input class="input" type="text" placeholder="例：平日9:00〜17:00">
+        </p>
+    </div>
+
+    <hr>
+
+    <div class="control">
+        <label class="label">ホームページ URL</label>
+        <p class="control">
+          <input class="input" type="text" placeholder="例：http://example.com" value="https://www.kanko-pro.co.jp/">
+        </p>
+    </div>
+
+    <div class="control">
+        <label class="label">Facebookページ URL</label>
+        <p class="control">
+          <input class="input" type="text" placeholder="例：http://example.com">
+        </p>
+    </div>
+
+    <div class="control">
+        <label class="label">Twitter URL</label>
+        <p class="control">
+          <input class="input" type="text" placeholder="例：http://example.com">
+        </p>
+    </div>
+
+    <div class="control">
+        <label class="label">Instagram URL</label>
+        <p class="control">
+          <input class="input" type="text" placeholder="例：http://example.com">
+        </p>
+    </div>
+
+    <hr>
+
+        <section class="cancel">
+            <h2 class="conts-ttl subtitle">
+                取消料
+            </h2>
+            <div class="conts-body">
+                <label class="label">説明文</label>
+                <p class="control">
+                    <textarea class="textarea" placeholder="例：契約成立後、お客様のご都合で契約を解除する場合、旅行代金に対してお客様1名につき下記の料率で取消料をいただきます。なお、複数人数のご参加で、一部のお客様が契約を解除される場合は、ご参加のお客様から運送・宿泊機関等の（1台・1室あたりの）ご利用人数の変更に対する差額代金をそれぞれいただきます。">契約成立後、お客様のご都合で契約を解除する場合、旅行代金に対してお客様1名につき下記の料率で取消料をいただきます。なお、複数人数のご参加で、一部のお客様が契約を解除される場合は、ご参加のお客様から運送・宿泊機関等の（1台・1室あたりの）ご利用人数の変更に対する差額代金をそれぞれいただきます。</textarea>
+                </p>
+
+                <label class="label">
+                    料率
+                    <span class="help">最大10件まで追加可能</span>
+                </label>
+                <div class="sortable">
+                    <p class="control has-addons">
+                        <a class="button">
+                          <i class="fa fa-navicon"></i>
+                        </a>
+                      <span class="select">
+                        <select>
+                          <option>旅行開始後 無連絡不参加</option>
+                          <option>当日</option>
+                          <option>前日</option>
+                          <option>2日前まで</option>
+                          <option>3日前まで</option>
+                          <option selected="">3日から2日前まで</option>
+                        </select>
+                      </span>
+                      <span class="select">
+                        <select>
+                          <option>100%</option>
+                          <option>90%</option>
+                          <option>80%</option>
+                          <option>70%</option>
+                          <option>60%</option>
+                          <option>50%</option>
+                          <option>40%</option>
+                          <option selected="">30%</option>
+                          <option>20%</option>
+                          <option>10%</option>
+                          <option>なし</option>
+                        </select>
+                      </span>
+                      <a class="button" onclick="((this).parentNode.remove())">
+                        <i class="fa fa-close"></i>
+                      </a>
+                    </p>
+                    <p class="control has-addons">
+                        <a class="button">
+                          <i class="fa fa-navicon"></i>
+                        </a>
+                      <span class="select">
+                        <select>
+                          <option>旅行開始後 無連絡不参加</option>
+                          <option>当日</option>
+                          <option selected="">前日</option>
+                          <option>2日前まで</option>
+                          <option>3日前まで</option>
+                          <option>3日から2日前まで</option>
+                        </select>
+                      </span>
+                      <span class="select">
+                        <select>
+                          <option>100%</option>
+                          <option>90%</option>
+                          <option>80%</option>
+                          <option>70%</option>
+                          <option>60%</option>
+                          <option>50%</option>
+                          <option selected="">40%</option>
+                          <option>30%</option>
+                          <option>20%</option>
+                          <option>10%</option>
+                          <option>なし</option>
+                        </select>
+                      </span>
+                      <a class="button" onclick="((this).parentNode.remove())">
+                        <i class="fa fa-close"></i>
+                      </a>
+                    </p>
+                    <p class="control has-addons">
+                        <a class="button">
+                          <i class="fa fa-navicon"></i>
+                        </a>
+                      <span class="select">
+                        <select>
+                          <option>旅行開始後 無連絡不参加</option>
+                          <option selected="">当日</option>
+                          <option>前日</option>
+                          <option>2日前まで</option>
+                          <option>3日前まで</option>
+                          <option>3日から2日前まで</option>
+                        </select>
+                      </span>
+                      <span class="select">
+                        <select>
+                          <option>100%</option>
+                          <option>90%</option>
+                          <option>80%</option>
+                          <option>70%</option>
+                          <option>60%</option>
+                          <option selected="">50%</option>
+                          <option>40%</option>
+                          <option>30%</option>
+                          <option>20%</option>
+                          <option>10%</option>
+                          <option>なし</option>
+                        </select>
+                      </span>
+                      <a class="button" onclick="((this).parentNode.remove())">
+                        <i class="fa fa-close"></i>
+                      </a>
+                    </p>
+                    <p class="control has-addons">
+                        <a class="button">
+                          <i class="fa fa-navicon"></i>
+                        </a>
+                      <span class="select">
+                        <select>
+                          <option selected="">旅行開始後 無連絡不参加</option>
+                          <option>当日</option>
+                          <option>前日</option>
+                          <option>2日前まで</option>
+                          <option>3日前まで</option>
+                          <option>3日から2日前まで</option>
+                        </select>
+                      </span>
+                      <span class="select">
+                        <select>
+                          <option selected="">100%</option>
+                          <option>90%</option>
+                          <option>80%</option>
+                          <option>70%</option>
+                          <option>60%</option>
+                          <option>50%</option>
+                          <option>40%</option>
+                          <option>30%</option>
+                          <option>20%</option>
+                          <option>10%</option>
+                          <option>なし</option>
+                        </select>
+                      </span>
+                      <a class="button" onclick="((this).parentNode.remove())">
+                        <i class="fa fa-close"></i>
+                      </a>
+                    </p>
+                </div>
+                <p class="control add-btn">
+                  <a class="button is-primary">
+                    <span class="icon">
+                      <i class="fa fa-plus-circle"></i>
+                    </span>
+                    <span>料率を追加</span>
+                  </a>
+                </p>
+
+                <label class="label">
+                    注釈
+                    <span class="help">最大10件まで追加可能</span>
+                </label>
+                <div class="control sortable">
+                    <p class="control has-addons">
+                        <a class="button is-white">
+                          <i class="fa fa-navicon"></i>
+                        </a>
+                        <textarea class="textarea is-expanded" style="min-height: 60px; min-width: auto;" placeholder="例：オプショナルプランも上記取消料率による取消料が利用日を基準として別途適用されます。ただし、旅行開始後の取消料は100％となります。">オプショナルプランも上記取消料率による取消料が利用日を基準として別途適用されます。ただし、旅行開始後の取消料は100％となります。</textarea>
+                        <a class="button is-white">
+                          <i class="fa fa-close"></i>
+                        </a>
+                    </p>
+                    <p class="control has-addons">
+                        <a class="button is-white">
+                          <i class="fa fa-navicon"></i>
+                        </a>
+                        <textarea class="textarea is-expanded" style="min-height: 60px; min-width: auto;" placeholder="例：オプショナルプランも上記取消料率による取消料が利用日を基準として別途適用されます。ただし、旅行開始後の取消料は100％となります。">取消しまたは人員減による払い戻しを行う場合は、所定の取消料率を差し引いて返金させていただきますが、返金にかかる振込手数料はお客様負担とさせていただきます。</textarea>
+                        <a class="button is-white">
+                          <i class="fa fa-close"></i>
+                        </a>
+                    </p>
+                    <p class="control has-addons">
+                        <a class="button is-white">
+                          <i class="fa fa-navicon"></i>
+                        </a>
+                        <textarea class="textarea is-expanded" style="min-height: 60px; min-width: auto;" placeholder="例：オプショナルプランも上記取消料率による取消料が利用日を基準として別途適用されます。ただし、旅行開始後の取消料は100％となります。">同様に乗車券等の商品を購入されて払戻しをされる場合、取消料なしの表記のあるものは取消料がかかりませんが返金にかかる振込手数料はお客様負担とさせていただきます。</textarea>
+                        <a class="button is-white">
+                          <i class="fa fa-close"></i>
+                        </a>
+                    </p>
+                </div>
+                <p class="control add-btn">
+                  <a class="button is-primary">
+                    <span class="icon">
+                      <i class="fa fa-plus-circle"></i>
+                    </span>
+                    <span>行を追加</span>
+                  </a>
+                </p>
+
+            </div>
+        </section>
+
+        <hr>
+
+    <div class="control">
+        <label class="label">旅行業に基づく旅行商品の取り扱い</label>
+        <span class="help">※旅行商品を取り扱う場合は、株式会社観光販売システムズとの契約が別途必要となります。</span>
+        <p class="control">
+            <label class="checkbox">
+              <input type="checkbox" name="travel-agency-available" checked="">
+              取り扱う
+            </label>
+        </p>
+    </div>
+
+    <div class="travel-agency-input">
+        <div class="control">
+            <label class="label">旅行条件書</label>
+            <p class="control">
+                <label class="radio">
+                    <input type="radio" name="condition_type" value="pdf" checked="checked"> PDFファイルをアップロードする
+                </label>
+                <label class="radio">
+                    <input type="radio" name="condition_type" value="link" checked=""> URLリンクを入力する
+                </label>
+            </p>
+
+            <!-- <div class="control condition-url">
+                <label class="label">旅行条件書 PDF</label>
+                <p class="control has-addons">
+                  <input class="input" type="file" placeholder="Find a repository">
+                </p>
+            </div> -->
+
+            <div class="control condition-url">
+                <label class="label">旅行条件書 URL</label>
+                <p class="control">
+                  <input class="input" type="text" placeholder="例：http://example.com" value="https://www.kanko-pro.co.jp/agreement/agreement23.php">
+                </p>
+            </div>
+
+            <label class="label">企画旅行業者の氏名又は名称</label>
+            <p class="control">
+                <input class="input" type="text" placeholder="例：観光販売システムズ" value="株式会社観光販売システムズ">
+            </p>
+
+            <label class="label">企画旅行業者の住所</label>
+            <p class="control">
+                <input class="input" type="text" placeholder="例：愛知県名古屋市中村区名駅3丁目21番7号　名古屋三交ビル9階" value="愛知県名古屋市中村区名駅3丁目21番7号　名古屋三交ビル9階">
+            </p>
+
+            <label class="label">企画旅行業者の登録番号</label>
+            <p class="control has-addons">
+                <span class="button is-disabled">観光庁長官登録旅行業第</span>
+                <input class="input" type="number" placeholder="例：1600" value="1600">
+                <span class="button is-disabled">号</span>
+            </p>
+
+            <label class="label">加入旅行業協会名（加入会社のみ）</label>
+            <p class="control">
+                <input class="input" type="text" placeholder="例：一般社団法人日本旅行業協会（JATA）正会員" value="一般社団法人日本旅行業協会（JATA）正会員">
+            </p>
+        </div>
+    </div>
+
+
+    <hr>
+
+    <section class="password">
+        <h2 class="conts-ttl subtitle">
+            パスワード再設定
+        </h2>
+
+        <div class="control has-icon">
+            <label class="label">新しいパスワード</label>
+            <p class="control">
+                <input class="input" type="password" placeholder="●●●●●●●●">
+                <span class="icon is-small">
+                    <i class="fa fa-lock"></i>
+                </span>
+            </p>
+        </div>
+
+        <div class="control has-icon">
+            <label class="label">パスワードの確認</label>
+            <p class="control">
+                <input class="input" type="password" placeholder="●●●●●●●●">
+                <span class="icon is-small">
+                    <i class="fa fa-lock"></i>
+                </span>
+            </p>
+        </div>
+    </section>
+
+    <hr>
+
+    <div class="control save-point">
+        <p class="has-text-centered">
+            <a class="button is-success">
+                <span class="icon">
+                    <i class="fa fa-save"></i>
+                </span>
+                <span>変更を保存</span>
+            </a>
+        </p>
+    </div>
+</main>
+<!-- END main -->
+        </div>
+    </div>
+</div>
+
+<!-- START global-footer -->
+<footer class="global-footer section">
+  <div class="container">
+    <div class="has-text-centered">
+      <!-- <div id="social">
+        <a href="https://twitter.com/jgthms" class="twitter-follow-button" data-show-count="true" data-lang="en">@jgthms</a>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-text="Bulma: a modern CSS framework based on Flexbox" data-url="http://bulma.io" data-count="horizontal" data-via="jgthms" data-related="jgthms:Creator of Bulma">Tweet</a>
+      </div> -->
+      <p class="copyright">© <script type="text/javascript">myDate = new Date() ;myYear = myDate.getFullYear ();document.write(myYear);</script> 株式会社 観光販売システムズ</p>
+    </div>
+  </div>
+</footer>
+<!-- END global-footer -->
+
+
+<!-- WEB Fonts -->
+<link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" data-webfonts />
+<link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" data-webfonts />
+
+
+
+
+<!-- Optional Stylesheets -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<!-- Common Script -->
+<script src="http://bulma.io/javascript/bulma.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.0.0/jquery.smooth-scroll.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
+<script src="/assets/js/common.min.js"></script>
+<script src="/assets/js/custom.min.js"></script>
+
+
+<!-- Google map javascript api v3 -->
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDaVeeyDXpwXIBedG9iyhnt3bhoY_WBGpY"></script>
+
+
+<!-- Page Script -->
+
+<script>
+    // 並び替え機能
+    $( function() {
+        $( ".sortable" ).sortable();
+        $( ".sortable" ).disableSelection();
+        $( ".button.remove" ).click(function() {
+            $( this ).parent().remove();
+        });
+    } );
+
+    // アコーディオン
+    $(document).ready( function() {
+    	$('.js-accordion').accordion({
+            header: ".conts-ttl",
+            active: 2,
+            heightStyle: "content",
+            icons: {
+                header: "ui-icon-pin-w",
+                activeHeader: "ui-icon-circle-arrow-s"
+            },
+            change: function(event, ui) {
+        		alert(ui.newContent.context.id);
+        	}
+        });
+    });
+</script>
+<script>
+    $(function() {
+        $('.js-datepicker').datepicker();
+        $('.js-timepicker').timepicker({
+            'timeFormat': 'H:i',
+            'scrollDefault': 'now',
+            'step': 15
+        });
+    });
+</script>
+
+<script src="//cdn.ckeditor.com/4.5.8/basic/ckeditor.js"></script>
+<script>
+  CKEDITOR.replace('ckeditor01', {
+    language: 'ja',
+    uiColor: '#ffffff',
+  });
+</script>
+
+<script type="text/javascript">
+$(function() {
+    $('[name=travel-agency-available]').change(function() {
+        if ($(this).is(':checked')) {
+            $('.travel-agency-input').fadeIn();
+        } else {
+            $('.travel-agency-input').fadeOut();
+        }
+    }).trigger('change');
+
+    $('[name=condition_type]').change(function() {
+        if ($("input:radio[name='condition_type']:checked").val() == "text") {
+            $('.condition-txt').fadeIn();
+            $('.condition-url').fadeOut();
+        } else if ($("input:radio[name='condition_type']:checked").val() == "link") {
+            $('.condition-url').fadeIn();
+            $('.condition-txt').fadeOut();
+        }
+    }).trigger('change');
+});
+</script>
+
+
+
+</body>
+</html>
