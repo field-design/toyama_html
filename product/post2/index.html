@@ -179,17 +179,17 @@
         <div class="conts-body message-body">
             <label class="label">タイトル</label>
             <p class="control">
-                <input class="input is-danger" type="text" placeholder="例：しんきろうロードサイクリングプラン">
+                <input class="input" type="text" placeholder="例：しんきろうロードサイクリングプラン" value="しんきろうロードサイクリングプラン">
             </p>
 
             <label class="label">サブタイトル</label>
             <p class="control">
-                <input class="input" type="text" placeholder="例：蜃気楼ガイドと行く！">
+                <input class="input" type="text" placeholder="例：蜃気楼ガイドと行く！" value="蜃気楼ガイドといく！">
             </p>
 
             <label class="label">説明文</label>
             <p class="control">
-                <textarea class="textarea is-danger" placeholder="例：蜃気楼が見える街として有名な「魚津市」でのレンタサイクルプラン"></textarea>
+                <textarea class="textarea" placeholder="例：蜃気楼が見える街として有名な「魚津市」でのレンタサイクルプラン">蜃気楼が見える街として有名な「魚津市」でのレンタサイクルプラン。蜃気楼や各見所をガイドが丁寧にご案内致します。また、電動アシスト付き自転車（大人のみ）なので、どなたでもお気軽にご参加いただけます。</textarea>
             </p>
 
             <label class="label">
@@ -199,18 +199,18 @@
             <div class="notification main-image">
                 <button class="delete" onclick="((this).parentNode.remove())"></button>
                 <figure class="image">
-                    <img src="http://placehold.jp/800x600.png">
+                    <img src="/assets/img/sample/slide01.jpg">
                 </figure>
             </div>
             <div class="notification main-image">
                 <button class="delete" onclick="((this).parentNode.remove())"></button>
                 <figure class="image">
-                    <img src="http://placehold.jp/800x600.png">
+                    <img src="/assets/img/sample/slide01.jpg">
                 </figure>
             </div>
             <p class="control">
                 <form action="" method="POST" enctype="multipart/form-data">
-                    <label class="button is-danger" for="main_img">画像を追加</label>
+                    <label class="button" for="main_img">画像を追加</label>
                     <input type="file" name="main_img" id="main_img" style="display:none;">
                 </form>
             </p>
@@ -247,7 +247,7 @@
                     <p class="control has-icon has-icon-right">
                         <span class="select is-fullwidth">
                           <select>
-                            <option>おとな</option>
+                            <option selected="">おとな</option>
                             <option>こども</option>
                             <option>その他</option>
                           </select>
@@ -257,7 +257,7 @@
                 <div class="column">
                     <label class="label">料金</label>
                     <p class="control has-icon has-icon-right">
-                        <input class="input is-danger" type="text" placeholder="例：2000">
+                        <input class="input" type="text" placeholder="例：2000" value="1000">
                         <span class="icon is-small">
                           円
                         </span>
@@ -287,7 +287,7 @@
                         <span class="select is-fullwidth">
                           <select>
                             <option>おとな</option>
-                            <option>こども</option>
+                            <option selected="">こども</option>
                             <option>その他</option>
                           </select>
                         </span>
@@ -296,7 +296,7 @@
                 <div class="column">
                     <label class="label">料金</label>
                     <p class="control has-icon has-icon-right">
-                        <input class="input is-danger" type="text" placeholder="例：2000">
+                        <input class="input" type="text" placeholder="例：2000" value="500">
                         <span class="icon is-small">
                           円
                         </span>
@@ -309,7 +309,7 @@
                           <select>
                             <option>未選択</option>
                             <option>幼児</option>
-                            <option>小学生</option>
+                            <option selected="">小学生</option>
                             <option>中学生</option>
                             <option>1台</option>
                             <option>1組</option>
@@ -423,13 +423,13 @@
                                 <td class="fri">
                                     <span>4</span>
                                     <div class="status">
-                                        <input type="number" name="" min="0" value="0">
+                                        <input type="number" name="" min="0" value="10">
                                     </div>
                                 </td>
                                 <td class="sat">
                                     <span>5</span>
                                     <div class="status">
-                                        <input type="number" name="" min="0" value="0">
+                                        <input type="number" name="" min="0" value="10">
                                     </div>
                                 </td>
                             </tr>
@@ -437,43 +437,43 @@
                                 <td class="sun">
                                     <span>6</span>
                                     <div class="status">
-                                        <input type="number" name="" min="0" value="0">
+                                        <input type="number" name="" min="0" value="10">
                                     </div>
                                 </td>
                                 <td class="mon">
                                     <span>7</span>
                                     <div class="status">
-                                        <input type="number" name="" min="0" value="0">
+                                        <input type="number" name="" min="0" value="10">
                                     </div>
                                 </td>
                                 <td class="tue">
                                     <span>8</span>
                                     <div class="status">
-                                        <input type="number" name="" min="0" value="0">
+                                        <input type="number" name="" min="0" value="10">
                                     </div>
                                 </td>
                                 <td class="wed">
                                     <span>9</span>
                                     <div class="status">
-                                        <input type="number" name="" min="0" value="0">
+                                        <input type="number" name="" min="0" value="10">
                                     </div>
                                 </td>
                                 <td class="thu">
                                     <span>10</span>
                                     <div class="status">
-                                        <input type="number" name="" min="0" value="0">
+                                        <input type="number" name="" min="0" value="10">
                                     </div>
                                 </td>
                                 <td class="fri">
                                     <span>11</span>
                                     <div class="status">
-                                        <input type="number" name="" min="0" value="0">
+                                        <input type="number" name="" min="0" value="10">
                                     </div>
                                 </td>
                                 <td class="sat">
                                     <span>12</span>
                                     <div class="status">
-                                        <input type="number" name="" min="0" value="0">
+                                        <input type="number" name="" min="0" value="10">
                                     </div>
                                 </td>
                             </tr>
@@ -481,43 +481,43 @@
                                 <td class="sun">
                                     <span>13</span>
                                     <div class="status">
-                                        <input type="number" name="" min="0" value="0">
+                                        <input type="number" name="" min="0" value="10">
                                     </div>
                                 </td>
                                 <td class="mon">
                                     <span>14</span>
                                     <div class="status">
-                                        <input type="number" name="" min="0" value="0">
+                                        <input type="number" name="" min="0" value="10">
                                     </div>
                                 </td>
                                 <td class="tue">
                                     <span>15</span>
                                     <div class="status">
-                                        <input type="number" name="" min="0" value="0">
+                                        <input type="number" name="" min="0" value="20">
                                     </div>
                                 </td>
                                 <td class="wed">
                                     <span>16</span>
                                     <div class="status">
-                                        <input type="number" name="" min="0" value="0">
+                                        <input type="number" name="" min="0" value="20">
                                     </div>
                                 </td>
                                 <td class="thu">
                                     <span>17</span>
                                     <div class="status">
-                                        <input type="number" name="" min="0" value="0">
+                                        <input type="number" name="" min="0" value="20">
                                     </div>
                                 </td>
                                 <td class="fri">
                                     <span>18</span>
                                     <div class="status">
-                                        <input type="number" name="" min="0" value="0">
+                                        <input type="number" name="" min="0" value="20">
                                     </div>
                                 </td>
                                 <td class="sat">
                                     <span>19</span>
                                     <div class="status">
-                                        <input type="number" name="" min="0" value="0">
+                                        <input type="number" name="" min="0" value="20">
                                     </div>
                                 </td>
                             </tr>
@@ -525,43 +525,43 @@
                                 <td class="sun">
                                     <span>20</span>
                                     <div class="status">
-                                        <input type="number" name="" min="0" value="0">
+                                        <input type="number" name="" min="0" value="20">
                                     </div>
                                 </td>
                                 <td class="mon">
                                     <span>21</span>
                                     <div class="status">
-                                        <input type="number" name="" min="0" value="0">
+                                        <input type="number" name="" min="0" value="20">
                                     </div>
                                 </td>
                                 <td class="tue">
                                     <span>22</span>
                                     <div class="status">
-                                        <input type="number" name="" min="0" value="0">
+                                        <input type="number" name="" min="0" value="20">
                                     </div>
                                 </td>
                                 <td class="wed">
                                     <span>23</span>
                                     <div class="status">
-                                        <input type="number" name="" min="0" value="0">
+                                        <input type="number" name="" min="0" value="20">
                                     </div>
                                 </td>
                                 <td class="thu">
                                     <span>24</span>
                                     <div class="status">
-                                        <input type="number" name="" min="0" value="0">
+                                        <input type="number" name="" min="0" value="20">
                                     </div>
                                 </td>
                                 <td class="fri">
                                     <span>25</span>
                                     <div class="status">
-                                        <input type="number" name="" min="0" value="0">
+                                        <input type="number" name="" min="0" value="20">
                                     </div>
                                 </td>
                                 <td class="sat">
                                     <span>26</span>
                                     <div class="status">
-                                        <input type="number" name="" min="0" value="0">
+                                        <input type="number" name="" min="0" value="20">
                                     </div>
                                 </td>
                             </tr>
@@ -569,31 +569,31 @@
                                 <td class="sun">
                                     <span>27</span>
                                     <div class="status">
-                                        <input type="number" name="" min="0" value="0">
+                                        <input type="number" name="" min="0" value="20">
                                     </div>
                                 </td>
                                 <td class="mon">
                                     <span>28</span>
                                     <div class="status">
-                                        <input type="number" name="" min="0" value="0">
+                                        <input type="number" name="" min="0" value="20">
                                     </div>
                                 </td>
                                 <td class="tue">
                                     <span>29</span>
                                     <div class="status">
-                                        <input type="number" name="" min="0" value="0">
+                                        <input type="number" name="" min="0" value="20">
                                     </div>
                                 </td>
                                 <td class="wed">
                                     <span>30</span>
                                     <div class="status">
-                                        <input type="number" name="" min="0" value="0">
+                                        <input type="number" name="" min="0" value="1">
                                     </div>
                                 </td>
                                 <td class="thu">
                                     <span>31</span>
                                     <div class="status">
-                                        <input type="number" name="" min="0" value="0">
+                                        <input type="number" name="" min="0" value="2">
                                     </div>
                                 </td>
                                 <td class="fri">
@@ -624,9 +624,9 @@
                 </label>
                 <div class="">
                     <p class="control has-addons">
-                      <input class="input is-danger" type="number" min="0" placeholder="例：3">
+                      <input class="input" type="number" min="0" placeholder="例：3" value="3">
                       <span class="button is-disabled">日前</span>
-                      <input class="input js-timepicker" type="text" placeholder="時間">
+                      <input class="input js-timepicker" type="text" placeholder="時間" value="10:00">
                       <span class="button is-disabled">時まで</span>
                     </p>
                 </div>
@@ -670,22 +670,17 @@
                     </nav>
                     <label class="label">画像</label>
                     <span class="help">横幅700px以上の画像を登録してください。</span>
-                    <p class="control">
-                        <form action="" method="POST" enctype="multipart/form-data">
-                            <label class="button" for="main_img">画像を選択してください</label>
-                            <input type="file" name="main_img" id="main_img" style="display:none;">
-                        </form>
-                    </p>
+
                     <div class="notification main-image">
                         <button class="delete" onclick="((this).parentNode.remove())"></button>
                         <figure class="image">
-                            <img src="http://placehold.jp/800x600.png">
+                            <img src="/assets/img/sample/detail01.jpg">
                         </figure>
                     </div>
 
                     <label class="label">タイトル</label>
                     <p class="control">
-                        <input class="input is-danger" type="text" placeholder="例：米騒動発祥の地">
+                        <input class="input" type="text" placeholder="例：米騒動発祥の地" value="【集合・受付・解散】 魚津駅前観光案内所">
                     </p>
 
                     <label class="label">説明文</label>
@@ -698,6 +693,88 @@
                     </label>
                     <p class="control">
                         <input class="input" type="text" placeholder="例：http://example.com">
+                    </p>
+                </div>
+                <div class="control box notification">
+                    <button class="delete" onclick="((this).parentNode.remove())"></button>
+                    <nav class="level">
+                        <!-- Left side -->
+                        <div class="level-left">
+                          <div class="level-item">
+                            <p class="subtitle is-5">
+                                <a class="button">
+                                  <i class="fa fa-navicon"></i>
+                                </a>
+                            </p>
+                          </div>
+                        </div>
+                    </nav>
+                    <label class="label">画像</label>
+                    <span class="help">横幅700px以上の画像を登録してください。</span>
+
+                    <div class="notification main-image">
+                        <button class="delete" onclick="((this).parentNode.remove())"></button>
+                        <figure class="image">
+                            <img src="/assets/img/sample/detail01.jpg">
+                        </figure>
+                    </div>
+
+                    <label class="label">タイトル</label>
+                    <p class="control">
+                        <input class="input" type="text" placeholder="例：米騒動発祥の地" value="米騒動発祥の地">
+                    </p>
+
+                    <label class="label">説明文</label>
+                    <p class="control">
+                        <textarea class="textarea" placeholder="例：蜃気楼の見える道、”しんきろうロード”は、魚津市の海沿い海岸線を南北に走る道路の通称です。">米騒動発祥の地魚津の貴重な遺跡</textarea>
+                    </p>
+
+                    <label class="label">外部リンク<br />
+                        <span class="help">外部リンクを掲載する場合のみ入力してください。</span>
+                    </label>
+                    <p class="control">
+                        <input class="input" type="text" placeholder="例：http://example.com" value="http://toyama.visit-town.com/">
+                    </p>
+                </div>
+                <div class="control box notification">
+                    <button class="delete" onclick="((this).parentNode.remove())"></button>
+                    <nav class="level">
+                        <!-- Left side -->
+                        <div class="level-left">
+                          <div class="level-item">
+                            <p class="subtitle is-5">
+                                <a class="button">
+                                  <i class="fa fa-navicon"></i>
+                                </a>
+                            </p>
+                          </div>
+                        </div>
+                    </nav>
+                    <label class="label">画像</label>
+                    <span class="help">横幅700px以上の画像を登録してください。</span>
+
+                    <div class="notification main-image">
+                        <button class="delete" onclick="((this).parentNode.remove())"></button>
+                        <figure class="image">
+                            <img src="/assets/img/sample/detail01.jpg">
+                        </figure>
+                    </div>
+
+                    <label class="label">タイトル</label>
+                    <p class="control">
+                        <input class="input" type="text" placeholder="例：米騒動発祥の地" value="海の駅 蜃気楼">
+                    </p>
+
+                    <label class="label">説明文</label>
+                    <p class="control">
+                        <textarea class="textarea" placeholder="例：蜃気楼の見える道、”しんきろうロード”は、魚津市の海沿い海岸線を南北に走る道路の通称です。">富山湾の埋立地にあるみなとオアシス魚津内の施設です。毎月第2、4日曜日に朝市が開催される。また、土曜、日曜、祝日には、浜焼きコーナーが登場します。</textarea>
+                    </p>
+
+                    <label class="label">外部リンク<br />
+                        <span class="help">外部リンクを掲載する場合のみ入力してください。</span>
+                    </label>
+                    <p class="control">
+                        <input class="input" type="text" placeholder="例：http://example.com" value="http://toyama.visit-town.com/">
                     </p>
                 </div>
 
@@ -736,13 +813,13 @@
             <label class="label">期間</label>
             <div class="control is-grouped">
                 <p class="control has-icon has-icon-right is-expanded">
-                    <input class="input is-danger js-datepicker" type="text" placeholder="開始日">
+                    <input class="input js-datepicker" type="text" placeholder="開始日" value="2016年4月1日(金)">
                     <span class="icon is-small">
                       <i class="fa fa-calendar"></i>
                     </span>
                 </p>
                 <p class="control has-icon has-icon-right is-expanded">
-                    <input class="input is-danger js-datepicker" type="text" placeholder="終了日">
+                    <input class="input js-datepicker" type="text" placeholder="終了日" value="2017年3月31日(金)">
                     <span class="icon is-small">
                       <i class="fa fa-calendar"></i>
                     </span>
@@ -751,7 +828,7 @@
 
             <label class="label">除外日</label>
             <p class="control">
-                <textarea class="textarea" placeholder="例：2016年12月28日～2017年1月5日"></textarea>
+                <textarea class="textarea" placeholder="例：2016年12月28日～2017年1月5日">2016年12月28日～2017年1月5日</textarea>
             </p>
 
             <label class="label">ご旅行・プラン代金に含まれるもの
@@ -762,7 +839,7 @@
                     <a class="button">
                       <i class="fa fa-navicon"></i>
                     </a>
-                    <input class="input is-expanded" type="text" placeholder="例：タクシー乗車代">
+                    <input class="input is-expanded" type="text" placeholder="例：タクシー乗車代" value="タクシー乗車代">
                     <a class="button remove" onclick="((this).parentNode.remove())">
                       <i class="fa fa-close"></i>
                     </a>
@@ -771,7 +848,16 @@
                     <a class="button">
                       <i class="fa fa-navicon"></i>
                     </a>
-                    <input class="input is-expanded" type="text" placeholder="例：タクシー乗車代">
+                    <input class="input is-expanded" type="text" placeholder="例：タクシー乗車代" value="ポートラム乗車代">
+                    <a class="button remove" onclick="((this).parentNode.remove())">
+                      <i class="fa fa-close"></i>
+                    </a>
+                </p>
+                <p class="control has-addons">
+                    <a class="button">
+                      <i class="fa fa-navicon"></i>
+                    </a>
+                    <input class="input is-expanded" type="text" placeholder="例：タクシー乗車代" value="ます寿しの試食代">
                     <a class="button remove" onclick="((this).parentNode.remove())">
                       <i class="fa fa-close"></i>
                     </a>
@@ -790,7 +876,7 @@
                 <div class="column">
                     <label class="label">最少受付人員</label>
                     <p class="control has-icon has-icon-right">
-                        <input class="input is-danger" type="text" placeholder="例：2">
+                        <input class="input" type="text" placeholder="例：2" value="2">
                         <span class="icon is-small">
                           名
                         </span>
@@ -799,7 +885,7 @@
                 <div class="column">
                     <label class="label">最少催行人員</label>
                     <p class="control has-icon has-icon-right">
-                        <input class="input is-danger" type="text" placeholder="例：2">
+                        <input class="input" type="text" placeholder="例：2" value="2">
                         <span class="icon is-small">
                           名
                         </span>
@@ -808,7 +894,7 @@
                 <div class="column">
                     <label class="label">最大申込人員</label>
                     <p class="control has-icon has-icon-right">
-                        <input class="input is-danger" type="text" placeholder="例：9">
+                        <input class="input" type="text" placeholder="例：9" value="9">
                         <span class="icon is-small">
                           名
                         </span>
@@ -818,15 +904,15 @@
 
             <label class="label">運行会社</label>
             <p class="control">
-                <input class="input" type="text" placeholder="例：〇〇交通">
+                <input class="input" type="text" placeholder="例：〇〇交通" value="大和交通">
             </p>
 
             <label class="label">予約締切</label>
             <p class="control">
-                <input class="input is-danger" type="text" placeholder="例：ご旅行出発日前日の０時間前">
+                <input class="input" type="text" placeholder="例：ご旅行出発日前日の０時間前" value="ご旅行出発日前日の０時間前">
             </p>
 
-            <div class="control save-point">
+            <div class="control save-point" id="save2">
                 <p class="has-text-centered">
                     <a class="button is-success">
                         <span class="icon">
@@ -849,7 +935,7 @@
         <div class="conts-body message-body">
             <label class="label">集合場所</label>
             <p class="control">
-                <input class="input is-danger" type="text" placeholder="例：JR富山駅 新幹線改札前　9:20集合">
+                <input class="input" type="text" placeholder="例：JR富山駅 新幹線改札前　9:20集合" value="JR富山駅 新幹線改札前　9:20集合">
             </p>
 
             <label class="label">座標</label>
@@ -889,7 +975,25 @@
                     <a class="button is-white">
                       <i class="fa fa-navicon"></i>
                     </a>
-                    <textarea class="textarea" rows="2" placeholder="例：おとな1名 こども1名でお申込みの場合は、おとな2名での価格として取り扱いさせていただきます。"></textarea>
+                    <textarea class="textarea" rows="2" placeholder="例：おとな1名 こども1名でお申込みの場合は、おとな2名での価格として取り扱いさせていただきます。">2～4名（小型・中型タクシー）、5～9名（ジャンボタクシー）が基本になります。</textarea>
+                    <a class="button is-white" onclick="((this).parentNode.remove())">
+                      <i class="fa fa-close"></i>
+                    </a>
+                </p>
+                <p class="control has-addons">
+                    <a class="button is-white">
+                      <i class="fa fa-navicon"></i>
+                    </a>
+                    <textarea class="textarea" rows="2" placeholder="例：おとな1名 こども1名でお申込みの場合は、おとな2名での価格として取り扱いさせていただきます。">車種はご利用人数により異なります。乗合のためリクエストはお受けできません。 （貸切対応を除く）</textarea>
+                    <a class="button is-white" onclick="((this).parentNode.remove())">
+                      <i class="fa fa-close"></i>
+                    </a>
+                </p>
+                <p class="control has-addons">
+                    <a class="button is-white">
+                      <i class="fa fa-navicon"></i>
+                    </a>
+                    <textarea class="textarea" rows="2" placeholder="例：おとな1名 こども1名でお申込みの場合は、おとな2名での価格として取り扱いさせていただきます。">おとな1名、こども1名でお申込みの場合は、おとな2名での価格として取り扱いさせていただきます。</textarea>
                     <a class="button is-white" onclick="((this).parentNode.remove())">
                       <i class="fa fa-close"></i>
                     </a>
@@ -913,7 +1017,25 @@
                     <a class="button is-white">
                       <i class="fa fa-navicon"></i>
                     </a>
-                    <textarea class="textarea is-expanded" rows="2" placeholder="例：ます寿し1/8カットサイズの試食ができます。店舗は当日のお任せになります。"></textarea>
+                    <textarea class="textarea is-expanded" rows="2" placeholder="例：ます寿し1/8カットサイズの試食ができます。店舗は当日のお任せになります。">2名参加の場合は車種に関わらず2名一列でのご利用を確保いたします。（他グループの参加者と隣合うことはありません。）</textarea>
+                    <a class="button is-white" onclick="((this).parentNode.remove())">
+                      <i class="fa fa-close"></i>
+                    </a>
+                </p>
+                <p class="control has-addons">
+                    <a class="button is-white">
+                      <i class="fa fa-navicon"></i>
+                    </a>
+                    <textarea class="textarea is-expanded" rows="2" placeholder="例：ます寿し1/8カットサイズの試食ができます。店舗は当日のお任せになります。">ます寿し1/8カットサイズの試食ができます。店舗は当日のお任せになります。</textarea>
+                    <a class="button is-white" onclick="((this).parentNode.remove())">
+                      <i class="fa fa-close"></i>
+                    </a>
+                </p>
+                <p class="control has-addons">
+                    <a class="button is-white">
+                      <i class="fa fa-navicon"></i>
+                    </a>
+                    <textarea class="textarea is-expanded" rows="2" placeholder="例：ます寿し1/8カットサイズの試食ができます。店舗は当日のお任せになります。">岩瀬浜（東岩瀬）～富山駅北まではお渡しするクーポン券でご乗車ください。時間の指定はありません。</textarea>
                     <a class="button is-white" onclick="((this).parentNode.remove())">
                       <i class="fa fa-close"></i>
                     </a>
@@ -954,8 +1076,28 @@
                 <span class="help">複数選択可能</span>
             </label>
             <p class="control">
+                <label class="checkbox">
+                  <input type="checkbox">
+                  黒部・宇奈月
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox">
+                  立山
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox">
+                  富山
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox">
+                  砺波・五箇山
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox">
+                  高岡・氷見
+                </label>
               <label class="checkbox">
-                <input type="checkbox">
+                <input type="checkbox" checked="">
                 魚津市
               </label>
               <label class="checkbox">
@@ -978,7 +1120,7 @@
             </label>
             <p class="control">
               <label class="checkbox">
-                <input type="checkbox">
+                <input type="checkbox" checked="">
                 体験する
               </label>
               <label class="checkbox">
@@ -1019,17 +1161,13 @@
                             <span>公開日時</span>
                         </th>
                         <td>
-                            2016年5月11日 11:30
+                            2017年3月01日 11:09
                             <a class="button is-small is-primary is-inverted">
                               <span class="icon is-small">
                                 <i class="fa fa-edit"></i>
                               </span>
                               <span>編集</span>
                             </a>
-                            <p class="control has-addons">
-                                <input class="input js-datepicker" type="text" placeholder="公開日">
-                                <input class="input js-timepicker" type="text" placeholder="時間">
-                            </p>
                         </td>
                     </tr>
                     <tr>
@@ -1038,8 +1176,8 @@
                             <span>下書きURL</span>
                         </th>
                         <td>
-                            <a href="https://example.com?preview=true" target="_blank">
-                                https://example.com?preview=true
+                            <a href="http://niikawa.web-ties.com/niikawa/plan/?preview=true" target="_blank">
+                                http://niikawa.web-ties.com/niikawa/plan/?preview=true
                                 <span class="icon is-small"><i class="fa fa-fw fa-external-link"></i></span>
                             </a>
                         </td>
@@ -1050,8 +1188,8 @@
                             <span>公開URL</span>
                         </th>
                         <td>
-                            <a href="https://example.com" target="_blank">
-                                https://example.com
+                            <a href="http://niikawa.web-ties.com/niikawa/plan/" target="_blank">
+                                http://niikawa.web-ties.com/niikawa/plan/
                                 <span class="icon is-small"><i class="fa fa-fw fa-external-link"></i></span>
                             </a>
                         </td>
@@ -1059,13 +1197,13 @@
                 </tbody>
             </table>
             <div class="control">
-                <a class="button is-danger is-outlined">
+                <a class="button is-outlined">
                     <span>このプランを削除</span>
                     <span class="icon is-small">
                         <i class="fa fa-times"></i>
                     </span>
                 </a>
-                <a class="button is-danger is-pulled-right">
+                <!-- <a class="button is-pulled-right">
                     <span class="icon is-small">
                         <i class="fa fa-check"></i>
                     </span>
@@ -1076,7 +1214,7 @@
                         <i class="fa fa-check"></i>
                     </span>
                     <span>公開</span>
-                </a>
+                </a> -->
                 <a class="button is-success is-pulled-right">
                     <span class="icon is-small">
                         <i class="fa fa-check"></i>
@@ -1206,6 +1344,7 @@
         //     $( this ).parent().remove();
         // });
     } );
+
 
     // アコーディオン
     $(document).ready( function() {
