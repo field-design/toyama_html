@@ -59,9 +59,13 @@
                 <span class="number-style">1</span>
             </a> -->
           <span class="nav-item">
-              <a class="button is-light" href="/settings/">
+              <!-- <a class="button is-light" href="/settings/">
                   <i class="fa fa-fw fa-cog"></i>
                   設定
+              </a> -->
+              <a class="button is-light" href="/admins/edit">
+                  <i class="fa fa-fw fa-user"></i>
+                  プロフィール
               </a>
               <a class="button" href="/login/">
                 <i class="fa fa-fw fa-sign-out"></i>
@@ -91,7 +95,7 @@
             <ul class="is-clearfix">
               <li><a href="/"><span class="icon is-small"><i class="fa fa-home" aria-hidden="true"></i></span></a></li>
               <li><a href="/settings"><span>設定</span></a></li>
-              <li><span>アカウント</span></li>
+              <li><span>口座設定</span></li>
             </ul>
         </div>
     </div>
@@ -150,7 +154,8 @@
     設定
   </p>
   <ul class="menu-list">
-    <li><a href="/settings">プロフィール</a></li>
+    <li><a href="/admins">事業者一覧</a></li>
+    <li><a href="/admins/edit">プロフィール</a></li>
     <!-- <li><a href="/settings/bank">口座設定</a></li> -->
     <!-- <li><a href="/settings/account">アカウント</a></li> -->
   </ul>
@@ -161,37 +166,45 @@
 <!-- START main -->
 <main>
 
-    <h2 class="title is-3">アカウント設定</h2>
+    <h2 class="title is-3">口座設定</h2>
 
-    <h3 class="title is-4">パスワード再設定</h3>
-
-    <div class="control has-icon">
-        <label class="label">メールアドレス</label>
+    <div class="control">
+        <label class="label">銀行名</label>
         <p class="control">
-            <input class="input is-disabled" type="email" value="info@example.com">
-            <span class="icon is-small">
-                <i class="fa fa-envelope"></i>
-            </span>
+            <input class="input is-danger is-outlined" type="text" placeholder="例：〇〇銀行">
         </p>
     </div>
 
-    <div class="control has-icon">
-        <label class="label">新しいパスワード</label>
+    <div class="control">
+        <label class="label">支店名</label>
         <p class="control">
-            <input class="input is-danger is-outlined" type="password" placeholder="●●●●●●●●">
-            <span class="icon is-small">
-                <i class="fa fa-lock"></i>
-            </span>
+            <input class="input is-danger is-outlined" type="text" placeholder="例：〇〇支店">
         </p>
     </div>
 
-    <div class="control has-icon">
-        <label class="label">パスワードの確認</label>
+    <div class="control">
+        <label class="label">口座の種類</label>
         <p class="control">
-            <input class="input is-danger is-outlined" type="password" placeholder="●●●●●●●●">
-            <span class="icon is-small">
-                <i class="fa fa-lock"></i>
-            </span>
+            <label class="radio">
+                <input type="radio" name="account_type" value="savings" checked="checked"> 普通
+            </label>
+            <label class="radio">
+                <input type="radio" name="account_type" value="current"> 当座
+            </label>
+        </p>
+    </div>
+
+    <div class="control">
+        <label class="label">口座番号</label>
+        <p class="control">
+            <input class="input is-danger is-outlined" type="number" min="0" placeholder="例：1234567">
+        </p>
+    </div>
+
+    <div class="control">
+        <label class="label">口座名義</label>
+        <p class="control">
+            <input class="input is-danger is-outlined" type="text" placeholder="例：ヤマダ タロウ">
         </p>
     </div>
 

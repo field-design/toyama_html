@@ -59,9 +59,13 @@
                 <span class="number-style">1</span>
             </a> -->
           <span class="nav-item">
-              <a class="button is-light" href="/settings/">
+              <!-- <a class="button is-light" href="/settings/">
                   <i class="fa fa-fw fa-cog"></i>
                   設定
+              </a> -->
+              <a class="button is-light" href="/admins/edit">
+                  <i class="fa fa-fw fa-user"></i>
+                  プロフィール
               </a>
               <a class="button" href="/login/">
                 <i class="fa fa-fw fa-sign-out"></i>
@@ -90,8 +94,7 @@
         <div class="notification">
             <ul class="is-clearfix">
               <li><a href="/"><span class="icon is-small"><i class="fa fa-home" aria-hidden="true"></i></span></a></li>
-              <li><a href="/settings"><span>設定</span></a></li>
-              <li><span>プロフィール</span></li>
+              <li><span>プロフィール設定</span></li>
             </ul>
         </div>
     </div>
@@ -150,7 +153,8 @@
     設定
   </p>
   <ul class="menu-list">
-    <li><a href="/settings">プロフィール</a></li>
+    <li><a href="/admins">事業者一覧</a></li>
+    <li><a href="/admins/edit">プロフィール</a></li>
     <!-- <li><a href="/settings/bank">口座設定</a></li> -->
     <!-- <li><a href="/settings/account">アカウント</a></li> -->
   </ul>
@@ -161,7 +165,7 @@
 <!-- START main -->
 <main>
 
-    <h2 class="title is-3">プロフィール</h2>
+    <h2 class="title is-3">プロフィール設定</h2>
 
     <div class="control">
         <label class="label">表示名</label>

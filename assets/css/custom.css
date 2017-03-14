@@ -135,6 +135,24 @@ body.login footer {
   text-align: center; }
 
 /* =====================
+  admin styles
+===================== */
+.admin-list th {
+  text-align: center; }
+
+.admin-list td {
+  vertical-align: middle; }
+
+.admin-list .admin-number {
+  text-align: center; }
+
+.admin-list .admin-status {
+  text-align: center; }
+
+.admin-list .admin-edit {
+  text-align: center; }
+
+/* =====================
   filter styles
 ===================== */
 .filter table th,
