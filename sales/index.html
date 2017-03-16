@@ -94,7 +94,7 @@
         <div class="notification">
             <ul class="is-clearfix">
               <li><a href="/"><span class="icon is-small"><i class="fa fa-home" aria-hidden="true"></i></span></a></li>
-              <li><a href="/order"><span>売上管理</span></a></li>
+              <li><a href="/sales"><span>売上管理</span></a></li>
               <li><span>売上一覧</span></li>
             </ul>
         </div>
@@ -172,10 +172,10 @@
         <!-- Hero content: will be in the middle -->
         <div class="hero-body">
             <h1 class="title is-4">
-              月間売上
+              期間
             </h1>
             <h2 class="subtitle">
-              2017/03
+              2017/03/01〜2017/03/31
             </h2>
             <nav class="level">
               <div class="level-item has-text-centered">
@@ -194,14 +194,14 @@
         </div>
     </section>
 
-    <section class="section">
+    <section class="hero-body">
         <h1 class="title is-4">
           商品別 TOP5
         </h1>
         <canvas id="myChart" width="400" height="300"></canvas>
     </section>
 
-    <section class="section">
+    <section class="hero-body">
         <h1 class="title is-4">
           売上一覧
         </h1>
@@ -214,54 +214,62 @@
               <th class="order-name">購入者</th>
               <th class="order-number">購入件数</th>
               <th class="order-amount">売上金額</th>
+              <th class="order-edit">詳細</th>
             </tr>
           </thead>
           <tfoot>
             <tr>
-              <th class="order-date" colspan="5">合計</th>
+              <th class="order-date" colspan="4">合計</th>
+              <th class="order-number">15</th>
               <th class="order-amount">90,000円</th>
+              <th></th>
             </tr>
         </tfoot>
           <tbody>
             <tr>
               <td class="order-date">2017/03/01<br />15:00</td>
               <td class="order-number">000025</td>
-              <td class="order-product-name">商品名A商品名A商品名A<br /><small>規格規格規格</small></td>
+              <td class="order-product-name">商品名A商品名A商品名A</td>
               <td class="order-name">山田 太朗</td>
               <td class="order-number">3</td>
               <td class="order-amount">18,000</td>
+              <td class="order-edit"><a href="/order/edit">詳細</a></td>
             </tr>
             <tr>
               <td class="order-date">2017/03/01<br />15:00</td>
               <td class="order-number">000020</td>
-              <td class="order-product-name">商品名A商品名A商品名A<br /><small>規格規格規格</small></td>
+              <td class="order-product-name">商品名A商品名A商品名A</td>
               <td class="order-name">山田 太朗</td>
               <td class="order-number">3</td>
               <td class="order-amount">18,000</td>
+              <td class="order-edit"><a href="/order/edit">詳細</a></td>
             </tr>
             <tr>
               <td class="order-date">2017/03/01<br />15:00</td>
               <td class="order-number">000019</td>
-              <td class="order-product-name">商品名B商品名B商品名B<br /><small>規格規格規格</small></td>
+              <td class="order-product-name">商品名B商品名B商品名B</td>
               <td class="order-name">山田 太朗</td>
               <td class="order-number">3</td>
               <td class="order-amount">18,000</td>
+              <td class="order-edit"><a href="/order/edit">詳細</a></td>
             </tr>
             <tr>
               <td class="order-date">2017/03/01<br />15:00</td>
               <td class="order-number">000018</td>
-              <td class="order-product-name">商品名B商品名B商品名B<br /><small>規格規格規格</small></td>
+              <td class="order-product-name">商品名B商品名B商品名B</td>
               <td class="order-name">山田 太朗</td>
               <td class="order-number">3</td>
               <td class="order-amount">18,000</td>
+              <td class="order-edit"><a href="/order/edit">詳細</a></td>
             </tr>
             <tr>
               <td class="order-date">2017/03/01<br />15:00</td>
               <td class="order-number">000010</td>
-              <td class="order-product-name">商品名C商品名C商品名C<br /><small>規格規格規格</small></td>
+              <td class="order-product-name">商品名C商品名C商品名C</td>
               <td class="order-name">山田 太朗</td>
               <td class="order-number">3</td>
               <td class="order-amount">18,000</td>
+              <td class="order-edit"><a href="/order/edit">詳細</a></td>
             </tr>
           </tbody>
         </table>
@@ -383,11 +391,12 @@
 <script>
 var ctx = document.getElementById("myChart");
 var myChart = new Chart(ctx, {
-    type: 'polarArea',
+    type: 'horizontalBar',
     data: {
         labels: ["商品名1商品名1商品名1", "商品名2商品名2商品名2", "商品名3商品名3商品名3", "商品名4商品名4商品名4", "商品名5商品名5商品名5"],
         datasets: [{
-            data: [50000, 19000, 30000, 50000, 20000, 30000],
+            label: "2017/03/01〜2017/03/31",
+            data: [50000, 50000, 30000, 20000, 19000],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
