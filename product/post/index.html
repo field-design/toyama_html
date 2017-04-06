@@ -38,8 +38,16 @@
     <nav class="nav has-shadow" id="top">
       <div class="container">
         <div class="nav-left">
-          <a class="nav-item" href="../index.html">
+          <span class="nav-item">
             <h1 class="title is-5">いまからえらべるTRAVEL</h1>
+            </span>
+          <a class="nav-item is-tab is-hidden-mobile" href="/" target="_blank">
+              <i class="fa fa-fw fa-external-link"></i>
+              サイトを表示
+          </a>
+          <a class="nav-item is-tab is-hidden-mobile" href="/admin">
+              <i class="fa fa-fw fa-home"></i>
+              HOME
           </a>
         </div>
         <span class="nav-toggle">
@@ -94,7 +102,6 @@
         <div class="notification">
             <ul class="is-clearfix">
               <li><a href="/"><span class="icon is-small"><i class="fa fa-home" aria-hidden="true"></i></span></a></li>
-              <li><a href="/product"><span>商品管理</span></a></li>
               <li><span>商品編集</span></li>
             </ul>
         </div>
@@ -110,12 +117,13 @@
     <p class="menu-label">商品編集</p>
     <ul>
       <li><a class="is-active" href="/product/post">基本情報</a></li>
-      <li><a href="/product/post">料金</a></li>
-      <li><a href="/product/post">予約カレンダー</a></li>
-      <li><a href="/product/post">コースの内容</a></li>
-      <li><a href="/product/post">プラン情報</a></li>
+      <li><a href="/product/post">代金</a></li>
+      <li><a href="/product/post">プラン詳細</a></li>
       <li><a href="/product/post">集合場所</a></li>
       <li><a href="/product/post">注意事項・その他</a></li>
+      <li><a href="/product/post">予約カレンダー</a></li>
+      <li><a href="/product/post">プラン内容</a></li>
+      <li><a href="/product/post">取消料</a></li>
       <li><a href="/product/post">エリア・カテゴリ</a></li>
       <li><a href="/product/post">公開設定</a></li>
     </ul>
@@ -169,32 +177,43 @@
     <h2 class="title is-3">商品編集</h2>
 
 <div class="js-accordion">
-    <section class="input-area message">
-        <h2 class="conts-ttl subtitle message-header">
-            基本情報
-            <span class="icon">
-              <i class="fa fa-plus-circle"></i>
-            </span>
-        </h2>
-        <div class="conts-body message-body">
-            <label class="label">タイトル</label>
-            <p class="control">
-                <input class="input is-danger" type="text" placeholder="例：しんきろうロードサイクリングプラン">
-            </p>
 
+<section class="input-area message plan-outline">
+    <h2 class="conts-ttl subtitle message-header">
+        基本情報
+        <span class="icon">
+          <i class="fa fa-plus-circle"></i>
+        </span>
+    </h2>
+    <div class="conts-body message-body">
+        <div class="control">
             <label class="label">サブタイトル</label>
-            <p class="control">
-                <input class="input" type="text" placeholder="例：蜃気楼ガイドと行く！">
-            </p>
+            <div class="control">
+                <div class="help counter">残り<span class="count"></span>文字</strong></div>
+                <input class="input limited" type="text" placeholder="例：蜃気楼ガイドと行く！" maxlength="64">
+            </div>
+        </div>
 
-            <label class="label">説明文</label>
-            <p class="control">
-                <textarea class="textarea is-danger" placeholder="例：蜃気楼が見える街として有名な「魚津市」でのレンタサイクルプラン"></textarea>
-            </p>
+        <div class="control">
+            <label class="label">タイトル<span class="must">必須</span></label>
+            <div class="control">
+                <div class="help counter">残り<span class="count"></span>文字</strong></div>
+                <input class="input is-danger is-bold limited" type="text" placeholder="例：しんきろうロードサイクリングプラン" maxlength="32">
+            </div>
+        </div>
 
+        <div class="control">
+            <label class="label">説明文<span class="must">必須</span></label>
+            <div class="control">
+                <div class="help counter">残り<span class="count"></span>文字</strong></div>
+                <textarea class="textarea is-danger limited" placeholder="例：蜃気楼が見える街として有名な「魚津市」でのレンタサイクルプラン" maxlength="64"></textarea>
+            </div>
+        </div>
+
+        <div class="control">
             <label class="label">
-                メイン画像
-                <span class="help">横幅1,000px以上の画像を登録してください。横長画像を推奨。最大5枚。</span>
+                メイン画像<span class="must">必須</span>
+                <span class="help">横幅1,000px以上の画像を1枚以上登録してください。横長画像を推奨。最大5枚。</span>
             </label>
             <div class="notification main-image">
                 <button class="delete" onclick="((this).parentNode.remove())"></button>
@@ -208,55 +227,66 @@
                     <img src="http://placehold.jp/800x600.png">
                 </figure>
             </div>
-            <p class="control">
+            <div class="control">
                 <form action="" method="POST" enctype="multipart/form-data">
                     <label class="button is-danger" for="main_img">画像を追加</label>
                     <input type="file" name="main_img" id="main_img" style="display:none;">
                 </form>
-            </p>
-
-            <div class="control save-point">
-                <p class="control has-addons has-addons-centered">
-                    <a class="button is-success">
-                        <span class="icon">
-                            <i class="fa fa-save"></i>
-                        </span>
-                        <span>変更を保存</span>
-                    </a>
-                </p>
             </div>
         </div>
-    </section>
 
-    <section class="input-area price message">
-        <h2 class="conts-ttl subtitle message-header">
-            料金
-            <span class="icon">
-              <i class="fa fa-plus-circle"></i>
-            </span>
-        </h2>
-        <div class="conts-body message-body">
+        <div class="control save-point">
+            <p class="control has-addons has-addons-centered">
+                <a class="button is-success">
+                    <span class="icon">
+                        <i class="fa fa-save"></i>
+                    </span>
+                    <span>変更を保存</span>
+                </a>
+            </p>
+        </div>
+    </div>
+</section>
 
-            <label class="label">料金
-                <span class="help">最大5件まで追加可能</span>
-            </label>
 
-            <div class="columns notification">
-                <button class="delete" onclick="((this).parentNode.remove())"></button>
+<section class="input-area price message">
+    <h2 class="conts-ttl subtitle message-header">
+        代金
+        <span class="icon">
+          <i class="fa fa-plus-circle"></i>
+        </span>
+    </h2>
+    <div class="conts-body message-body">
+
+        <label class="label">代金タイトル<span class="must">必須</span></label>
+        <div class="control">
+            <div class="help counter">残り<span class="count"></span>文字</strong></div>
+            <input class="input is-danger limited" type="text" placeholder="例：おひとりさま" maxlength="16">
+        </div>
+
+        <div class="notification">
+            <button class="delete" onclick="((this).parentNode.remove())"></button>
+            <div class="columns">
                 <div class="column">
-                    <label class="label">料金タイトル</label>
+                    <label class="label">区分<span class="must">必須</span></label>
                     <p class="control has-icon has-icon-right">
                         <span class="select is-fullwidth">
                           <select>
+                            <option>おとな・こども同額</option>
                             <option>おとな</option>
                             <option>こども</option>
+                            <option>大学生</option>
+                            <option>高校生</option>
+                            <option>中学生</option>
+                            <option>小学生</option>
+                            <option>幼児</option>
                             <option>その他</option>
                           </select>
                         </span>
                     </p>
                 </div>
                 <div class="column">
-                    <label class="label">料金</label>
+                    <label class="label">代金<span class="must">必須</span></label>
                     <p class="control has-icon has-icon-right">
                         <input class="input is-danger" type="text" placeholder="例：2000">
                         <span class="icon is-small">
@@ -264,39 +294,65 @@
                         </span>
                     </p>
                 </div>
-                <div class="column">
-                    <label class="label">料金種別</label>
-                    <p class="control has-icon has-icon-right">
-                        <span class="select is-fullwidth">
-                          <select>
-                            <option>未選択</option>
-                            <option>幼児</option>
-                            <option>小学生</option>
-                            <option>中学生</option>
-                            <option>1台</option>
-                            <option>1組</option>
-                          </select>
-                        </span>
-                    </p>
+            </div>
+            <div>
+                <label class="label">条件
+                    <span class="help">最大5件まで追加可能</span>
+                </label>
+                <div class="control sortable">
+                    <div class="control has-addons">
+                        <a class="button">
+                          <i class="fa fa-navicon"></i>
+                        </a>
+                        <input class="input is-expanded" type="text" placeholder="例：6歳以上">
+                        <a class="button remove" onclick="((this).parentNode.remove())">
+                          <i class="fa fa-close"></i>
+                        </a>
+                    </div>
+                    <div class="control has-addons">
+                        <a class="button">
+                          <i class="fa fa-navicon"></i>
+                        </a>
+                        <input class="input is-expanded" type="text" placeholder="例：6歳以上">
+                        <a class="button remove" onclick="((this).parentNode.remove())">
+                          <i class="fa fa-close"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="control add-btn">
+                  <a class="button is-primary">
+                    <span class="icon">
+                      <i class="fa fa-plus-circle"></i>
+                    </span>
+                    <span>条件を追加</span>
+                  </a>
                 </div>
             </div>
+        </div>
 
-            <div class="columns notification">
-                <button class="delete" onclick="((this).parentNode.remove())"></button>
+        <div class="notification">
+            <button class="delete" onclick="((this).parentNode.remove())"></button>
+            <div class="columns">
                 <div class="column">
-                    <label class="label">料金タイトル</label>
+                    <label class="label">区分<span class="must">必須</span></label>
                     <p class="control has-icon has-icon-right">
                         <span class="select is-fullwidth">
                           <select>
+                            <option>おとな・こども同額</option>
                             <option>おとな</option>
                             <option>こども</option>
+                            <option>大学生</option>
+                            <option>高校生</option>
+                            <option>中学生</option>
+                            <option>小学生</option>
+                            <option>幼児</option>
                             <option>その他</option>
                           </select>
                         </span>
                     </p>
                 </div>
                 <div class="column">
-                    <label class="label">料金</label>
+                    <label class="label">代金<span class="must">必須</span></label>
                     <p class="control has-icon has-icon-right">
                         <input class="input is-danger" type="text" placeholder="例：2000">
                         <span class="icon is-small">
@@ -304,463 +360,105 @@
                         </span>
                     </p>
                 </div>
-                <div class="column">
-                    <label class="label">料金種別</label>
-                    <p class="control has-icon has-icon-right">
-                        <span class="select is-fullwidth">
-                          <select>
-                            <option>未選択</option>
-                            <option>幼児</option>
-                            <option>小学生</option>
-                            <option>中学生</option>
-                            <option>1台</option>
-                            <option>1組</option>
-                          </select>
-                        </span>
-                    </p>
+            </div>
+            <div>
+                <label class="label">条件
+                    <span class="help">最大5件まで追加可能</span>
+                </label>
+                <div class="control sortable">
+                    <div class="control has-addons">
+                        <a class="button">
+                          <i class="fa fa-navicon"></i>
+                        </a>
+                        <input class="input is-expanded" type="text" placeholder="例：6歳以上">
+                        <a class="button remove" onclick="((this).parentNode.remove())">
+                          <i class="fa fa-close"></i>
+                        </a>
+                    </div>
+                    <div class="control has-addons">
+                        <a class="button">
+                          <i class="fa fa-navicon"></i>
+                        </a>
+                        <input class="input is-expanded" type="text" placeholder="例：6歳以上">
+                        <a class="button remove" onclick="((this).parentNode.remove())">
+                          <i class="fa fa-close"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="control add-btn">
+                  <a class="button is-primary">
+                    <span class="icon">
+                      <i class="fa fa-plus-circle"></i>
+                    </span>
+                    <span>条件を追加</span>
+                  </a>
                 </div>
             </div>
-
-            <p class="control add-btn">
-              <a class="button is-primary">
-                <span class="icon">
-                  <i class="fa fa-plus-circle"></i>
-                </span>
-                <span>料金を追加</span>
-              </a>
-            </p>
         </div>
-    </section>
 
-    <section class="input-area calendar message">
-        <h2 class="conts-ttl subtitle message-header">
-            カレンダー
+        <div class="control add-btn">
+          <a class="button is-primary">
             <span class="icon">
               <i class="fa fa-plus-circle"></i>
             </span>
-        </h2>
-        <div class="conts-body message-body">
-
-            <div class="control">
-                <label class="label">プランの種類</label>
-                <p class="control">
-                    <label class="radio">
-                        <input type="radio" name="plan_type" value="standard" checked="checked"> 通常プラン
-                    </label>
-                    <label class="radio">
-                        <input type="radio" name="plan_type" value="request"> リクエストプラン
-                    </label>
-                </p>
-            </div>
-
-            <hr>
-
-            <div class="calendar-wrap">
-                <label class="label">
-                    在庫設定
-                    <span class="help">各日程に在庫を入力してください。</span>
-                </label>
-                
-                <div class="input-table">
-                    <div class="control is-grouped">
-                        <p class="control has-addons">
-                            <a class="button">
-                              <span>今月</span>
-                            </a>
-                        </p>
-                        <p class="control has-addons">
-                            <a class="button">
-                              <span class="icon">
-                                <i class="fa fa-angle-left"></i>
-                              </span>
-                            </a>
-                            <a class="button">
-                              <span>2017年3月</span>
-                            </a>
-                            <a class="button">
-                              <span class="icon">
-                                <i class="fa fa-angle-right"></i>
-                              </span>
-                            </a>
-                        </p>
-                    </div>
-                    <table class="table is-bordered">
-                        <thead>
-                            <tr>
-                                <th class="sun"><span>日</span></th>
-                                <th class="mon"><span>月</span></th>
-                                <th class="tue"><span>火</span></th>
-                                <th class="wed"><span>水</span></th>
-                                <th class="thu"><span>木</span></th>
-                                <th class="fri"><span>金</span></th>
-                                <th class="sat"><span>土</span></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="sun">
-                
-                                </td>
-                                <td class="mon">
-                
-                                </td>
-                                <td class="tue">
-                                    <span>1</span>
-                                    <div class="status">
-                                        <input type="number" name="" min="0" value="0">
-                                    </div>
-                                </td>
-                                <td class="wed">
-                                    <span>2</span>
-                                    <div class="status">
-                                        <input type="number" name="" min="0" value="0">
-                                    </div>
-                                </td>
-                                <td class="thu">
-                                    <span>3</span>
-                                    <div class="status">
-                                        <input type="number" name="" min="0" value="0">
-                                    </div>
-                                </td>
-                                <td class="fri">
-                                    <span>4</span>
-                                    <div class="status">
-                                        <input type="number" name="" min="0" value="0">
-                                    </div>
-                                </td>
-                                <td class="sat">
-                                    <span>5</span>
-                                    <div class="status">
-                                        <input type="number" name="" min="0" value="0">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="sun">
-                                    <span>6</span>
-                                    <div class="status">
-                                        <input type="number" name="" min="0" value="0">
-                                    </div>
-                                </td>
-                                <td class="mon">
-                                    <span>7</span>
-                                    <div class="status">
-                                        <input type="number" name="" min="0" value="0">
-                                    </div>
-                                </td>
-                                <td class="tue">
-                                    <span>8</span>
-                                    <div class="status">
-                                        <input type="number" name="" min="0" value="0">
-                                    </div>
-                                </td>
-                                <td class="wed">
-                                    <span>9</span>
-                                    <div class="status">
-                                        <input type="number" name="" min="0" value="0">
-                                    </div>
-                                </td>
-                                <td class="thu">
-                                    <span>10</span>
-                                    <div class="status">
-                                        <input type="number" name="" min="0" value="0">
-                                    </div>
-                                </td>
-                                <td class="fri">
-                                    <span>11</span>
-                                    <div class="status">
-                                        <input type="number" name="" min="0" value="0">
-                                    </div>
-                                </td>
-                                <td class="sat">
-                                    <span>12</span>
-                                    <div class="status">
-                                        <input type="number" name="" min="0" value="0">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="sun">
-                                    <span>13</span>
-                                    <div class="status">
-                                        <input type="number" name="" min="0" value="0">
-                                    </div>
-                                </td>
-                                <td class="mon">
-                                    <span>14</span>
-                                    <div class="status">
-                                        <input type="number" name="" min="0" value="0">
-                                    </div>
-                                </td>
-                                <td class="tue">
-                                    <span>15</span>
-                                    <div class="status">
-                                        <input type="number" name="" min="0" value="0">
-                                    </div>
-                                </td>
-                                <td class="wed">
-                                    <span>16</span>
-                                    <div class="status">
-                                        <input type="number" name="" min="0" value="0">
-                                    </div>
-                                </td>
-                                <td class="thu">
-                                    <span>17</span>
-                                    <div class="status">
-                                        <input type="number" name="" min="0" value="0">
-                                    </div>
-                                </td>
-                                <td class="fri">
-                                    <span>18</span>
-                                    <div class="status">
-                                        <input type="number" name="" min="0" value="0">
-                                    </div>
-                                </td>
-                                <td class="sat">
-                                    <span>19</span>
-                                    <div class="status">
-                                        <input type="number" name="" min="0" value="0">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="sun">
-                                    <span>20</span>
-                                    <div class="status">
-                                        <input type="number" name="" min="0" value="0">
-                                    </div>
-                                </td>
-                                <td class="mon">
-                                    <span>21</span>
-                                    <div class="status">
-                                        <input type="number" name="" min="0" value="0">
-                                    </div>
-                                </td>
-                                <td class="tue">
-                                    <span>22</span>
-                                    <div class="status">
-                                        <input type="number" name="" min="0" value="0">
-                                    </div>
-                                </td>
-                                <td class="wed">
-                                    <span>23</span>
-                                    <div class="status">
-                                        <input type="number" name="" min="0" value="0">
-                                    </div>
-                                </td>
-                                <td class="thu">
-                                    <span>24</span>
-                                    <div class="status">
-                                        <input type="number" name="" min="0" value="0">
-                                    </div>
-                                </td>
-                                <td class="fri">
-                                    <span>25</span>
-                                    <div class="status">
-                                        <input type="number" name="" min="0" value="0">
-                                    </div>
-                                </td>
-                                <td class="sat">
-                                    <span>26</span>
-                                    <div class="status">
-                                        <input type="number" name="" min="0" value="0">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="sun">
-                                    <span>27</span>
-                                    <div class="status">
-                                        <input type="number" name="" min="0" value="0">
-                                    </div>
-                                </td>
-                                <td class="mon">
-                                    <span>28</span>
-                                    <div class="status">
-                                        <input type="number" name="" min="0" value="0">
-                                    </div>
-                                </td>
-                                <td class="tue">
-                                    <span>29</span>
-                                    <div class="status">
-                                        <input type="number" name="" min="0" value="0">
-                                    </div>
-                                </td>
-                                <td class="wed">
-                                    <span>30</span>
-                                    <div class="status">
-                                        <input type="number" name="" min="0" value="0">
-                                    </div>
-                                </td>
-                                <td class="thu">
-                                    <span>31</span>
-                                    <div class="status">
-                                        <input type="number" name="" min="0" value="0">
-                                    </div>
-                                </td>
-                                <td class="fri">
-                
-                                </td>
-                                <td class="sat">
-                
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p class="control has-addons">
-                      <input class="input has-text-centered" type="number" placeholder="" min="0">
-                      <a class="button">
-                        一括入力
-                      </a>
-                    </p>
-                </div>
-                
-            </div>
-
-            <hr>
-
-            <div class="control">
-                <label class="label">
-                    手仕舞い日（申込締切日）
-                    <span class="help">当日の場合は0日前と入力してください。</span>
-                </label>
-                <div class="">
-                    <p class="control has-addons">
-                      <input class="input is-danger" type="number" min="0" placeholder="例：3">
-                      <span class="button is-disabled">日前</span>
-                      <input class="input js-timepicker" type="text" placeholder="時間">
-                      <span class="button is-disabled">時まで</span>
-                    </p>
-                </div>
-            </div>
-
-            <div class="control save-point">
-                <p class="has-text-centered">
-                    <a class="button is-success">
-                        <span class="icon">
-                            <i class="fa fa-save"></i>
-                        </span>
-                        <span>変更を保存</span>
-                    </a>
-                </p>
-            </div>
+            <span>代金を追加</span>
+          </a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="input-area message plan-detail">
-        <h2 class="conts-ttl subtitle message-header">
-            コースの内容
-            <span class="icon">
-              <i class="fa fa-plus-circle"></i>
-            </span>
-        </h2>
-        <div class="conts-body message-body">
-            <div class="control sortable">
-                <div class="control box notification">
-                    <button class="delete" onclick="((this).parentNode.remove())"></button>
-                    <nav class="level">
-                        <!-- Left side -->
-                        <div class="level-left">
-                          <div class="level-item">
-                            <p class="subtitle is-5">
-                                <a class="button">
-                                  <i class="fa fa-navicon"></i>
-                                </a>
-                            </p>
-                          </div>
-                        </div>
-                    </nav>
-                    <label class="label">画像</label>
-                    <span class="help">横幅800px以上の画像を登録してください。横長画像を推奨。</span>
-                    <p class="control">
-                        <form action="" method="POST" enctype="multipart/form-data">
-                            <label class="button" for="main_img">画像を選択してください</label>
-                            <input type="file" name="main_img" id="main_img" style="display:none;">
-                        </form>
-                    </p>
-                    <div class="notification main-image">
-                        <button class="delete" onclick="((this).parentNode.remove())"></button>
-                        <figure class="image">
-                            <img src="http://placehold.jp/800x600.png">
-                        </figure>
-                    </div>
 
-                    <label class="label">タイトル</label>
-                    <p class="control">
-                        <input class="input is-danger" type="text" placeholder="例：米騒動発祥の地">
-                    </p>
-
-                    <label class="label">説明文</label>
-                    <p class="control">
-                        <textarea class="textarea" placeholder="例：蜃気楼の見える道、”しんきろうロード”は、魚津市の海沿い海岸線を南北に走る道路の通称です。"></textarea>
-                    </p>
-
-                    <label class="label">外部リンク<br />
-                        <span class="help">外部リンクを掲載する場合のみ入力してください。</span>
-                    </label>
-                    <p class="control">
-                        <input class="input" type="text" placeholder="例：http://example.com">
-                    </p>
-                </div>
-
-            </div>
-            <p class="control add-btn">
-              <a class="button is-primary">
-                <span class="icon">
-                  <i class="fa fa-plus-circle"></i>
-                </span>
-                <span>詳細を追加</span>
-              </a>
-              <span class="help">最大10件まで追加可能</span>
-            </p>
-
-            <div class="control save-point">
-                <p class="control has-addons has-addons-centered">
-                    <a class="button is-success">
-                        <span class="icon">
-                            <i class="fa fa-save"></i>
-                        </span>
-                        <span>変更を保存</span>
-                    </a>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section class="input-area message">
-        <h2 class="conts-ttl subtitle message-header">
-            プラン情報
-            <span class="icon">
-              <i class="fa fa-minus-circle"></i>
-            </span>
-        </h2>
-        <div class="conts-body message-body">
-            <label class="label">期間</label>
-            <div class="control is-grouped">
-                <p class="control has-icon has-icon-right is-expanded">
+<section class="input-area message plan-detail">
+    <h2 class="conts-ttl subtitle message-header">
+        プラン詳細
+        <span class="icon">
+          <i class="fa fa-minus-circle"></i>
+        </span>
+    </h2>
+    <div class="conts-body message-body">
+        <div class="columns control">
+            <div class="column is-4">
+                <label class="label">開始日<span class="must">必須</span></label>
+                <p class="control has-icon has-icon-right">
                     <input class="input is-danger js-datepicker" type="text" placeholder="開始日">
                     <span class="icon is-small">
                       <i class="fa fa-calendar"></i>
                     </span>
                 </p>
-                <p class="control has-icon has-icon-right is-expanded">
+            </div>
+            <div class="column is-4">
+                <label class="label">終了日<span class="must">必須</span></label>
+                <p class="control has-icon has-icon-right">
                     <input class="input is-danger js-datepicker" type="text" placeholder="終了日">
                     <span class="icon is-small">
                       <i class="fa fa-calendar"></i>
                     </span>
                 </p>
             </div>
+        </div>
 
+        <div class="control">
+            <label class="label">注釈</label>
+            <div class="control">
+                <div class="help counter">残り<span class="count">128</span>文字</strong></div>
+                <textarea class="textarea limited" placeholder="例：上記期間の火曜、木曜" maxlength="128"></textarea>
+            </div>
+        </div>
+
+        <div class="control">
             <label class="label">除外日</label>
-            <p class="control">
-                <textarea class="textarea" placeholder="例：2016年12月28日～2017年1月5日"></textarea>
-            </p>
+            <div class="control">
+                <div class="help counter">残り<span class="count">128</span>文字</strong></div>
+                <textarea class="textarea limited" placeholder="例：2016年12月28日～2017年1月5日" maxlength="128"></textarea>
+            </div>
+        </div>
 
+        <div class="control">
             <label class="label">ご旅行・プラン代金に含まれるもの
                 <span class="help">最大10件まで追加可能</span>
             </label>
             <div class="control sortable">
-                <p class="control has-addons">
+                <div class="control has-addons">
                     <a class="button">
                       <i class="fa fa-navicon"></i>
                     </a>
@@ -768,8 +466,8 @@
                     <a class="button remove" onclick="((this).parentNode.remove())">
                       <i class="fa fa-close"></i>
                     </a>
-                </p>
-                <p class="control has-addons">
+                </div>
+                <div class="control has-addons">
                     <a class="button">
                       <i class="fa fa-navicon"></i>
                     </a>
@@ -777,324 +475,2516 @@
                     <a class="button remove" onclick="((this).parentNode.remove())">
                       <i class="fa fa-close"></i>
                     </a>
-                </p>
+                </div>
             </div>
-            <p class="control add-btn">
+            <div class="control add-btn">
               <a class="button is-primary">
                 <span class="icon">
                   <i class="fa fa-plus-circle"></i>
                 </span>
                 <span>行を追加</span>
               </a>
-            </p>
-
-            <div class="columns">
-                <div class="column">
-                    <label class="label">最少受付人員</label>
-                    <p class="control has-icon has-icon-right">
-                        <input class="input is-danger" type="text" placeholder="例：2">
-                        <span class="icon is-small">
-                          名
-                        </span>
-                    </p>
-                </div>
-                <div class="column">
-                    <label class="label">最少催行人員</label>
-                    <p class="control has-icon has-icon-right">
-                        <input class="input is-danger" type="text" placeholder="例：2">
-                        <span class="icon is-small">
-                          名
-                        </span>
-                    </p>
-                </div>
-                <div class="column">
-                    <label class="label">最大申込人員</label>
-                    <p class="control has-icon has-icon-right">
-                        <input class="input is-danger" type="text" placeholder="例：9">
-                        <span class="icon is-small">
-                          名
-                        </span>
-                    </p>
-                </div>
             </div>
+        </div>
 
+        <div class="columns control">
+            <div class="column">
+                <label class="label">最少受付人員<span class="must">必須</span></label>
+                <p class="control has-icon has-icon-right">
+                    <input class="input is-danger" type="text" placeholder="例：2">
+                    <span class="icon is-small">
+                      名
+                    </span>
+                </p>
+            </div>
+            <div class="column">
+                <label class="label">最少催行人員<span class="must">必須</span></label>
+                <p class="control has-icon has-icon-right">
+                    <input class="input is-danger" type="text" placeholder="例：2">
+                    <span class="icon is-small">
+                      名
+                    </span>
+                </p>
+            </div>
+            <div class="column">
+                <label class="label">最大申込人員<span class="must">必須</span></label>
+                <p class="control has-icon has-icon-right">
+                    <input class="input is-danger" type="text" placeholder="例：9">
+                    <span class="icon is-small">
+                      名
+                    </span>
+                </p>
+            </div>
+        </div>
+
+        <div class="control">
             <label class="label">運行会社</label>
-            <p class="control">
-                <input class="input" type="text" placeholder="例：〇〇交通">
-            </p>
-
-            <label class="label">予約締切</label>
-            <p class="control">
-                <input class="input is-danger" type="text" placeholder="例：ご旅行出発日前日の０時間前">
-            </p>
-
-            <div class="control save-point">
-                <p class="has-text-centered">
-                    <a class="button is-success">
-                        <span class="icon">
-                            <i class="fa fa-save"></i>
-                        </span>
-                        <span>変更を保存</span>
-                    </a>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section class="input-area message">
-        <h2 class="conts-ttl subtitle message-header">
-            集合場所
-            <span class="icon">
-              <i class="fa fa-plus-circle"></i>
-            </span>
-        </h2>
-        <div class="conts-body message-body">
-            <label class="label">集合場所</label>
-            <p class="control">
-                <input class="input is-danger" type="text" placeholder="例：JR富山駅 新幹線改札前　9:20集合">
-            </p>
-
-            <label class="label">座標</label>
-            <span class="help">地図のピンを動かして位置を調整してください。</span>
-            <div id="location-map"></div>
-            <p class="control">
-                <input class="input" type="text" value="36.141114,137.251362">
-            </p>
-
-            <div class="control save-point">
-                <p class="has-text-centered">
-                    <a class="button is-success">
-                        <span class="icon">
-                            <i class="fa fa-save"></i>
-                        </span>
-                        <span>変更を保存</span>
-                    </a>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section class="input-area cautions message">
-        <h2 class="conts-ttl subtitle message-header">
-            注意事項・その他
-            <span class="icon">
-              <i class="fa fa-plus-circle"></i>
-            </span>
-        </h2>
-        <div class="conts-body message-body">
-            <label class="label">
-                注意事項
-                <span class="help">最大5件まで追加可能</span>
-            </label>
-            <div class="control sortable">
-                <p class="control has-addons">
-                    <a class="button is-white">
-                      <i class="fa fa-navicon"></i>
-                    </a>
-                    <textarea class="textarea" rows="2" placeholder="例：おとな1名 こども1名でお申込みの場合は、おとな2名での価格として取り扱いさせていただきます。"></textarea>
-                    <a class="button is-white" onclick="((this).parentNode.remove())">
-                      <i class="fa fa-close"></i>
-                    </a>
-                </p>
-            </div>
-            <p class="control add-btn">
-              <a class="button is-primary">
-                <span class="icon">
-                  <i class="fa fa-plus-circle"></i>
-                </span>
-                <span>行を追加</span>
-              </a>
-            </p>
-
-            <label class="label">
-                その他
-                <span class="help">最大5件まで追加可能</span>
-            </label>
-            <div class="control sortable">
-                <p class="control has-addons">
-                    <a class="button is-white">
-                      <i class="fa fa-navicon"></i>
-                    </a>
-                    <textarea class="textarea is-expanded" rows="2" placeholder="例：ます寿し1/8カットサイズの試食ができます。店舗は当日のお任せになります。"></textarea>
-                    <a class="button is-white" onclick="((this).parentNode.remove())">
-                      <i class="fa fa-close"></i>
-                    </a>
-                </p>
-            </div>
-            <p class="control add-btn">
-              <a class="button is-primary">
-                <span class="icon">
-                  <i class="fa fa-plus-circle"></i>
-                </span>
-                <span>行を追加</span>
-              </a>
-            </p>
-
-            <div class="control save-point">
-                <p class="has-text-centered">
-                    <a class="button is-success">
-                        <span class="icon">
-                            <i class="fa fa-save"></i>
-                        </span>
-                        <span>変更を保存</span>
-                    </a>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section class="input-area category message">
-        <h2 class="conts-ttl subtitle message-header">
-            エリア・カテゴリ
-            <span class="icon">
-              <i class="fa fa-plus-circle"></i>
-            </span>
-        </h2>
-        <div class="conts-body message-body">
-            <label class="label">
-                エリア
-                <span class="help">複数選択可能</span>
-            </label>
-            <p class="control">
-              <label class="checkbox">
-                <input type="checkbox">
-                魚津市
-              </label>
-              <label class="checkbox">
-                <input type="checkbox">
-                黒部市
-              </label>
-              <label class="checkbox">
-                <input type="checkbox">
-                入善町
-              </label>
-              <label class="checkbox">
-                <input type="checkbox">
-                朝日町
-              </label>
-            </p>
-
-            <label class="label">
-                カテゴリ
-                <span class="help">複数選択可能</span>
-            </label>
-            <p class="control">
-              <label class="checkbox">
-                <input type="checkbox">
-                体験する
-              </label>
-              <label class="checkbox">
-                <input type="checkbox">
-                見る
-              </label>
-              <label class="checkbox">
-                <input type="checkbox">
-                食べる
-              </label>
-              <label class="checkbox">
-                <input type="checkbox">
-                買う
-              </label>
-            </p>
-        </div>
-    </section>
-
-    <section class="release message is-info">
-        <h2 class="subtitle message-header">
-            公開設定
-        </h2>
-        <div class="conts-body message-body">
-            <table class="table">
-                <tbody>
-                    <tr>
-                        <th>
-                            <span class="icon is-small"><i class="fa fa-refresh"></i></span>
-                            <span>ステータス</span>
-                        </th>
-                        <td>
-                            下書き
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            <span class="icon is-small"><i class="fa fa-calendar"></i></span>
-                            <span>公開日時</span>
-                        </th>
-                        <td>
-                            2016年5月11日 11:30
-                            <a class="button is-small is-primary is-inverted">
-                              <span class="icon is-small">
-                                <i class="fa fa-edit"></i>
-                              </span>
-                              <span>編集</span>
-                            </a>
-                            <p class="control has-addons">
-                                <input class="input js-datepicker" type="text" placeholder="公開日">
-                                <input class="input js-timepicker" type="text" placeholder="時間">
-                            </p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            <span class="icon is-small"><i class="fa fa-link"></i></span>
-                            <span>下書きURL</span>
-                        </th>
-                        <td>
-                            <a href="https://example.com?preview=true" target="_blank">
-                                https://example.com?preview=true
-                                <span class="icon is-small"><i class="fa fa-fw fa-external-link"></i></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            <span class="icon is-small"><i class="fa fa-link"></i></span>
-                            <span>公開URL</span>
-                        </th>
-                        <td>
-                            <a href="https://example.com" target="_blank">
-                                https://example.com
-                                <span class="icon is-small"><i class="fa fa-fw fa-external-link"></i></span>
-                            </a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
             <div class="control">
-                <a class="button is-danger is-outlined">
-                    <span>このプランを削除</span>
-                    <span class="icon is-small">
-                        <i class="fa fa-times"></i>
-                    </span>
-                </a>
-                <a class="button is-danger is-pulled-right">
-                    <span class="icon is-small">
-                        <i class="fa fa-check"></i>
-                    </span>
-                    <span>非公開</span>
-                </a>
-                <a class="button is-info is-pulled-right">
-                    <span class="icon is-small">
-                        <i class="fa fa-check"></i>
-                    </span>
-                    <span>公開</span>
-                </a>
-                <a class="button is-success is-pulled-right">
-                    <span class="icon is-small">
-                        <i class="fa fa-check"></i>
-                    </span>
-                    <span>公開リクエスト</span>
-                </a>
-                <a class="button is-primary is-pulled-right">
-                    <span class="icon is-small">
-                        <i class="fa fa-check"></i>
-                    </span>
-                    <span>下書き保存</span>
-                </a>
+                <div class="help counter">残り<span class="count"></span>文字</strong></div>
+                <input class="input limited" type="text" placeholder="例：〇〇交通" maxlength="64">
             </div>
         </div>
 
-    </section>
+        <div class="control">
+            <div class="control">
+                <label class="label">添乗員</label>
+                <div class="control">
+                    <label class="radio">
+                        <input type="radio" name="plan_type" value="standard" checked="checked"> 有り
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="plan_type" value="request"> 無し
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="control">
+            <label class="label">スタート時間</label>
+            <div class="control">
+                <div class="help counter">残り<span class="count"></span>文字</strong></div>
+                <input class="input limited" type="text" placeholder="例：〇〇交通" maxlength="64">
+            </div>
+        </div>
+
+        <div class="control">
+            <label class="label">所要時間</label>
+            <div class="control">
+                <div class="help counter">残り<span class="count"></span>文字</strong></div>
+                <input class="input limited" type="text" placeholder="例：〇〇交通" maxlength="64">
+            </div>
+        </div>
+
+        <div class="control">
+            <label class="label">予約締切<span class="must">必須</span></label>
+            <div class="control">
+                <div class="help counter">残り<span class="count"></span>文字</strong></div>
+                <input class="input is-danger limited" type="text" placeholder="例：ご旅行出発日前日の０時間前" maxlength="64">
+            </div>
+        </div>
+
+        <div class="control">
+            <label class="label">コース</label>
+            <div class="control sortable">
+                <div class="control has-addons">
+                    <a class="button">
+                      <i class="fa fa-navicon"></i>
+                    </a>
+                    <input class="input is-expanded" type="text" placeholder="例：午前コース">
+                    <a class="button remove" onclick="((this).parentNode.remove())">
+                      <i class="fa fa-close"></i>
+                    </a>
+                </div>
+                <div class="control has-addons">
+                    <a class="button">
+                      <i class="fa fa-navicon"></i>
+                    </a>
+                    <input class="input is-expanded" type="text" placeholder="例：午前コース">
+                    <a class="button remove" onclick="((this).parentNode.remove())">
+                      <i class="fa fa-close"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="control add-btn">
+              <a class="button is-primary">
+                <span class="icon">
+                  <i class="fa fa-plus-circle"></i>
+                </span>
+                <span>コースを追加</span>
+              </a>
+            </div>
+        </div>
+
+        <div class="control save-point">
+            <p class="has-text-centered">
+                <a class="button is-success">
+                    <span class="icon">
+                        <i class="fa fa-save"></i>
+                    </span>
+                    <span>変更を保存</span>
+                </a>
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="input-area message meeting-place">
+    <h2 class="conts-ttl subtitle message-header">
+        集合場所
+        <span class="icon">
+          <i class="fa fa-plus-circle"></i>
+        </span>
+    </h2>
+    <div class="conts-body message-body">
+
+        <div class="control sortable">
+            <div class="control box notification">
+                <button class="delete" onclick="((this).parentNode.remove())"></button>
+                <nav class="level">
+                    <!-- Left side -->
+                    <div class="level-left">
+                      <div class="level-item">
+                        <p class="subtitle is-5">
+                            <a class="button">
+                              <i class="fa fa-navicon"></i>
+                            </a>
+                        </p>
+                      </div>
+                    </div>
+                </nav>
+                <label class="label">集合場所<span class="must">必須</span></label>
+                <div class="control">
+                    <div class="help counter">残り<span class="count"></span>文字</strong></div>
+                    <input class="input is-danger limited" type="text" placeholder="例：JR富山駅 新幹線改札前　9:20集合" maxlength="64">
+                </div>
+
+                <label class="label">座標</label>
+                <span class="help">地図のピンを動かして位置を調整してください。</span>
+                <div id="location-map"></div>
+                <div class="control">
+                    <input class="input" type="text" value="36.141114,137.251362">
+                </div>
+            </div>
+        </div>
+
+        <div class="control add-btn">
+          <a class="button is-primary">
+            <span class="icon">
+              <i class="fa fa-plus-circle"></i>
+            </span>
+            <span>集合場所を追加</span>
+          </a>
+          <span class="help">最大3件まで追加可能</span>
+        </div>
+
+        <div class="control save-point">
+            <p class="has-text-centered">
+                <a class="button is-success">
+                    <span class="icon">
+                        <i class="fa fa-save"></i>
+                    </span>
+                    <span>変更を保存</span>
+                </a>
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="input-area cautions message">
+    <h2 class="conts-ttl subtitle message-header">
+        注意事項・その他
+        <span class="icon">
+          <i class="fa fa-plus-circle"></i>
+        </span>
+    </h2>
+    <div class="conts-body message-body">
+        <label class="label">
+            注意事項
+            <span class="help">最大5件まで追加可能</span>
+        </label>
+        <div class="control sortable">
+            <div class="control has-addons">
+                <a class="button is-white">
+                  <i class="fa fa-navicon"></i>
+                </a>
+                <textarea class="textarea" rows="2" placeholder="例：おとな1名 こども1名でお申込みの場合は、おとな2名での価格として取り扱いさせていただきます。"></textarea>
+                <a class="button is-white" onclick="((this).parentNode.remove())">
+                  <i class="fa fa-close"></i>
+                </a>
+            </div>
+        </div>
+        <div class="control add-btn">
+          <a class="button is-primary">
+            <span class="icon">
+              <i class="fa fa-plus-circle"></i>
+            </span>
+            <span>行を追加</span>
+          </a>
+      </div>
+
+        <label class="label">
+            その他
+            <span class="help">最大5件まで追加可能</span>
+        </label>
+        <div class="control sortable">
+            <div class="control has-addons">
+                <a class="button is-white">
+                  <i class="fa fa-navicon"></i>
+                </a>
+                <textarea class="textarea is-expanded" rows="2" placeholder="例：ます寿し1/8カットサイズの試食ができます。店舗は当日のお任せになります。"></textarea>
+                <a class="button is-white" onclick="((this).parentNode.remove())">
+                  <i class="fa fa-close"></i>
+                </a>
+            </div>
+        </div>
+        <div class="control add-btn">
+          <a class="button is-primary">
+            <span class="icon">
+              <i class="fa fa-plus-circle"></i>
+            </span>
+            <span>行を追加</span>
+          </a>
+        </div>
+
+        <div class="control save-point">
+            <p class="has-text-centered">
+                <a class="button is-success">
+                    <span class="icon">
+                        <i class="fa fa-save"></i>
+                    </span>
+                    <span>変更を保存</span>
+                </a>
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="input-area calendar message">
+    <h2 class="conts-ttl subtitle message-header">
+        カレンダー
+        <span class="icon">
+          <i class="fa fa-plus-circle"></i>
+        </span>
+    </h2>
+    <div class="conts-body message-body">
+
+        <div class="calendar-wrap">
+            <label class="label">
+                催行日<span class="must">必須</span>
+                <span class="help">各日程に在庫設定又は、リクエスト受付可能日を入力してください。<br />コースを設定している場合はコース毎に設定してください。<br />必要に応じてオプションを選択してください。</span>
+            </label>
+            
+            <div class="control">
+                <p class="control has-icon has-icon-right">
+                    <span class="select is-fullwidth">
+                      <select>
+                        <option>午前コース</option>
+                        <option>午後コース</option>
+                        <option>終日コース</option>
+                      </select>
+                    </span>
+                </p>
+            </div>
+            <div class="input-table">
+                <div class="control is-grouped">
+                    <p class="control has-addons">
+                        <a class="button">
+                          <span>今月</span>
+                        </a>
+                    </p>
+                    <p class="control has-addons">
+                        <a class="button">
+                          <span class="icon">
+                            <i class="fa fa-angle-left"></i>
+                          </span>
+                        </a>
+                        <a class="button">
+                          <span>2017年3月</span>
+                        </a>
+                        <a class="button">
+                          <span class="icon">
+                            <i class="fa fa-angle-right"></i>
+                          </span>
+                        </a>
+                    </p>
+                </div>
+                <table class="table is-bordered">
+                    <thead>
+                        <tr>
+                            <th class="sun"><span>日</span></th>
+                            <th class="mon"><span>月</span></th>
+                            <th class="tue"><span>火</span></th>
+                            <th class="wed"><span>水</span></th>
+                            <th class="thu"><span>木</span></th>
+                            <th class="fri"><span>金</span></th>
+                            <th class="sat"><span>土</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="sun">
+            
+                            </td>
+                            <td class="mon">
+            
+                            </td>
+                            <td class="tue">
+                                <span class="day">1</span>
+                                <div class="status">
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>リクエスト</option>
+                                            <option>期間外</option>
+                                            <option>空きなし</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>なし</option>
+                                            <option>オプション1</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                            </td>
+                            <td class="wed">
+                                <span class="day">2</span>
+                                <div class="status">
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>リクエスト</option>
+                                            <option>期間外</option>
+                                            <option>空きなし</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>なし</option>
+                                            <option>オプション1</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                            </td>
+                            <td class="thu">
+                                <span class="day">3</span>
+                                <div class="status">
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>リクエスト</option>
+                                            <option>期間外</option>
+                                            <option>空きなし</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>なし</option>
+                                            <option>オプション1</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                            </td>
+                            <td class="fri">
+                                <span class="day">4</span>
+                                <div class="status">
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>リクエスト</option>
+                                            <option>期間外</option>
+                                            <option>空きなし</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>なし</option>
+                                            <option>オプション1</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                            </td>
+                            <td class="sat">
+                                <span class="day">5</span>
+                                <div class="status">
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>リクエスト</option>
+                                            <option>期間外</option>
+                                            <option>空きなし</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>なし</option>
+                                            <option>オプション1</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="sun">
+                                <span class="day">6</span>
+                                <div class="status">
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>リクエスト</option>
+                                            <option>期間外</option>
+                                            <option>空きなし</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>なし</option>
+                                            <option>オプション1</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                            </td>
+                            <td class="mon">
+                                <span class="day">7</span>
+                                <div class="status">
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>リクエスト</option>
+                                            <option>期間外</option>
+                                            <option>空きなし</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>なし</option>
+                                            <option>オプション1</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                            </td>
+                            <td class="tue">
+                                <span class="day">8</span>
+                                <div class="status">
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>リクエスト</option>
+                                            <option>期間外</option>
+                                            <option>空きなし</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>なし</option>
+                                            <option>オプション1</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                            </td>
+                            <td class="wed">
+                                <span class="day">9</span>
+                                <div class="status">
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>リクエスト</option>
+                                            <option>期間外</option>
+                                            <option>空きなし</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>なし</option>
+                                            <option>オプション1</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                            </td>
+                            <td class="thu">
+                                <span class="day">10</span>
+                                <div class="status">
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>リクエスト</option>
+                                            <option>期間外</option>
+                                            <option>空きなし</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>なし</option>
+                                            <option>オプション1</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                            </td>
+                            <td class="fri">
+                                <span class="day">11</span>
+                                <div class="status">
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>リクエスト</option>
+                                            <option>期間外</option>
+                                            <option>空きなし</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>なし</option>
+                                            <option>オプション1</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                            </td>
+                            <td class="sat">
+                                <span class="day">12</span>
+                                <div class="status">
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>リクエスト</option>
+                                            <option>期間外</option>
+                                            <option>空きなし</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>なし</option>
+                                            <option>オプション1</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="sun">
+                                <span class="day">13</span>
+                                <div class="status">
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>リクエスト</option>
+                                            <option>期間外</option>
+                                            <option>空きなし</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>なし</option>
+                                            <option>オプション1</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                            </td>
+                            <td class="mon">
+                                <span class="day">14</span>
+                                <div class="status">
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>リクエスト</option>
+                                            <option>期間外</option>
+                                            <option>空きなし</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>なし</option>
+                                            <option>オプション1</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                            </td>
+                            <td class="tue">
+                                <span class="day">15</span>
+                                <div class="status">
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>リクエスト</option>
+                                            <option>期間外</option>
+                                            <option>空きなし</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>なし</option>
+                                            <option>オプション1</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                            </td>
+                            <td class="wed">
+                                <span class="day">16</span>
+                                <div class="status">
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>リクエスト</option>
+                                            <option>期間外</option>
+                                            <option>空きなし</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>なし</option>
+                                            <option>オプション1</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                            </td>
+                            <td class="thu">
+                                <span class="day">17</span>
+                                <div class="status">
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>リクエスト</option>
+                                            <option>期間外</option>
+                                            <option>空きなし</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>なし</option>
+                                            <option>オプション1</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                            </td>
+                            <td class="fri">
+                                <span class="day">18</span>
+                                <div class="status">
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>リクエスト</option>
+                                            <option>期間外</option>
+                                            <option>空きなし</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>なし</option>
+                                            <option>オプション1</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                            </td>
+                            <td class="sat">
+                                <span class="day">19</span>
+                                <div class="status">
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>リクエスト</option>
+                                            <option>期間外</option>
+                                            <option>空きなし</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>なし</option>
+                                            <option>オプション1</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="sun">
+                                <span class="day">20</span>
+                                <div class="status">
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>リクエスト</option>
+                                            <option>期間外</option>
+                                            <option>空きなし</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>なし</option>
+                                            <option>オプション1</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                            </td>
+                            <td class="mon">
+                                <span class="day">21</span>
+                                <div class="status">
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>リクエスト</option>
+                                            <option>期間外</option>
+                                            <option>空きなし</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>なし</option>
+                                            <option>オプション1</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                            </td>
+                            <td class="tue">
+                                <span class="day">22</span>
+                                <div class="status">
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>リクエスト</option>
+                                            <option>期間外</option>
+                                            <option>空きなし</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>なし</option>
+                                            <option>オプション1</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                            </td>
+                            <td class="wed">
+                                <span class="day">23</span>
+                                <div class="status">
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>リクエスト</option>
+                                            <option>期間外</option>
+                                            <option>空きなし</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>なし</option>
+                                            <option>オプション1</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                            </td>
+                            <td class="thu">
+                                <span class="day">24</span>
+                                <div class="status">
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>リクエスト</option>
+                                            <option>期間外</option>
+                                            <option>空きなし</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>なし</option>
+                                            <option>オプション1</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                            </td>
+                            <td class="fri">
+                                <span class="day">25</span>
+                                <div class="status">
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>リクエスト</option>
+                                            <option>期間外</option>
+                                            <option>空きなし</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>なし</option>
+                                            <option>オプション1</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                            </td>
+                            <td class="sat">
+                                <span class="day">26</span>
+                                <div class="status">
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>リクエスト</option>
+                                            <option>期間外</option>
+                                            <option>空きなし</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>なし</option>
+                                            <option>オプション1</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="sun">
+                                <span class="day">27</span>
+                                <div class="status">
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>リクエスト</option>
+                                            <option>期間外</option>
+                                            <option>空きなし</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>なし</option>
+                                            <option>オプション1</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                            </td>
+                            <td class="mon">
+                                <span class="day">28</span>
+                                <div class="status">
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>リクエスト</option>
+                                            <option>期間外</option>
+                                            <option>空きなし</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>なし</option>
+                                            <option>オプション1</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                            </td>
+                            <td class="tue">
+                                <span class="day">29</span>
+                                <div class="status">
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>リクエスト</option>
+                                            <option>期間外</option>
+                                            <option>空きなし</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>なし</option>
+                                            <option>オプション1</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                            </td>
+                            <td class="wed">
+                                <span class="day">30</span>
+                                <div class="status">
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>リクエスト</option>
+                                            <option>期間外</option>
+                                            <option>空きなし</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>なし</option>
+                                            <option>オプション1</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                            </td>
+                            <td class="thu">
+                                <span class="day">31</span>
+                                <div class="status">
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>リクエスト</option>
+                                            <option>期間外</option>
+                                            <option>空きなし</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                    <p class="has-icon has-icon-right">
+                                        <span class="select is-fullwidth">
+                                          <select>
+                                            <option>なし</option>
+                                            <option>オプション1</option>
+                                          </select>
+                                          
+                                        </span>
+                                    </p>
+                                </div>
+                                
+                            </td>
+                            <td class="fri">
+            
+                            </td>
+                            <td class="sat">
+            
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            
+                <div class="control is-grouped">
+                    <div class="control has-addons has-icon has-icon-right">
+                        <span class="select">
+                          <select>
+                            <option>リクエスト</option>
+                            <option>期間外</option>
+                            <option>空きなし</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                            <option>13</option>
+                            <option>14</option>
+                            <option>15</option>
+                            <option>16</option>
+                            <option>17</option>
+                            <option>18</option>
+                            <option>19</option>
+                            <option>20</option>
+                            <option>21</option>
+                            <option>22</option>
+                            <option>23</option>
+                            <option>24</option>
+                            <option>25</option>
+                            <option>26</option>
+                            <option>27</option>
+                            <option>28</option>
+                            <option>29</option>
+                            <option>30</option>
+                          </select>
+                          
+                        </span>
+                    </div>
+                    <div class="control has-addons">
+                        <a class="button">
+                          一括入力
+                        </a>
+                    </div>
+                </div>
+            
+                <div class="control is-grouped">
+                    <div class="control has-addons has-icon has-icon-right">
+                        <span class="select">
+                          <select>
+                            <option>なし</option>
+                            <option>オプション1</option>
+                          </select>
+                          
+                        </span>
+                    </div>
+                    <div class="control has-addons">
+                        <a class="button">
+                          一括入力
+                        </a>
+                    </div>
+                </div>
+            
+                <div class="message is-dark notes">
+                    <div class="message-header">
+                        <p>オプション説明</p>
+                        <button class="delete" onclick="((this).parentNode.parentNode.remove())"></button>
+                    </div>
+                    <div class="message-body">
+                        <ul>
+                            <li>オプション1：手仕舞日を切った場合は、リクエストプランに切り替えます。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <hr>
+
+        <div class="control">
+            <label class="label">
+                手仕舞い日（申込締切日）<span class="must">必須</span>
+                <span class="help">当日の場合は0日前と入力してください。</span>
+            </label>
+            <div class="">
+                <p class="control has-addons">
+                  <input class="input is-danger" type="number" min="0" placeholder="例：3">
+                  <span class="button is-disabled">日前</span>
+                  <input class="input js-timepicker" type="text" placeholder="時間">
+                  <span class="button is-disabled">時まで</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="control save-point">
+            <p class="has-text-centered">
+                <a class="button is-success">
+                    <span class="icon">
+                        <i class="fa fa-save"></i>
+                    </span>
+                    <span>変更を保存</span>
+                </a>
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="input-area message plan-point">
+    <h2 class="conts-ttl subtitle message-header">
+        プラン内容
+        <span class="icon">
+          <i class="fa fa-plus-circle"></i>
+        </span>
+    </h2>
+    <div class="conts-body message-body">
+        <div class="control sortable">
+            <div class="control box notification">
+                <button class="delete" onclick="((this).parentNode.remove())"></button>
+                <nav class="level">
+                    <!-- Left side -->
+                    <div class="level-left">
+                      <div class="level-item">
+                        <p class="subtitle is-5">
+                            <a class="button">
+                              <i class="fa fa-navicon"></i>
+                            </a>
+                        </p>
+                      </div>
+                    </div>
+                </nav>
+                <label class="label">画像</label>
+                <span class="help">横幅800px以上の画像を1枚登録してください。横長画像を推奨。</span>
+                <div class="control">
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        <label class="button" for="main_img">画像を選択してください</label>
+                        <input type="file" name="main_img" id="main_img" style="display:none;">
+                    </form>
+                </p>
+                <div class="notification main-image">
+                    <button class="delete" onclick="((this).parentNode.remove())"></button>
+                    <figure class="image">
+                        <img src="http://placehold.jp/800x600.png">
+                    </figure>
+                </div>
+
+                <label class="label">タイトル<span class="must">必須</span></label>
+                <div class="control">
+                    <div class="help counter">残り<span class="count"></span>文字</strong></div>
+                    <input class="input is-danger limited" type="text" placeholder="例：米騒動発祥の地" maxlength="64">
+                </div>
+
+                <label class="label">説明文</label>
+                <div class="control">
+                    <div class="help counter">残り<span class="count">128</span>文字</strong></div>
+                    <textarea class="textarea limited" placeholder="例：蜃気楼の見える道、”しんきろうロード”は、魚津市の海沿い海岸線を南北に走る道路の通称です。" maxlength="128"></textarea>
+                </div>
+
+                <label class="label">外部リンク<br />
+                    <span class="help">外部リンクを掲載する場合のみ入力してください。</span>
+                </label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="例：http://example.com">
+                </div>
+            </div>
+
+        </div>
+        <div class="control add-btn">
+          <a class="button is-primary">
+            <span class="icon">
+              <i class="fa fa-plus-circle"></i>
+            </span>
+            <span>内容を追加</span>
+          </a>
+          <span class="help">最大10件まで追加可能</span>
+        </div>
+
+        <div class="control save-point">
+            <p class="control has-addons has-addons-centered">
+                <a class="button is-success">
+                    <span class="icon">
+                        <i class="fa fa-save"></i>
+                    </span>
+                    <span>変更を保存</span>
+                </a>
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="cancel input-area message">
+    <h2 class="conts-ttl subtitle message-header">
+        取消料
+        <span class="icon">
+          <i class="fa fa-plus-circle"></i>
+        </span>
+    </h2>
+    <div class="conts-body message-body">
+
+        <label class="label">
+            料率
+            <span class="help">最大10件まで追加可能</span>
+        </label>
+        <div class="sortable">
+            <p class="control has-addons">
+                <a class="button">
+                  <i class="fa fa-navicon"></i>
+                </a>
+              <input class="input" type="text" placeholder="例：2日前">
+              <span class="select">
+                <select>
+                  <option>100%</option>
+                  <option>90%</option>
+                  <option>80%</option>
+                  <option>70%</option>
+                  <option>60%</option>
+                  <option>50%</option>
+                  <option>40%</option>
+                  <option>30%</option>
+                  <option>20%</option>
+                  <option>10%</option>
+                  <option>なし</option>
+                </select>
+              </span>
+              <a class="button" onclick="((this).parentNode.remove())">
+                <i class="fa fa-close"></i>
+              </a>
+            </p>
+            <p class="control has-addons">
+                <a class="button">
+                  <i class="fa fa-navicon"></i>
+                </a>
+              <input class="input" type="text" placeholder="例：2日前">
+              <span class="select">
+                <select>
+                  <option>100%</option>
+                  <option>90%</option>
+                  <option>80%</option>
+                  <option>70%</option>
+                  <option>60%</option>
+                  <option>50%</option>
+                  <option>40%</option>
+                  <option>30%</option>
+                  <option>20%</option>
+                  <option>10%</option>
+                  <option>なし</option>
+                </select>
+              </span>
+              <a class="button" onclick="((this).parentNode.remove())">
+                <i class="fa fa-close"></i>
+              </a>
+            </p>
+        </div>
+        <p class="control add-btn">
+          <a class="button is-primary">
+            <span class="icon">
+              <i class="fa fa-plus-circle"></i>
+            </span>
+            <span>料率を追加</span>
+          </a>
+        </p>
+
+        <label class="label">
+            注釈
+            <span class="help">最大10件まで追加可能</span>
+        </label>
+        <div class="control sortable">
+            <p class="control has-addons">
+                <a class="button is-white">
+                  <i class="fa fa-navicon"></i>
+                </a>
+                <textarea class="textarea is-expanded" style="min-height: 60px; min-width: auto;" placeholder="例：オプショナルプランも上記取消料率による取消料が利用日を基準として別途適用されます。ただし、旅行開始後の取消料は100％となります。"></textarea>
+                <a class="button is-white">
+                  <i class="fa fa-close"></i>
+                </a>
+            </p>
+        </div>
+        <p class="control add-btn">
+          <a class="button is-primary">
+            <span class="icon">
+              <i class="fa fa-plus-circle"></i>
+            </span>
+            <span>行を追加</span>
+          </a>
+        </p>
+
+    </div>
+</section>
+
+
+<section class="input-area category message">
+    <h2 class="conts-ttl subtitle message-header">
+        エリア・カテゴリ
+        <span class="icon">
+          <i class="fa fa-plus-circle"></i>
+        </span>
+    </h2>
+    <div class="conts-body message-body">
+        <div class="area">
+            <label class="label">エリア<span class="help">複数選択可能</span></label>
+            <div class="control area-group">
+                <label class="checkbox"><input type="checkbox" name="kurobe-unaduki">黒部・宇奈月</label>
+                <label class="checkbox"><input type="checkbox" name="tateyama">立山</label>
+                <label class="checkbox"><input type="checkbox" name="toyama">富山</label>
+                <label class="checkbox"><input type="checkbox" name="tonami-gokayama">砺波・五箇山</label>
+                <label class="checkbox"><input type="checkbox" name="takaoka-himi">高岡・氷見</label>
+            </div>
+            <div class="control area-detail">
+                <div class="kurobe-unaduki">
+                    <label class="checkbox"><input type="checkbox">魚津市</label>
+                    <label class="checkbox"><input type="checkbox">黒部市</label>
+                    <label class="checkbox"><input type="checkbox">入善町</label>
+                    <label class="checkbox"><input type="checkbox">朝日町</label>
+                </div>
+                <div class="tateyama">
+                    <label class="checkbox"><input type="checkbox">船橋村</label>
+                    <label class="checkbox"><input type="checkbox">上市町</label>
+                    <label class="checkbox"><input type="checkbox">立山町</label>
+                </div>
+                <div class="toyama">
+                    <label class="checkbox"><input type="checkbox">富山市</label>
+                </div>
+                <div class="tonami-gokayama">
+                    <label class="checkbox"><input type="checkbox">氷見市</label>
+                    <label class="checkbox"><input type="checkbox">射水市</label>
+                    <label class="checkbox"><input type="checkbox">高岡市</label>
+                </div>
+                <div class="takaoka-himi">
+                    <label class="checkbox"><input type="checkbox">小矢部市</label>
+                    <label class="checkbox"><input type="checkbox">砺波市</label>
+                    <label class="checkbox"><input type="checkbox">南砺市</label>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="category">
+            <label class="label">カテゴリ<span class="help">複数選択可能</span></label>
+            <div class="control">
+                <label class="checkbox"><input type="checkbox">体験する</label>
+                <label class="checkbox"><input type="checkbox">見る</label>
+                <label class="checkbox"><input type="checkbox">食べる</label>
+                <label class="checkbox"><input type="checkbox">買う</label>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="release message is-info">
+    <h2 class="subtitle message-header">
+        公開設定
+    </h2>
+    <div class="conts-body message-body">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>
+                        <span class="icon is-small"><i class="fa fa-refresh"></i></span>
+                        <span>ステータス</span>
+                    </th>
+                    <td>
+                        下書き
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <span class="icon is-small"><i class="fa fa-calendar"></i></span>
+                        <span>公開日時</span>
+                    </th>
+                    <td>
+                        2016年5月11日 11:30
+                        <a class="button is-small is-primary is-inverted">
+                          <span class="icon is-small">
+                            <i class="fa fa-edit"></i>
+                          </span>
+                          <span>編集</span>
+                        </a>
+                        <p class="control has-addons">
+                            <input class="input js-datepicker" type="text" placeholder="公開日">
+                            <input class="input js-timepicker" type="text" placeholder="時間">
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <span class="icon is-small"><i class="fa fa-link"></i></span>
+                        <span>下書きURL</span>
+                    </th>
+                    <td>
+                        <a href="https://example.com?preview=true" target="_blank">
+                            https://example.com?preview=true
+                            <span class="icon is-small"><i class="fa fa-fw fa-external-link"></i></span>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <span class="icon is-small"><i class="fa fa-link"></i></span>
+                        <span>公開URL</span>
+                    </th>
+                    <td>
+                        <a href="https://example.com" target="_blank">
+                            https://example.com
+                            <span class="icon is-small"><i class="fa fa-fw fa-external-link"></i></span>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="control">
+            <a class="button is-danger is-outlined">
+                <span>このプランを削除</span>
+                <span class="icon is-small">
+                    <i class="fa fa-times"></i>
+                </span>
+            </a>
+            <a class="button is-danger is-pulled-right">
+                <span class="icon is-small">
+                    <i class="fa fa-check"></i>
+                </span>
+                <span>非公開</span>
+            </a>
+            <a class="button is-info is-pulled-right">
+                <span class="icon is-small">
+                    <i class="fa fa-check"></i>
+                </span>
+                <span>公開</span>
+            </a>
+            <a class="button is-success is-pulled-right">
+                <span class="icon is-small">
+                    <i class="fa fa-check"></i>
+                </span>
+                <span>公開リクエスト</span>
+            </a>
+            <a class="button is-primary is-pulled-right">
+                <span class="icon is-small">
+                    <i class="fa fa-check"></i>
+                </span>
+                <span>下書き保存</span>
+            </a>
+        </div>
+    </div>
+
+</section>
+
 
 </div>
 
@@ -1200,40 +3090,149 @@
   }
 </script>
 <script>
-    // 並び替え機能
-    $( function() {
-        $( ".sortable" ).sortable();
-        $( ".sortable" ).disableSelection();
-        // $( ".button.remove" ).click(function() {
-        //     $( this ).parent().remove();
-        // });
-    } );
+/***************************
+並び替え
+****************************/
+$( function() {
+    $( ".sortable" ).sortable();
+    $( ".sortable" ).disableSelection();
+    // $( ".button.remove" ).click(function() {
+    //     $( this ).parent().remove();
+    // });
+} );
 
-    // アコーディオン
-    $(document).ready( function() {
-    	$('.js-accordion').accordion({
-            header: ".conts-ttl",
-            active: 0,
-            heightStyle: "content",
-            icons: {
-                header: "ui-icon-pin-w",
-                activeHeader: "ui-icon-circle-arrow-s"
-            },
-            change: function(event, ui) {
-        		alert(ui.newContent.context.id);
-        	}
-        });
+/***************************
+アコーディオン
+****************************/
+
+var start_section = 8;
+
+
+function menuScroll(index) {
+    var target = $('.js-accordion section:nth-child(' + index + ')');
+    var position = target.offset().top + 45;
+    $('body,html').animate({scrollTop:position}, 400, 'swing');
+}
+$('.menu-product li:not(last-child) a').click(function(){
+    var index = $('.menu-product li').index($(this).parent());
+    $('.js-accordion').accordion({
+        active: index
     });
-</script>
-<script>
-    $(function() {
-        $('.js-datepicker').datepicker();
-        $('.js-timepicker').timepicker({
-            'timeFormat': 'H:i',
-            'scrollDefault': 'now',
-            'step': 15
-        });
+
+});
+var cnt = 0;
+$('.menu-product li:last-child a').click(function(){
+    $('.js-accordion').accordion({
+        active : false,
+        collapsible : true
     });
+    if(cnt == 0) {
+        cnt++;
+        $(this).click();
+    }
+});
+
+$(document).ready( function() {
+    $('.js-accordion').accordion({
+        header: ".conts-ttl",
+        active: start_section,
+        heightStyle: "content",
+        collapsible: true,
+        icons: {
+            header: "ui-icon-pin-w",
+            activeHeader: "ui-icon-circle-arrow-s"
+        },
+        beforeActivate: function(event, ui) {
+            //アコーディオンクローズ
+            if(ui.oldHeader[0]) {
+                var objOldHeader = $('#' + ui.oldHeader[0].id);
+                objOldHeader.find('i').removeClass('fa-minus-circle');
+                objOldHeader.find('i').addClass('fa-plus-circle');
+                var oldIndex = $('.js-accordion section').index(objOldHeader.parents('section'));
+                $('.menu-product li:nth-child(' + (oldIndex + 1) + ') a').removeClass('is-active');
+            } else {
+                $('.menu-product li:last-child a').removeClass('is-active');
+            }
+
+            //アコーディオンオープン
+            if(ui.newHeader[0]) {
+                var objNewHeader = $('#' + ui.newHeader[0].id);
+                objNewHeader.find('i').removeClass('fa-plus-circle');
+                objNewHeader.find('i').addClass('fa-minus-circle');
+                var newIndex = $('.js-accordion section').index(objNewHeader.parents('section'));
+                $('.menu-product li:nth-child(' + (newIndex + 1) + ') a').addClass('is-active');
+            } else {
+                $('.menu-product li:last-child a').addClass('is-active');
+            }
+            if(oldIndex !== undefined && newIndex !== undefined) {
+                if(oldIndex < newIndex) {
+                    menuScroll(oldIndex + 1);
+                } else {
+                    menuScroll(newIndex);
+                }
+            }
+        },
+        activate: function(event, ui) {
+            initMap();
+        }
+    });
+    //$('.menu-product li:nth-child(' + start_section + ') a').addClass('is-active');
+});
+$(window).load(function(){
+    $('form').animate({opacity: 1}, 300);
+    if(start_section > 0) {
+        menuScroll(start_section + 1);
+    }
+    $('.menu-product li:nth-child(' + (start_section + 1) + ') a').addClass('is-active');
+});
+
+/***************************
+datepicker
+****************************/
+$(function() {
+    $('.js-datepicker').datepicker();
+    $('.js-timepicker').timepicker({
+        'timeFormat': 'H:i',
+        'scrollDefault': 'now',
+        'step': 15
+    });
+});
+
+/***************************
+エリア選択
+****************************/
+$('.kurobe-unaduki').hide();
+$('.tateyama').hide();
+$('.toyama').hide();
+$('.tonami-gokayama').hide();
+$('.takaoka-himi').hide();
+$('.area-group').click(function() {
+    if ($('[name=kurobe-unaduki]').prop('checked')) {
+        $('.kurobe-unaduki').fadeIn();
+    } else {
+        $('.kurobe-unaduki').fadeOut();
+    }
+    if ($('[name=tateyama]').prop('checked')) {
+        $('.tateyama').fadeIn();
+    } else {
+        $('.tateyama').fadeOut();
+    }
+    if ($('[name=toyama]').prop('checked')) {
+        $('.toyama').fadeIn();
+    } else {
+        $('.toyama').fadeOut();
+    }
+    if ($('[name=tonami-gokayama]').prop('checked')) {
+        $('.tonami-gokayama').fadeIn();
+    } else {
+        $('.tonami-gokayama').fadeOut();
+    }
+    if ($('[name=takaoka-himi]').prop('checked')) {
+        $('.takaoka-himi').fadeIn();
+    } else {
+        $('.takaoka-himi').fadeOut();
+    }
+});
 </script>
 
 

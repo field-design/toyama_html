@@ -38,8 +38,16 @@
     <nav class="nav has-shadow" id="top">
       <div class="container">
         <div class="nav-left">
-          <a class="nav-item" href="../index.html">
+          <span class="nav-item">
             <h1 class="title is-5">いまからえらべるTRAVEL</h1>
+            </span>
+          <a class="nav-item is-tab is-hidden-mobile" href="/" target="_blank">
+              <i class="fa fa-fw fa-external-link"></i>
+              サイトを表示
+          </a>
+          <a class="nav-item is-tab is-hidden-mobile" href="/admin">
+              <i class="fa fa-fw fa-home"></i>
+              HOME
           </a>
         </div>
         <span class="nav-toggle">
@@ -94,7 +102,6 @@
         <div class="notification">
             <ul class="is-clearfix">
               <li><a href="/"><span class="icon is-small"><i class="fa fa-home" aria-hidden="true"></i></span></a></li>
-              <li><a href="/order"><span>受注管理</span></a></li>
               <li><span>受注一覧</span></li>
             </ul>
         </div>
@@ -110,12 +117,13 @@
     <p class="menu-label">商品編集</p>
     <ul>
       <li><a class="is-active" href="/product/post">基本情報</a></li>
-      <li><a href="/product/post">料金</a></li>
-      <li><a href="/product/post">予約カレンダー</a></li>
-      <li><a href="/product/post">コースの内容</a></li>
-      <li><a href="/product/post">プラン情報</a></li>
+      <li><a href="/product/post">代金</a></li>
+      <li><a href="/product/post">プラン詳細</a></li>
       <li><a href="/product/post">集合場所</a></li>
       <li><a href="/product/post">注意事項・その他</a></li>
+      <li><a href="/product/post">予約カレンダー</a></li>
+      <li><a href="/product/post">プラン内容</a></li>
+      <li><a href="/product/post">取消料</a></li>
       <li><a href="/product/post">エリア・カテゴリ</a></li>
       <li><a href="/product/post">公開設定</a></li>
     </ul>
@@ -168,10 +176,10 @@
 
     <h2 class="title is-3">受注一覧</h2>
 
-    <!-- <div class="filter section">
+    <div class="filter section">
         <table class="table is-narrow">
             <tr>
-                <th>注文番号</th>
+                <th>申込番号</th>
                 <td>
                     <p class="control">
                       <input class="input" type="text" placeholder="">
@@ -185,6 +193,7 @@
                       <span class="select">
                         <select>
                           <option>承認待ち</option>
+                          <option>非承認</option>
                           <option>入金待ち</option>
                           <option>キャンセル</option>
                           <option>入金済み</option>
@@ -276,15 +285,7 @@
                 </td>
             </tr>
             <tr>
-                <th>購入金額</th>
-                <td>
-                    <p class="control">
-                      <input class="input" type="text" placeholder="">
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <th>購入商品名</th>
+                <th>商品名</th>
                 <td>
                     <p class="control">
                       <input class="input" type="text" placeholder="">
@@ -297,14 +298,14 @@
             この条件で絞り込む
           </button>
         </div>
-    </div> -->
+    </div>
 
     <table class="order-list table">
       <thead>
         <tr>
           <th class="order-image"></th>
           <th class="order-date">受注日</th>
-          <th class="order-number">注文番号</th>
+          <th class="order-number">申込番号</th>
           <th class="order-name">お名前</th>
           <th class="order-payment">支払方法</th>
           <th class="order-amount">合計金額</th>
@@ -320,7 +321,7 @@
               </p>
           </td>
           <td class="order-date">2017/03/01<br />15:00</td>
-          <td class="order-number">000023</td>
+          <td class="order-number">order000023</td>
           <td class="order-name">山田 太朗</td>
           <td class="order-payment">クレジットカード</td>
           <td class="order-amount">128,000</td>
@@ -334,7 +335,7 @@
                 </p>
             </td>
           <td class="order-date">2017/03/01<br />14:00</td>
-          <td class="order-number">000021</td>
+          <td class="order-number">order000021</td>
           <td class="order-name">山田 太朗</td>
           <td class="order-payment">コンビニ</td>
           <td class="order-amount">6,000</td>
@@ -348,7 +349,7 @@
                 </p>
             </td>
           <td class="order-date">2017/03/01<br />14:00</td>
-          <td class="order-number">000020</td>
+          <td class="order-number">order000020</td>
           <td class="order-name">山田 太朗</td>
           <td class="order-payment">コンビニ</td>
           <td class="order-amount">6,000</td>
@@ -362,7 +363,7 @@
                 </p>
             </td>
           <td class="order-date">2017/03/01<br />14:00</td>
-          <td class="order-number">000019</td>
+          <td class="order-number">order000019</td>
           <td class="order-name">山田 太朗</td>
           <td class="order-payment">コンビニ</td>
           <td class="order-amount">6,000</td>
@@ -376,7 +377,7 @@
                 </p>
             </td>
           <td class="order-date">2017/03/01<br />14:00</td>
-          <td class="order-number">000018</td>
+          <td class="order-number">order000018</td>
           <td class="order-name">山田 太朗</td>
           <td class="order-payment">コンビニ</td>
           <td class="order-amount">6,000</td>

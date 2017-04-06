@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* =====================
   common styles
 ===================== */
@@ -38,6 +39,16 @@
       content: "/";
       color: #999; }
 
+.products .is-danger {
+  color: #ff3860; }
+  .products .is-danger:hover {
+    opacity: .8; }
+
+.products .is-light {
+  color: #363636; }
+  .products .is-light:hover {
+    opacity: .8; }
+
 .input-table table th,
 .input-table table td {
   position: relative;
@@ -50,7 +61,7 @@
       width: 100%;
       text-align: center; }
 
-.input-table table td span {
+.input-table table td .day {
   position: absolute;
   top: .25em;
   left: 0;
@@ -62,10 +73,38 @@
 .input-table table .sat {
   color: #4285f4; }
 
+@media screen and (max-width: 767px) {
+  .input-table table thead {
+    display: none; }
+  .input-table table tbody tr td {
+    display: block; }
+    .input-table table tbody tr td:nth-child(1) .day:after {
+      content: "（日）"; }
+    .input-table table tbody tr td:nth-child(2) .day:after {
+      content: "（月）"; }
+    .input-table table tbody tr td:nth-child(3) .day:after {
+      content: "（火）"; }
+    .input-table table tbody tr td:nth-child(4) .day:after {
+      content: "（水）"; }
+    .input-table table tbody tr td:nth-child(5) .day:after {
+      content: "（木）"; }
+    .input-table table tbody tr td:nth-child(6) .day:after {
+      content: "（金）"; }
+    .input-table table tbody tr td:nth-child(7) .day:after {
+      content: "（土）"; } }
+
+.input-table .notes ul {
+  list-style: disc outside;
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-top: 1em; }
+
 .input-area {
   margin-bottom: 45px; }
   .input-area .conts-ttl {
     margin-bottom: 0; }
+  .input-area .is-bold {
+    font-weight: bold; }
 
 .add-btn {
   text-align: right; }
@@ -84,7 +123,9 @@
 .message-body a {
   text-decoration: none; }
 
-.plan-detail .conts-body .notification {
+.price .conts-body .notification,
+.plan-point .conts-body .notification,
+.meeting-place .conts-body .notification {
   background: white; }
 
 .release .message-header {
@@ -151,6 +192,16 @@ body.login footer {
 
 .admin-list .admin-edit {
   text-align: center; }
+
+select.is-danger {
+  border-color: #ff3860; }
+
+.must {
+  padding-left: .5em;
+  color: #ff3860;
+  font-size: 12px; }
+  .must:before {
+    content: "※"; }
 
 /* =====================
   filter styles

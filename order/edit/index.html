@@ -38,8 +38,16 @@
     <nav class="nav has-shadow" id="top">
       <div class="container">
         <div class="nav-left">
-          <a class="nav-item" href="../index.html">
+          <span class="nav-item">
             <h1 class="title is-5">いまからえらべるTRAVEL</h1>
+            </span>
+          <a class="nav-item is-tab is-hidden-mobile" href="/" target="_blank">
+              <i class="fa fa-fw fa-external-link"></i>
+              サイトを表示
+          </a>
+          <a class="nav-item is-tab is-hidden-mobile" href="/admin">
+              <i class="fa fa-fw fa-home"></i>
+              HOME
           </a>
         </div>
         <span class="nav-toggle">
@@ -94,7 +102,7 @@
         <div class="notification">
             <ul class="is-clearfix">
               <li><a href="/"><span class="icon is-small"><i class="fa fa-home" aria-hidden="true"></i></span></a></li>
-              <li><a href="/order"><span>受注管理</span></a></li>
+              <li><a href="/order"><span>受注一覧</span></a></li>
               <li><span>詳細情報</span></li>
             </ul>
         </div>
@@ -110,12 +118,13 @@
     <p class="menu-label">商品編集</p>
     <ul>
       <li><a class="is-active" href="/product/post">基本情報</a></li>
-      <li><a href="/product/post">料金</a></li>
-      <li><a href="/product/post">予約カレンダー</a></li>
-      <li><a href="/product/post">コースの内容</a></li>
-      <li><a href="/product/post">プラン情報</a></li>
+      <li><a href="/product/post">代金</a></li>
+      <li><a href="/product/post">プラン詳細</a></li>
       <li><a href="/product/post">集合場所</a></li>
       <li><a href="/product/post">注意事項・その他</a></li>
+      <li><a href="/product/post">予約カレンダー</a></li>
+      <li><a href="/product/post">プラン内容</a></li>
+      <li><a href="/product/post">取消料</a></li>
       <li><a href="/product/post">エリア・カテゴリ</a></li>
       <li><a href="/product/post">公開設定</a></li>
     </ul>
@@ -169,38 +178,13 @@
     <h2 class="title is-3">詳細情報</h2>
 
     <section>
-        <h3 class="title is-5">決済情報</h3>
-        <hr>
-        <table class="order-edit table is-bordered">
-          <tbody>
-            <tr>
-                <th>決済種別</th>
-                <td>クレジットカード決済</td>
-            </tr>
-            <tr>
-                <th>与信承認番号</th>
-                <td>0010485</td>
-            </tr>
-            <tr>
-                <th>支払方法</th>
-                <td>一括払い</td>
-            </tr>
-            <tr>
-                <th>決済金額</th>
-                <td>18,000円</td>
-            </tr>
-          </tbody>
-        </table>
-    </section>
-
-    <section>
         <h3 class="title is-5">受注ステータス</h3>
         <hr>
         <table class="order-edit table is-bordered">
           <tbody>
             <tr>
-                <th>受注番号</th>
-                <td>000238</td>
+                <th>予約番号</th>
+                <td>order000238</td>
             </tr>
             <tr>
                 <th>受注日</th>
@@ -215,6 +199,12 @@
                         <i class="fa fa-check"></i>
                       </span>
                       <span>承認する</span>
+                    </a>
+                    <a class="button is-danger is-outlined is-small">
+                      <span class="icon is-small">
+                        <i class="fa fa-check"></i>
+                      </span>
+                      <span>承認しない</span>
                     </a>
                 </td>
             </tr>
@@ -231,10 +221,10 @@
         <hr>
         <table class="order-edit table is-bordered">
           <tbody>
-            <tr>
+            <!-- <tr>
                 <th>会員ID</th>
                 <td>000123（非会員）</td>
-            </tr>
+            </tr> -->
             <tr>
                 <th>お名前</th>
                 <td>山田 太朗</td>
@@ -281,10 +271,22 @@
     <section>
         <h3 class="title is-5">受注詳細</h3>
         <hr>
+        <table class="order-edit table is-bordered">
+          <tbody>
+            <tr>
+                <th>商品名</th>
+                <td>〇〇プラン<br /><small>〇〇コース</small></td>
+            </tr>
+            <tr>
+                <th>予約日</th>
+                <td>2017/04/30</td>
+            </tr>
+          </tbody>
+        </table>
         <table class="order-list table">
           <thead>
             <tr>
-              <th class="order-product-name">商品名</th>
+              <th class="order-product-name">区分</th>
               <th class="order-amount">単価</th>
               <th class="order-number">数量</th>
               <th class="order-edit">小計</th>
@@ -298,22 +300,45 @@
         </tfoot>
           <tbody>
             <tr>
-              <td class="order-product-name">商品名A商品名A商品名A<br /><small>規格規格規格</small></td>
+              <td class="order-product-name">おとな</td>
               <td class="order-amount">128,000円</td>
               <td class="order-number">1</td>
               <td class="order-amount">128,000円</td>
             </tr>
             <tr>
-              <td class="order-product-name">商品名B商品名B商品名<br /><small>規格規格規格</small></td>
+              <td class="order-product-name">こども(小学生)</td>
               <td class="order-amount">6,000円</td>
               <td class="order-number">2</td>
               <td class="order-amount">12,000円</td>
             </tr>
+          </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h3 class="title is-5">決済情報</h3>
+        <hr>
+        <table class="order-edit table is-bordered">
+          <tbody>
             <tr>
-              <td class="order-product-name">商品名C商品名C商品名<br /><small>規格規格規格</small></td>
-              <td class="order-amount">6,000円</td>
-              <td class="order-number">1</td>
-              <td class="order-amount">6,000円</td>
+                <th>決済種別</th>
+                <td>クレジットカード決済</td>
+            </tr>
+            <tr>
+                <th>与信承認番号</th>
+                <td>0010485</td>
+            </tr>
+            <tr>
+                <th>支払方法</th>
+                <td>一括払い</td>
+            </tr>
+            <tr>
+                <th>コンビニ名</th>
+                <td>ローソン</td>
+            </tr>
+            <tr>
+                <th>決済金額</th>
+                <td>18,000円</td>
             </tr>
           </tbody>
         </table>
