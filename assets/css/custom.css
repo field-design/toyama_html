@@ -275,6 +275,26 @@ select.is-danger {
   float: right; }
 
 /* =====================
+  custom select
+===================== */
+.multi-wrapper .item {
+  color: #333; }
+
+.multi-wrapper .non-selected-wrapper,
+.multi-wrapper .selected-wrapper {
+  height: 500px !important; }
+
+.multi-wrapper .selected-wrapper .item.selected {
+  position: relative;
+  padding-left: 1.25em; }
+  .multi-wrapper .selected-wrapper .item.selected:before {
+    position: absolute;
+    top: .4em;
+    left: 0;
+    content: "\f0c9";
+    font-family: FontAwesome; }
+
+/* =====================
   errors
 ===================== */
 .error {
