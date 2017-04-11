@@ -149,6 +149,18 @@ body.login footer {
   background-color: transparent; }
 
 /* =====================
+  product list styles
+===================== */
+.product-list th {
+  text-align: center; }
+
+.product-list td {
+  vertical-align: middle; }
+
+.product-list .product-edit {
+  text-align: center; }
+
+/* =====================
   order styles
 ===================== */
 .order-list th {
