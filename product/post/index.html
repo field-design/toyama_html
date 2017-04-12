@@ -121,8 +121,9 @@
       <li><a href="/product/post">プラン詳細</a></li>
       <li><a href="/product/post">集合場所</a></li>
       <li><a href="/product/post">注意事項・その他</a></li>
-      <li><a href="/product/post">プラン内容</a></li>
       <li><a href="/product/post">取消料</a></li>
+      <li><a href="/product/post">お申し込み</a></li>
+      <li><a href="/product/post">プラン内容</a></li>
       <li><a href="/product/post">エリア・カテゴリ</a></li>
       <li><a href="/product/post">公開設定</a></li>
     </ul>
@@ -444,7 +445,7 @@
         </div>
 
         <div class="control">
-            <label class="label">注釈</label>
+            <span class="must">必須</span>
             <div class="control">
                 <div class="help counter">残り<span class="count">128</span>文字</strong></div>
                 <textarea class="textarea limited" placeholder="例：上記期間の火曜、木曜" maxlength="128"></textarea>
@@ -549,7 +550,7 @@
             <label class="label">スタート時間</label>
             <div class="control">
                 <div class="help counter">残り<span class="count"></span>文字</strong></div>
-                <input class="input limited" type="text" placeholder="例：〇〇交通" maxlength="64">
+                <input class="input limited" type="text" placeholder="例：10：00スタート" maxlength="64">
             </div>
         </div>
 
@@ -557,7 +558,7 @@
             <label class="label">所要時間</label>
             <div class="control">
                 <div class="help counter">残り<span class="count"></span>文字</strong></div>
-                <input class="input limited" type="text" placeholder="例：〇〇交通" maxlength="64">
+                <input class="input limited" type="text" placeholder="例：約3時間" maxlength="64">
             </div>
         </div>
 
@@ -566,38 +567,6 @@
             <div class="control">
                 <div class="help counter">残り<span class="count"></span>文字</strong></div>
                 <input class="input is-danger limited" type="text" placeholder="例：ご旅行出発日前日の０時間前" maxlength="64">
-            </div>
-        </div>
-
-        <div class="control">
-            <label class="label">コース</label>
-            <div class="control sortable">
-                <div class="control has-addons">
-                    <a class="button">
-                      <i class="fa fa-navicon"></i>
-                    </a>
-                    <input class="input is-expanded" type="text" placeholder="例：午前コース">
-                    <a class="button remove" onclick="((this).parentNode.remove())">
-                      <i class="fa fa-close"></i>
-                    </a>
-                </div>
-                <div class="control has-addons">
-                    <a class="button">
-                      <i class="fa fa-navicon"></i>
-                    </a>
-                    <input class="input is-expanded" type="text" placeholder="例：午前コース">
-                    <a class="button remove" onclick="((this).parentNode.remove())">
-                      <i class="fa fa-close"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="control add-btn">
-              <a class="button is-primary">
-                <span class="icon">
-                  <i class="fa fa-plus-circle"></i>
-                </span>
-                <span>コースを追加</span>
-              </a>
             </div>
         </div>
 
@@ -748,89 +717,6 @@
 </section>
 
 
-<section class="input-area message plan-point">
-    <h2 class="conts-ttl subtitle message-header">
-        プラン内容
-        <span class="icon">
-          <i class="fa fa-plus-circle"></i>
-        </span>
-    </h2>
-    <div class="conts-body message-body">
-        <div class="control sortable">
-            <div class="control box notification">
-                <button class="delete" onclick="((this).parentNode.remove())"></button>
-                <nav class="level">
-                    <!-- Left side -->
-                    <div class="level-left">
-                      <div class="level-item">
-                        <p class="subtitle is-5">
-                            <a class="button">
-                              <i class="fa fa-navicon"></i>
-                            </a>
-                        </p>
-                      </div>
-                    </div>
-                </nav>
-                <label class="label">画像</label>
-                <span class="help">横幅800px以上の画像を1枚登録してください。横長画像を推奨。</span>
-                <div class="control">
-                    <form action="" method="POST" enctype="multipart/form-data">
-                        <label class="button" for="main_img">画像を選択してください</label>
-                        <input type="file" name="main_img" id="main_img" style="display:none;">
-                    </form>
-                </p>
-                <div class="notification main-image">
-                    <button class="delete" onclick="((this).parentNode.remove())"></button>
-                    <figure class="image">
-                        <img src="http://placehold.jp/800x600.png">
-                    </figure>
-                </div>
-
-                <label class="label">タイトル<span class="must">必須</span></label>
-                <div class="control">
-                    <div class="help counter">残り<span class="count"></span>文字</strong></div>
-                    <input class="input is-danger limited" type="text" placeholder="例：米騒動発祥の地" maxlength="64">
-                </div>
-
-                <label class="label">説明文</label>
-                <div class="control">
-                    <div class="help counter">残り<span class="count">128</span>文字</strong></div>
-                    <textarea class="textarea limited" placeholder="例：蜃気楼の見える道、”しんきろうロード”は、魚津市の海沿い海岸線を南北に走る道路の通称です。" maxlength="128"></textarea>
-                </div>
-
-                <label class="label">外部リンク<br />
-                    <span class="help">外部リンクを掲載する場合のみ入力してください。</span>
-                </label>
-                <div class="control">
-                    <input class="input" type="text" placeholder="例：http://example.com">
-                </div>
-            </div>
-
-        </div>
-        <div class="control add-btn">
-          <a class="button is-primary">
-            <span class="icon">
-              <i class="fa fa-plus-circle"></i>
-            </span>
-            <span>内容を追加</span>
-          </a>
-          <span class="help">最大10件まで追加可能</span>
-        </div>
-
-        <div class="control save-point">
-            <p class="control has-addons has-addons-centered">
-                <a class="button is-success">
-                    <span class="icon">
-                        <i class="fa fa-save"></i>
-                    </span>
-                    <span>変更を保存</span>
-                </a>
-            </p>
-        </div>
-    </div>
-</section>
-
-
 <section class="cancel input-area message">
     <h2 class="conts-ttl subtitle message-header">
         取消料
@@ -927,6 +813,147 @@
           </a>
         </p>
 
+    </div>
+</section>
+
+
+<section class="input-area message plan-course">
+    <h2 class="conts-ttl subtitle message-header">
+        お申し込み
+        <span class="icon">
+          <i class="fa fa-minus-circle"></i>
+        </span>
+    </h2>
+    <div class="conts-body message-body">
+
+        <div class="control">
+            <label class="label">コース</label>
+            <div class="control sortable">
+                <div class="control has-addons">
+                    <a class="button">
+                      <i class="fa fa-navicon"></i>
+                    </a>
+                    <input class="input is-expanded" type="text" placeholder="例：午前コース">
+                    <a class="button" href="/product/calendar/setting.html" disabled>予約カレンダー</a>
+                    <a class="button remove" onclick="((this).parentNode.remove())">
+                      <i class="fa fa-close"></i>
+                    </a>
+                </div>
+
+                <div class="control has-addons">
+                    <a class="button">
+                      <i class="fa fa-navicon"></i>
+                    </a>
+                    <input class="input is-expanded" type="text" placeholder="例：午前コース">
+                    <a class="button" href="/product/calendar/setting.html">予約カレンダー</a>
+                    <a class="button remove" onclick="((this).parentNode.remove())">
+                      <i class="fa fa-close"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="control add-btn">
+              <a class="button is-primary">
+                <span class="icon">
+                  <i class="fa fa-plus-circle"></i>
+                </span>
+                <span>コースを追加</span>
+              </a>
+            </div>
+        </div>
+
+        <div class="control save-point">
+            <p class="has-text-centered">
+                <a class="button is-success">
+                    <span class="icon">
+                        <i class="fa fa-save"></i>
+                    </span>
+                    <span>変更を保存</span>
+                </a>
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="input-area message plan-point">
+    <h2 class="conts-ttl subtitle message-header">
+        プラン内容
+        <span class="icon">
+          <i class="fa fa-plus-circle"></i>
+        </span>
+    </h2>
+    <div class="conts-body message-body">
+        <div class="control sortable">
+            <div class="control box notification">
+                <button class="delete" onclick="((this).parentNode.remove())"></button>
+                <nav class="level">
+                    <!-- Left side -->
+                    <div class="level-left">
+                      <div class="level-item">
+                        <p class="subtitle is-5">
+                            <a class="button">
+                              <i class="fa fa-navicon"></i>
+                            </a>
+                        </p>
+                      </div>
+                    </div>
+                </nav>
+                <label class="label">画像</label>
+                <span class="help">横幅800px以上の画像を1枚登録してください。横長画像を推奨。</span>
+                <div class="control">
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        <label class="button" for="main_img">画像を選択してください</label>
+                        <input type="file" name="main_img" id="main_img" style="display:none;">
+                    </form>
+                </p>
+                <div class="notification main-image">
+                    <button class="delete" onclick="((this).parentNode.remove())"></button>
+                    <figure class="image">
+                        <img src="http://placehold.jp/800x600.png">
+                    </figure>
+                </div>
+
+                <label class="label">タイトル<span class="must">必須</span></label>
+                <div class="control">
+                    <div class="help counter">残り<span class="count"></span>文字</strong></div>
+                    <input class="input is-danger limited" type="text" placeholder="例：米騒動発祥の地" maxlength="64">
+                </div>
+
+                <label class="label">説明文</label>
+                <div class="control">
+                    <div class="help counter">残り<span class="count">128</span>文字</strong></div>
+                    <textarea class="textarea limited" placeholder="例：蜃気楼の見える道、”しんきろうロード”は、魚津市の海沿い海岸線を南北に走る道路の通称です。" maxlength="128"></textarea>
+                </div>
+
+                <label class="label">外部リンク<br />
+                    <span class="help">外部リンクを掲載する場合のみ入力してください。</span>
+                </label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="例：http://example.com">
+                </div>
+            </div>
+
+        </div>
+        <div class="control add-btn">
+          <a class="button is-primary">
+            <span class="icon">
+              <i class="fa fa-plus-circle"></i>
+            </span>
+            <span>内容を追加</span>
+          </a>
+          <span class="help">最大10件まで追加可能</span>
+        </div>
+
+        <div class="control save-point">
+            <p class="control has-addons has-addons-centered">
+                <a class="button is-success">
+                    <span class="icon">
+                        <i class="fa fa-save"></i>
+                    </span>
+                    <span>変更を保存</span>
+                </a>
+            </p>
+        </div>
     </div>
 </section>
 
@@ -1130,7 +1157,10 @@
         <a href="https://twitter.com/jgthms" class="twitter-follow-button" data-show-count="true" data-lang="en">@jgthms</a>
         <a href="https://twitter.com/share" class="twitter-share-button" data-text="Bulma: a modern CSS framework based on Flexbox" data-url="http://bulma.io" data-count="horizontal" data-via="jgthms" data-related="jgthms:Creator of Bulma">Tweet</a>
       </div> -->
-      <p class="copyright">© <script type="text/javascript">myDate = new Date() ;myYear = myDate.getFullYear ();document.write(myYear);</script> 株式会社 観光販売システムズ</p>
+      <p class="copyright">
+          © <script type="text/javascript">myDate = new Date() ;myYear = myDate.getFullYear ();document.write(myYear);</script> 株式会社 観光販売システムズ<br />
+          操作方法についてのお問い合わせ先：026-224-3501
+      </p>
     </div>
   </div>
 </footer>
