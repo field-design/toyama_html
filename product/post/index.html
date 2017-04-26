@@ -117,7 +117,6 @@
     <p class="menu-label">商品編集</p>
     <ul>
       <li><a class="is-active" href="/product/post">基本情報</a></li>
-      <li><a href="/product/post">代金</a></li>
       <li><a href="/product/post">プラン詳細</a></li>
       <li><a href="/product/post">集合場所</a></li>
       <li><a href="/product/post">注意事項・その他</a></li>
@@ -140,7 +139,8 @@
   </p>
   <ul class="menu-list">
     <li><a href="/product">商品一覧</a></li>
-    <li><a href="/product/post">新規追加</a></li>
+    <li><a href="/product/post">商品追加</a></li>
+    <li><a href="/product/price">代金</a></li>
     <li><a href="/product/calendar">予約カレンダー</a></li>
   </ul>
   <p class="menu-label">
@@ -196,7 +196,7 @@
         <div class="control">
             <label class="label">サブタイトル</label>
             <div class="control">
-                <div class="help counter">残り<span class="count"></span>文字</strong></div>
+                <div class="help counter">残り<span class="count">64</span>文字</strong></div>
                 <input class="input limited" type="text" placeholder="例：蜃気楼ガイドと行く！" maxlength="64">
             </div>
         </div>
@@ -204,7 +204,7 @@
         <div class="control">
             <label class="label">タイトル<span class="must">必須</span></label>
             <div class="control">
-                <div class="help counter">残り<span class="count"></span>文字</strong></div>
+                <div class="help counter">残り<span class="count">32</span>文字</strong></div>
                 <input class="input is-danger is-bold limited" type="text" placeholder="例：しんきろうロードサイクリングプラン" maxlength="32">
             </div>
         </div>
@@ -212,7 +212,7 @@
         <div class="control">
             <label class="label">説明文<span class="must">必須</span></label>
             <div class="control">
-                <div class="help counter">残り<span class="count"></span>文字</strong></div>
+                <div class="help counter">残り<span class="count">64</span>文字</strong></div>
                 <textarea class="textarea is-danger limited" placeholder="例：蜃気楼が見える街として有名な「魚津市」でのレンタサイクルプラン" maxlength="64"></textarea>
             </div>
         </div>
@@ -251,165 +251,6 @@
                     <span>変更を保存</span>
                 </a>
             </p>
-        </div>
-    </div>
-</section>
-
-
-<section class="input-area price message">
-    <h2 class="conts-ttl subtitle message-header">
-        代金
-        <span class="icon">
-          <i class="fa fa-plus-circle"></i>
-        </span>
-    </h2>
-    <div class="conts-body message-body">
-
-        <label class="label">代金タイトル<span class="must">必須</span></label>
-        <div class="control">
-            <div class="help counter">残り<span class="count"></span>文字</strong></div>
-            <input class="input is-danger limited" type="text" placeholder="例：おひとりさま" maxlength="16">
-        </div>
-
-        <div class="notification">
-            <button class="delete" onclick="((this).parentNode.remove())"></button>
-            <div class="columns">
-                <div class="column">
-                    <label class="label">区分<span class="must">必須</span></label>
-                    <p class="control has-icon has-icon-right">
-                        <span class="select is-fullwidth">
-                          <select>
-                            <option>おとな・こども同額</option>
-                            <option>おとな</option>
-                            <option>こども</option>
-                            <option>大学生</option>
-                            <option>高校生</option>
-                            <option>中学生</option>
-                            <option>小学生</option>
-                            <option>幼児</option>
-                            <option>その他</option>
-                          </select>
-                        </span>
-                    </p>
-                </div>
-                <div class="column">
-                    <label class="label">代金<span class="must">必須</span></label>
-                    <p class="control has-icon has-icon-right">
-                        <input class="input is-danger" type="text" placeholder="例：2000">
-                        <span class="icon is-small">
-                          円
-                        </span>
-                    </p>
-                </div>
-            </div>
-            <div>
-                <label class="label">条件
-                    <span class="help">最大5件まで追加可能</span>
-                </label>
-                <div class="control sortable">
-                    <div class="control has-addons">
-                        <a class="button">
-                          <i class="fa fa-navicon"></i>
-                        </a>
-                        <input class="input is-expanded" type="text" placeholder="例：6歳以上">
-                        <a class="button remove" onclick="((this).parentNode.remove())">
-                          <i class="fa fa-close"></i>
-                        </a>
-                    </div>
-                    <div class="control has-addons">
-                        <a class="button">
-                          <i class="fa fa-navicon"></i>
-                        </a>
-                        <input class="input is-expanded" type="text" placeholder="例：6歳以上">
-                        <a class="button remove" onclick="((this).parentNode.remove())">
-                          <i class="fa fa-close"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="control add-btn">
-                  <a class="button is-primary">
-                    <span class="icon">
-                      <i class="fa fa-plus-circle"></i>
-                    </span>
-                    <span>条件を追加</span>
-                  </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="notification">
-            <button class="delete" onclick="((this).parentNode.remove())"></button>
-            <div class="columns">
-                <div class="column">
-                    <label class="label">区分<span class="must">必須</span></label>
-                    <p class="control has-icon has-icon-right">
-                        <span class="select is-fullwidth">
-                          <select>
-                            <option>おとな・こども同額</option>
-                            <option>おとな</option>
-                            <option>こども</option>
-                            <option>大学生</option>
-                            <option>高校生</option>
-                            <option>中学生</option>
-                            <option>小学生</option>
-                            <option>幼児</option>
-                            <option>その他</option>
-                          </select>
-                        </span>
-                    </p>
-                </div>
-                <div class="column">
-                    <label class="label">代金<span class="must">必須</span></label>
-                    <p class="control has-icon has-icon-right">
-                        <input class="input is-danger" type="text" placeholder="例：2000">
-                        <span class="icon is-small">
-                          円
-                        </span>
-                    </p>
-                </div>
-            </div>
-            <div>
-                <label class="label">条件
-                    <span class="help">最大5件まで追加可能</span>
-                </label>
-                <div class="control sortable">
-                    <div class="control has-addons">
-                        <a class="button">
-                          <i class="fa fa-navicon"></i>
-                        </a>
-                        <input class="input is-expanded" type="text" placeholder="例：6歳以上">
-                        <a class="button remove" onclick="((this).parentNode.remove())">
-                          <i class="fa fa-close"></i>
-                        </a>
-                    </div>
-                    <div class="control has-addons">
-                        <a class="button">
-                          <i class="fa fa-navicon"></i>
-                        </a>
-                        <input class="input is-expanded" type="text" placeholder="例：6歳以上">
-                        <a class="button remove" onclick="((this).parentNode.remove())">
-                          <i class="fa fa-close"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="control add-btn">
-                  <a class="button is-primary">
-                    <span class="icon">
-                      <i class="fa fa-plus-circle"></i>
-                    </span>
-                    <span>条件を追加</span>
-                  </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="control add-btn">
-          <a class="button is-primary">
-            <span class="icon">
-              <i class="fa fa-plus-circle"></i>
-            </span>
-            <span>代金を追加</span>
-          </a>
         </div>
     </div>
 </section>
@@ -527,7 +368,7 @@
         <div class="control">
             <label class="label">運行会社</label>
             <div class="control">
-                <div class="help counter">残り<span class="count"></span>文字</strong></div>
+                <div class="help counter">残り<span class="count">64</span>文字</strong></div>
                 <input class="input limited" type="text" placeholder="例：〇〇交通" maxlength="64">
             </div>
         </div>
@@ -549,7 +390,7 @@
         <div class="control">
             <label class="label">スタート時間</label>
             <div class="control">
-                <div class="help counter">残り<span class="count"></span>文字</strong></div>
+                <div class="help counter">残り<span class="count">64</span>文字</strong></div>
                 <input class="input limited" type="text" placeholder="例：10：00スタート" maxlength="64">
             </div>
         </div>
@@ -557,7 +398,7 @@
         <div class="control">
             <label class="label">所要時間</label>
             <div class="control">
-                <div class="help counter">残り<span class="count"></span>文字</strong></div>
+                <div class="help counter">残り<span class="count">64</span>文字</strong></div>
                 <input class="input limited" type="text" placeholder="例：約3時間" maxlength="64">
             </div>
         </div>
@@ -565,7 +406,7 @@
         <div class="control">
             <label class="label">予約締切<span class="must">必須</span></label>
             <div class="control">
-                <div class="help counter">残り<span class="count"></span>文字</strong></div>
+                <div class="help counter">残り<span class="count">64</span>文字</strong></div>
                 <input class="input is-danger limited" type="text" placeholder="例：ご旅行出発日前日の０時間前" maxlength="64">
             </div>
         </div>
@@ -610,8 +451,14 @@
                 </nav>
                 <label class="label">集合場所<span class="must">必須</span></label>
                 <div class="control">
-                    <div class="help counter">残り<span class="count"></span>文字</strong></div>
+                    <div class="help counter">残り<span class="count">64</span>文字</strong></div>
                     <input class="input is-danger limited" type="text" placeholder="例：JR富山駅 新幹線改札前　9:20集合" maxlength="64">
+                </div>
+
+                <label class="label">住所</label>
+                <div class="control">
+                    <div class="help counter">残り<span class="count">64</span>文字</strong></div>
+                    <input class="input limited" type="text" placeholder="例：富山県富山市明輪町1-225" maxlength="64">
                 </div>
 
                 <label class="label">座標</label>
@@ -725,6 +572,7 @@
         </span>
     </h2>
     <div class="conts-body message-body">
+        <span class="control help">未入力の場合は、プロフィールで設定した取消料が表示されます。</span>
 
         <label class="label">
             料率
@@ -915,7 +763,7 @@
 
                 <label class="label">タイトル<span class="must">必須</span></label>
                 <div class="control">
-                    <div class="help counter">残り<span class="count"></span>文字</strong></div>
+                    <div class="help counter">残り<span class="count">64</span>文字</strong></div>
                     <input class="input is-danger limited" type="text" placeholder="例：米騒動発祥の地" maxlength="64">
                 </div>
 
@@ -977,6 +825,7 @@
             </div>
             <div class="control area-detail">
                 <div class="kurobe-unaduki">
+                    <label class="checkbox"><input type="checkbox">滑川市</label>
                     <label class="checkbox"><input type="checkbox">魚津市</label>
                     <label class="checkbox"><input type="checkbox">黒部市</label>
                     <label class="checkbox"><input type="checkbox">入善町</label>

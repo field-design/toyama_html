@@ -117,7 +117,6 @@
     <p class="menu-label">商品編集</p>
     <ul>
       <li><a class="is-active" href="/product/post">基本情報</a></li>
-      <li><a href="/product/post">代金</a></li>
       <li><a href="/product/post">プラン詳細</a></li>
       <li><a href="/product/post">集合場所</a></li>
       <li><a href="/product/post">注意事項・その他</a></li>
@@ -140,7 +139,8 @@
   </p>
   <ul class="menu-list">
     <li><a href="/product">商品一覧</a></li>
-    <li><a href="/product/post">新規追加</a></li>
+    <li><a href="/product/post">商品追加</a></li>
+    <li><a href="/product/price">代金</a></li>
     <li><a href="/product/calendar">予約カレンダー</a></li>
   </ul>
   <p class="menu-label">
@@ -226,14 +226,16 @@
 
         <div class="control">
             <label class="label">郵便番号<span class="must">必須</span></label>
-            <div class="control is-horizontal">
-                <div class="control is-grouped">
-                    <p class="control is-expanded">
-                        <input class="input is-danger" type="number" min="0" placeholder="例：123">
-                    </p>
-                    <p class="control is-expanded">
-                        <input class="input is-danger" type="number" min="0" placeholder="例：4567">
-                    </p>
+            <div class="columns">
+                <div class="control is-horizontal column is-4">
+                    <div class="control is-grouped">
+                        <p class="control is-expanded">
+                            <input class="input is-danger" type="number" min="0" placeholder="例：123">
+                        </p>
+                        <p class="control is-expanded">
+                            <input class="input is-danger" type="number" min="0" placeholder="例：4567">
+                        </p>
+                    </div>
                 </div>
             </div>
 
@@ -304,34 +306,38 @@
 
         <div class="control">
             <label class="label">電話番号<span class="must">必須</span></label>
-            <div class="control is-horizontal">
-                <div class="control is-grouped">
-                    <p class="control is-expanded">
-                        <input class="input is-danger is-outlined" type="number" min="0" placeholder="例：123">
-                    </p>
-                    <p class="control is-expanded">
-                        <input class="input is-danger is-outlined" type="number" min="0" placeholder="例：4567">
-                    </p>
-                    <p class="control is-expanded">
-                        <input class="input is-danger is-outlined" type="number" min="0" placeholder="例：8901">
-                    </p>
+            <div class="columns">
+                <div class="control is-horizontal column is-6">
+                    <div class="control is-grouped">
+                        <p class="control is-expanded">
+                            <input class="input is-danger is-outlined" type="number" min="0" placeholder="例：123">
+                        </p>
+                        <p class="control is-expanded">
+                            <input class="input is-danger is-outlined" type="number" min="0" placeholder="例：4567">
+                        </p>
+                        <p class="control is-expanded">
+                            <input class="input is-danger is-outlined" type="number" min="0" placeholder="例：8901">
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="control">
             <label class="label">FAX番号</label>
-            <div class="control is-horizontal">
-                <div class="control is-grouped">
-                    <p class="control is-expanded">
-                        <input class="input" type="number" min="0" placeholder="例：123">
-                    </p>
-                    <p class="control is-expanded">
-                        <input class="input" type="number" min="0" placeholder="例：4567">
-                    </p>
-                    <p class="control is-expanded">
-                        <input class="input" type="number" min="0" placeholder="例：8901">
-                    </p>
+            <div class="columns">
+                <div class="control is-horizontal column is-6">
+                    <div class="control is-grouped">
+                        <p class="control is-expanded">
+                            <input class="input" type="number" min="0" placeholder="例：123">
+                        </p>
+                        <p class="control is-expanded">
+                            <input class="input" type="number" min="0" placeholder="例：4567">
+                        </p>
+                        <p class="control is-expanded">
+                            <input class="input" type="number" min="0" placeholder="例：8901">
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -383,28 +389,32 @@
 
         <div class="control">
             <label class="label">担当者名<span class="must">必須</span></label>
-            <div class="control is-horizontal">
-                <div class="control is-grouped">
-                    <p class="control is-expanded">
-                        <input class="input is-danger is-outlined" type="text" placeholder="姓">
-                    </p>
-                    <p class="control is-expanded">
-                        <input class="input is-danger is-outlined" type="text" placeholder="名">
-                    </p>
+            <div class="columns">
+                <div class="control is-horizontal column is-6">
+                    <div class="control is-grouped">
+                        <p class="control is-expanded">
+                            <input class="input is-danger is-outlined" type="text" placeholder="姓">
+                        </p>
+                        <p class="control is-expanded">
+                            <input class="input is-danger is-outlined" type="text" placeholder="名">
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="control">
             <label class="label">フリガナ<span class="must">必須</span></label>
-            <div class="control is-horizontal">
-                <div class="control is-grouped">
-                    <p class="control is-expanded">
-                        <input class="input is-danger" type="text" placeholder="セイ">
-                    </p>
-                    <p class="control is-expanded">
-                        <input class="input is-danger" type="text" placeholder="メイ">
-                    </p>
+            <div class="columns">
+                <div class="control is-horizontal column is-6">
+                    <div class="control is-grouped">
+                        <p class="control is-expanded">
+                            <input class="input is-danger" type="text" placeholder="セイ">
+                        </p>
+                        <p class="control is-expanded">
+                            <input class="input is-danger" type="text" placeholder="メイ">
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
