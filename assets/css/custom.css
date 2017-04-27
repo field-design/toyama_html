@@ -127,6 +127,9 @@
 .meeting-place .conts-body .notification {
   background: white; }
 
+.plan-course .relation-link {
+  text-align: right; }
+
 .release .message-header {
   margin-bottom: 0;
   -webkit-box-pack: center;
