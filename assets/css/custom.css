@@ -49,6 +49,26 @@
   .products .is-light:hover {
     opacity: .8; }
 
+.numbering {
+  counter-reset: number 0; }
+  .numbering .numbered {
+    position: relative;
+    padding-left: 30px; }
+    .numbering .numbered:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 30px;
+      height: 100%;
+      padding-top: 10px;
+      background: rgba(0, 0, 0, 0.4);
+      counter-increment: number 1;
+      content: counter(number);
+      font-size: 200%;
+      color: #ddd;
+      text-align: center; }
+
 .input-table table th,
 .input-table table td {
   position: relative;
