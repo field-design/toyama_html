@@ -202,12 +202,20 @@ body.login footer {
 .order-list .order-edit {
   text-align: center; }
 
-.order-edit-detail th {
-  width: 30%;
-  vertical-align: middle; }
-
-.order-edit-detail .word-break {
-  word-break: break-all; }
+.order-edit-detail {
+  margin-bottom: 2.5em;
+  counter-reset: number 0; }
+  .order-edit-detail th {
+    width: 30%;
+    vertical-align: middle; }
+  .order-edit-detail .word-break {
+    word-break: break-all; }
+  .order-edit-detail .with caption {
+    padding-bottom: .5em;
+    text-align: left; }
+    .order-edit-detail .with caption:after {
+      counter-increment: number 1;
+      content: counter(number); }
 
 /* =====================
   admin styles
