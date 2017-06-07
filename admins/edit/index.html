@@ -174,26 +174,7 @@
 <main>
 
     <h2 class="title is-3">プロフィール設定</h2>
-
-    <section class="region">
-        <h2 class="conts-ttl subtitle">
-            言語設定
-        </h2>
-        <div class="control">
-            <label class="label">表示言語</label>
-            <p class="control">
-                <label class="radio">
-                    <input type="radio" name="language-select" value="ja" checked> 日本語
-                </label>
-                <label class="radio">
-                    <input type="radio" name="language-select" value="en"> 英語
-                </label>
-                <!-- <label class="radio">
-                    <input type="radio" name="language-select" value="tw"> 台湾語
-                </label> -->
-            </p>
-        </div>
-    </section>
+    <span class="tag is-light">日本語</span>
 
     <hr>
 
@@ -870,6 +851,35 @@
                 <span class="icon is-small">
                     <i class="fa fa-globe"></i>
                 </span>
+            </p>
+        </div>
+    </section>
+
+    <hr>
+
+    <section class="region">
+        <h2 class="conts-ttl subtitle">
+            言語設定
+        </h2>
+        <div class="control">
+            <label class="label">表示言語</label>
+            <p class="control">
+                <label class="radio">
+                    <input type="radio" name="language-select" value="ja" checked> 日本語
+                </label>
+                <label class="radio">
+                    <input type="radio" name="language-select" value="en"> 英語
+                </label>
+                <!-- <label class="radio">
+                    <input type="radio" name="language-select" value="tw"> 台湾語
+                </label> -->
+            </p>
+        </div>
+        <div class="control">
+            <label class="label">スラッグ</label>
+            <span class="help">日本語版プロフィールと英語版プロフィールの紐付けに使用します。半角英字で入力して下さい。</span>
+            <p class="control">
+                <input class="input" type="text" placeholder="例：kanko-pro">
             </p>
         </div>
     </section>
