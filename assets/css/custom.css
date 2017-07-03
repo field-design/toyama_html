@@ -136,6 +136,9 @@
 .message-body a {
   text-decoration: none; }
 
+.plan-price .course {
+  background: white; }
+
 .plan-point .conts-body .notification,
 .meeting-place .conts-body .notification {
   background: white; }
@@ -301,7 +304,6 @@ select.is-danger {
   color: #333;
   display: block;
   padding: 10px;
-  -webkit-transition: all .2s ease;
   transition: all .2s ease; }
 
 .ui-datepicker-calendar td a:hover {
