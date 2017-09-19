@@ -61,7 +61,7 @@
                   <i class="fa fa-fw fa-file-text"></i>
                   操作マニュアル
               </a>
-              <a class="button is-light" href="/admins/edit">
+              <a class="button is-light" href="/admins">
                   <i class="fa fa-fw fa-user"></i>
                   プロフィール
               </a>
@@ -91,7 +91,7 @@
     <div class="breadcrumbs section">
         <div class="notification">
             <ul class="is-clearfix">
-              <li><a href="/"><span class="icon is-small"><i class="fa fa-home" aria-hidden="true"></i></span></a></li>
+              <li><a href="/admin"><span class="icon is-small"><i class="fa fa-home" aria-hidden="true"></i></span></a></li>
               <li><span>商品編集</span></li>
             </ul>
         </div>
@@ -161,7 +161,7 @@
   </p>
   <ul class="menu-list">
     <li><a href="/admins">事業者一覧</a></li>
-    <li><a href="/admins/edit">プロフィール</a></li>
+    <!-- <li><a href="/admins/edit">プロフィール</a></li> -->
   </ul>
   <p class="menu-label">
     その他
@@ -547,7 +547,7 @@
             <div class="column">
                 <label class="label">最少受付人員<span class="must">必須</span></label>
                 <p class="control has-icon has-icon-right">
-                    <input class="input is-danger" type="text" placeholder="例：2">
+                    <input class="input is-danger" type="number" min="1" placeholder="例：2">
                     <span class="icon is-small">
                       名
                     </span>
@@ -556,7 +556,7 @@
             <div class="column">
                 <label class="label">最少催行人員<span class="must">必須</span></label>
                 <p class="control has-icon has-icon-right">
-                    <input class="input is-danger" type="text" placeholder="例：2">
+                    <input class="input is-danger" type="number" min="1" placeholder="例：2">
                     <span class="icon is-small">
                       名
                     </span>
@@ -565,7 +565,7 @@
             <div class="column">
                 <label class="label">最大申込人員<span class="must">必須</span></label>
                 <p class="control has-icon has-icon-right">
-                    <input class="input is-danger" type="text" placeholder="例：9">
+                    <input class="input is-danger" type="number" min="1" placeholder="例：9">
                     <span class="icon is-small">
                       名
                     </span>
@@ -819,6 +819,14 @@
     </h2>
     <div class="conts-body message-body">
         <span class="control help">未入力の場合は、プロフィールで設定した取消料が表示されます。</span>
+
+        <div class="control">
+            <label class="label">説明文</label>
+            <div class="control">
+                <div class="help counter">残り<span class="count">256</span>文字</strong></div>
+                <textarea class="textarea limited" placeholder="例：契約成立後、お客様のご都合で契約を解除する場合、旅行代金に対してお客様1名につき下記の料率で取消料をいただきます。" maxlength="256"></textarea>
+            </div>
+        </div>
 
         <label class="label">
             料率
@@ -1268,38 +1276,6 @@
             <tbody>
                 <tr>
                     <th>
-                        <span class="icon is-small"><i class="fa fa-object-group"></i></span>
-                        <span>記事グループ</span>
-                    </th>
-                    <td>
-                        <div class="field">
-                          <p class="control">
-                            <input class="input" type="text" placeholder="例：masuzushi-taiken">
-                          </p>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <span class="icon is-small"><i class="fa fa-language"></i></span>
-                        <span>表示言語</span>
-                    </th>
-                    <td>
-                        <p class="control">
-                            <label class="radio">
-                                <input type="radio" name="language-select" value="ja" checked> 日本語
-                            </label>
-                            <label class="radio">
-                                <input type="radio" name="language-select" value="en"> 英語
-                            </label>
-                            <!-- <label class="radio">
-                                <input type="radio" name="language-select" value="tw"> 台湾語
-                            </label> -->
-                        </p>
-                    </td>
-                </tr>
-                <tr>
-                    <th>
                         <span class="icon is-small"><i class="fa fa-refresh"></i></span>
                         <span>ステータス</span>
                     </th>
@@ -1313,13 +1289,13 @@
                         <span>公開日時</span>
                     </th>
                     <td>
-                        2016年5月11日 11:30
+                        <!-- 2016年5月11日 11:30
                         <a class="button is-small is-primary is-inverted">
                           <span class="icon is-small">
                             <i class="fa fa-edit"></i>
                           </span>
                           <span>編集</span>
-                        </a>
+                        </a> -->
                         <p class="control has-addons">
                             <input class="input js-datepicker" type="text" placeholder="公開日">
                             <input class="input js-timepicker" type="text" placeholder="時間">
@@ -1348,6 +1324,74 @@
                             https://example.com
                             <span class="icon is-small"><i class="fa fa-fw fa-external-link"></i></span>
                         </a>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <span class="icon is-small"><i class="fa fa-lock"></i></span>
+                        <span>限定公開機能</span>
+                    </th>
+                    <td>
+                        <p class="control">
+                            <label class="radio">
+                                <input type="radio" name="limited-link" value="0" checked> 利用しない
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="limited-link" value="1"> 利用する
+                            </label>
+                        </p>
+                        <div class="limited-link-url">
+                            <label class="label">
+                                <span class="icon is-small"><i class="fa fa-link"></i></span>
+                                <span>限定公開URL</span>
+                            </label>
+                            <div class="control">
+                                <a href="https://example.com" target="_blank">
+                                    https://example.com
+                                    <span class="icon is-small"><i class="fa fa-fw fa-external-link"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <span class="icon is-small"><i class="fa fa-language"></i></span>
+                        <span>多言語機能</span>
+                    </th>
+                    <td>
+                        <p class="control">
+                            <label class="radio">
+                                <input type="radio" name="multilanguage" value="0" checked> 利用しない
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="multilanguage" value="1"> 利用する
+                            </label>
+                        </p>
+                        <div class="multilanguage-on">
+                            <label class="label">
+                                <span class="icon is-small"><i class="fa fa-object-group"></i></span>
+                                <span>記事グループ</span>
+                            </label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="例：masuzushi-taiken">
+                            </div>
+                            <label class="label">
+                                <span class="icon is-small"><i class="fa fa-language"></i></span>
+                                <span>表示言語</span>
+                            </label>
+                            <div class="control">
+                                <label class="radio">
+                                    <input type="radio" name="language-select" value="ja" checked> 日本語
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="language-select" value="en"> 英語
+                                </label>
+                                <!-- <label class="radio">
+                                    <input type="radio" name="language-select" value="tw"> 台湾語
+                                </label> -->
+                            </div>
+                        </div>
                     </td>
                 </tr>
             </tbody>
@@ -1484,7 +1528,7 @@
   </p>
   <ul class="menu-list">
     <li><a href="/admins">事業者一覧</a></li>
-    <li><a href="/admins/edit">プロフィール</a></li>
+    <!-- <li><a href="/admins/edit">プロフィール</a></li> -->
   </ul>
   <p class="menu-label">
     その他
@@ -1565,6 +1609,7 @@
     map.panTo(lat_lng);
   }
 </script>
+
 <script>
 /***************************
 並び替え
@@ -1580,9 +1625,7 @@ $( function() {
 /***************************
 アコーディオン
 ****************************/
-
 var start_section = 0;
-
 
 function menuScroll(index) {
     var target = $('.js-accordion section:nth-child(' + index + ')');
@@ -1707,6 +1750,30 @@ $('.area-group').click(function() {
         $('.takaoka-himi').fadeIn();
     } else {
         $('.takaoka-himi').fadeOut();
+    }
+});
+
+/***************************
+限定公開URL
+****************************/
+$('.limited-link-url').hide();
+$('[name=limited-link]').click(function() {
+    if ($('input[name=limited-link]:eq(1)').prop('checked')) {
+        $('.limited-link-url').fadeIn();
+    } else {
+        $('.limited-link-url').fadeOut();
+    }
+});
+
+/***************************
+多言語機能
+****************************/
+$('.multilanguage-on').hide();
+$('[name=multilanguage]').click(function() {
+    if ($('input[name=multilanguage]:eq(1)').prop('checked')) {
+        $('.multilanguage-on').fadeIn();
+    } else {
+        $('.multilanguage-on').fadeOut();
     }
 });
 </script>
