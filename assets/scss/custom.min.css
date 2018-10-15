@@ -334,6 +334,17 @@ body.login footer {
     opacity: .2;
 }
 
+.control.control-d2 .has-addons input {
+    max-width: 100px;
+}
+
+.control.control-d2 .has-addons .no-frame {
+    display: inline-flex;
+    align-items: center;
+    padding-left: .75em;
+    padding-right: .75em;
+}
+
 /* =====================
   admin styles
 ===================== */
